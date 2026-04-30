@@ -332,7 +332,7 @@ function scorePick(ids){
   if(elecs.length)warns.push("電気タイプ→ガアとアシレが弱点。ガブかカバで受ける");
   if(opp.find(p=>p.name==="エーフィ"))warns.push("マジックミラー→ステロ・あくびが跳ね返される。カバ選出注意");
   if(opp.find(p=>p.name==="ドリュウズ")&&opp.find(p=>p.name==="カバルドン"))warns.push("砂パ警戒→ドリュウズがすなかきで最速S224");
-  let answers=opp.map(p=>({name:p.name,answer:p.answer,warn:p.warn,moves:p.moves||[]}));
+  let answers=opp.map(p=>({name:p.name,answer:p.answer,warn:p.warn,moves:p.liveMoves||p.moves||[]}));
   return{best:sc[0],second:sc[1],flex2,warnings:warns,answers,allScores:sc};
 }
 function renderRec(){
@@ -383,7 +383,12 @@ function renderSpeed(){
   }).join('');
 }
 function renderMatchups(){
-  document.getElementById('matchup-list').innerHTML=POKEDB.map((p,i)=>`<div class="matchup-card fold" onclick="this.classList.toggle('open')"><div class="mu-head"><span class="mu-rank">${i+1}</span><span class="mu-name">${p.name}</span><span class="mu-answer">${p.answer.split('/')[0]}</span></div><div class="fold-body"><b>型:</b> ${p.sets}<div class="mv-list">${(p.moves||[]).map(m=>`<span class="mv-tag">${m}</span>`).join('')}</div><b>処理:</b> ${p.answer}<br>${p.warn?'<span style="color:#ff6b6b">⚠ '+p.warn+'</span>':''}</div></div>`).join('');
+  document.getElementById('matchup-list').innerHTML=POKEDB.map((p,i)=>{
+    const mvs = p.liveMoves || p.moves || [];
+    const rankLabel = p.liveRank ? p.liveRank : (i+1);
+    const liveTag = p.liveMoves ? '<span style="color:var(--accent);font-size:9px;margin-left:4px">LIVE</span>' : '';
+    return `<div class="matchup-card fold" onclick="this.classList.toggle('open')"><div class="mu-head"><span class="mu-rank">${rankLabel}</span><span class="mu-name">${p.name}${liveTag}</span><span class="mu-answer">${p.answer.split('/')[0]}</span></div><div class="fold-body"><b>型:</b> ${p.sets}<div class="mv-list">${mvs.map(m=>`<span class="mv-tag">${m}</span>`).join('')}</div><b>処理:</b> ${p.answer}<br>${p.warn?'<span style="color:#ff6b6b">⚠ '+p.warn+'</span>':''}</div></div>`;
+  }).join('');
   document.getElementById('meta-updated').textContent='DATA '+DATA_VERSION;
 }
 function renderType(){
@@ -400,7 +405,34 @@ function sw(n){
   event.currentTarget.classList.add('active');
   window.scrollTo(0,0);
 }
+// ===== DYNAMIC DATA FETCH =====
+let liveData = null;
+async function fetchLiveData(){
+  try {
+    const res = await fetch('data.json?t='+Date.now());
+    if(!res.ok) return;
+    liveData = await res.json();
+    // Update POKEDB moves from live data
+    if(liveData && liveData.pokemon){
+      liveData.pokemon.forEach(lp => {
+        // Match by name (strip メガ prefix for matching)
+        const baseName = lp.name.replace(/^メガ/,'');
+        const match = POKEDB.find(p => p.name === lp.name || p.name === baseName || lp.name.includes(p.name));
+        if(match && lp.moves_mentioned && lp.moves_mentioned.length > 0){
+          match.liveMoves = lp.moves_mentioned;
+          match.liveRank = lp.rank;
+        }
+      });
+    }
+    // Re-render matchups with live data
+    renderMatchups();
+    document.getElementById('meta-updated').textContent =
+      'LIVE DATA: ' + (liveData.updated_at||'').slice(0,10) + ' (yakkun.com)';
+  } catch(e){ console.log('Live data not available, using static'); }
+}
+
 renderGrid();renderParty();renderSpeed();renderMatchups();renderType();
+fetchLiveData();
 </script>
 </body>
 </html>
