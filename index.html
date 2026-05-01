@@ -444,10 +444,9 @@ async function fetchLiveData(){
     const res = await fetch('data.json?t='+Date.now());
     if(!res.ok) return;
     liveData = await res.json();
-    // Update POKEDB moves from live data
+    // Update POKEDB moves from ranking data
     if(liveData && liveData.pokemon){
       liveData.pokemon.forEach(lp => {
-        // Match by name (strip メガ prefix for matching)
         const baseName = lp.name.replace(/^メガ/,'');
         const match = POKEDB.find(p => p.name === lp.name || p.name === baseName || lp.name.includes(p.name));
         if(match && lp.moves_mentioned && lp.moves_mentioned.length > 0){
@@ -456,10 +455,27 @@ async function fetchLiveData(){
         }
       });
     }
-    // Re-render matchups with live data
-    renderMatchups();
+    // Add ALL pokemon from pokedex (ones not already in POKEDB)
+    if(liveData && liveData.all_pokemon){
+      let nextId = 1000;
+      const existingNames = new Set(POKEDB.map(p=>p.name));
+      liveData.all_pokemon.forEach(ap => {
+        if(existingNames.has(ap.name)) return;
+        POKEDB.push({
+          id: nextId++,
+          name: ap.name,
+          types: ap.types,
+          spd: ap.spe_max,
+          cat: ap.cat,
+          ghost: ap.ghost,
+          sets:'', moves:[], answer:'', warn:''
+        });
+      });
+    }
+    // Re-render with full data
+    renderGrid(); renderMatchups();
     document.getElementById('meta-updated').textContent =
-      'LIVE DATA: ' + (liveData.updated_at||'').slice(0,10) + ' (yakkun.com)';
+      'LIVE DATA: ' + (liveData.updated_at||'').slice(0,10) + ' (' + POKEDB.length + '体)';
   } catch(e){ console.log('Live data not available, using static'); }
 }
 

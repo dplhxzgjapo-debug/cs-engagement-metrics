@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-30T11:55:26Z",
-  "source": "yakkun.com/ch/ranking.htm",
+  "updated_at": "2026-05-01T01:28:51Z",
+  "source": "yakkun.com",
   "format": "singles",
   "pokemon": [
     {
@@ -646,6 +646,1992 @@
       "moves_mentioned": [
         "めいそう"
       ]
+    }
+  ],
+  "all_pokemon": [
+    {
+      "name": "フシギバナ",
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "spe_base": 80,
+      "spe_max": 145,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "リザードン",
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "spe_base": 100,
+      "spe_max": 167,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "カメックス",
+      "types": [
+        "water"
+      ],
+      "spe_base": 78,
+      "spe_max": 143,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "スピアー",
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "spe_base": 75,
+      "spe_max": 139,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ピジョット",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "spe_base": 101,
+      "spe_max": 168,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "アーボック",
+      "types": [
+        "poison"
+      ],
+      "spe_base": 80,
+      "spe_max": 145,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ピカチュウ",
+      "types": [
+        "electric"
+      ],
+      "spe_base": 90,
+      "spe_max": 156,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ライチュウ",
+      "types": [
+        "electric"
+      ],
+      "spe_base": 110,
+      "spe_max": 178,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ピクシー",
+      "types": [
+        "fairy"
+      ],
+      "spe_base": 60,
+      "spe_max": 123,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "キュウコン",
+      "types": [
+        "fire"
+      ],
+      "spe_base": 100,
+      "spe_max": 167,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ウインディ",
+      "types": [
+        "fire"
+      ],
+      "spe_base": 95,
+      "spe_max": 161,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "フーディン",
+      "types": [
+        "psychic"
+      ],
+      "spe_base": 120,
+      "spe_max": 189,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "カイリキー",
+      "types": [
+        "fighting"
+      ],
+      "spe_base": 55,
+      "spe_max": 117,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ウツボット",
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "spe_base": 70,
+      "spe_max": 134,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ヤドラン",
+      "types": [
+        "water",
+        "psychic"
+      ],
+      "spe_base": 30,
+      "spe_max": 90,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ゲンガー",
+      "types": [
+        "ghost",
+        "poison"
+      ],
+      "spe_base": 110,
+      "spe_max": 178,
+      "cat": "spe_atk",
+      "ghost": true
+    },
+    {
+      "name": "ガルーラ",
+      "types": [
+        "normal"
+      ],
+      "spe_base": 90,
+      "spe_max": 156,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "スターミー",
+      "types": [
+        "water",
+        "psychic"
+      ],
+      "spe_base": 115,
+      "spe_max": 183,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "カイロス",
+      "types": [
+        "bug"
+      ],
+      "spe_base": 85,
+      "spe_max": 150,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ケンタロス",
+      "types": [
+        "normal"
+      ],
+      "spe_base": 110,
+      "spe_max": 178,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ギャラドス",
+      "types": [
+        "water",
+        "flying"
+      ],
+      "spe_base": 81,
+      "spe_max": 146,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "メタモン",
+      "types": [
+        "normal"
+      ],
+      "spe_base": 48,
+      "spe_max": 110,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "シャワーズ",
+      "types": [
+        "water"
+      ],
+      "spe_base": 65,
+      "spe_max": 128,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "サンダース",
+      "types": [
+        "electric"
+      ],
+      "spe_base": 130,
+      "spe_max": 200,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ブースター",
+      "types": [
+        "fire"
+      ],
+      "spe_base": 65,
+      "spe_max": 128,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "プテラ",
+      "types": [
+        "rock",
+        "flying"
+      ],
+      "spe_base": 130,
+      "spe_max": 200,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "カビゴン",
+      "types": [
+        "normal"
+      ],
+      "spe_base": 30,
+      "spe_max": 90,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "カイリュー",
+      "types": [
+        "dragon",
+        "flying"
+      ],
+      "spe_base": 80,
+      "spe_max": 145,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "バクフーン",
+      "types": [
+        "fire"
+      ],
+      "spe_base": 100,
+      "spe_max": 167,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "オーダイル",
+      "types": [
+        "water"
+      ],
+      "spe_base": 78,
+      "spe_max": 143,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "アリアドス",
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "spe_base": 40,
+      "spe_max": 101,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "デンリュウ",
+      "types": [
+        "electric"
+      ],
+      "spe_base": 55,
+      "spe_max": 117,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "マリルリ",
+      "types": [
+        "water",
+        "fairy"
+      ],
+      "spe_base": 50,
+      "spe_max": 112,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "ニョロトノ",
+      "types": [
+        "water"
+      ],
+      "spe_base": 70,
+      "spe_max": 134,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "エーフィ",
+      "types": [
+        "psychic"
+      ],
+      "spe_base": 110,
+      "spe_max": 178,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ブラッキー",
+      "types": [
+        "dark"
+      ],
+      "spe_base": 65,
+      "spe_max": 128,
+      "cat": "wall",
+      "ghost": false
+    },
+    {
+      "name": "ヤドキング",
+      "types": [
+        "water",
+        "psychic"
+      ],
+      "spe_base": 30,
+      "spe_max": 90,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "フォレトス",
+      "types": [
+        "bug",
+        "steel"
+      ],
+      "spe_base": 40,
+      "spe_max": 101,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "ハガネール",
+      "types": [
+        "steel",
+        "ground"
+      ],
+      "spe_base": 30,
+      "spe_max": 90,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "ハッサム",
+      "types": [
+        "bug",
+        "steel"
+      ],
+      "spe_base": 65,
+      "spe_max": 128,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ヘラクロス",
+      "types": [
+        "bug",
+        "fighting"
+      ],
+      "spe_base": 85,
+      "spe_max": 150,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "エアームド",
+      "types": [
+        "steel",
+        "flying"
+      ],
+      "spe_base": 70,
+      "spe_max": 134,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "ヘルガー",
+      "types": [
+        "dark",
+        "fire"
+      ],
+      "spe_base": 95,
+      "spe_max": 161,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "バンギラス",
+      "types": [
+        "rock",
+        "dark"
+      ],
+      "spe_base": 61,
+      "spe_max": 124,
+      "cat": "wall",
+      "ghost": false
+    },
+    {
+      "name": "ペリッパー",
+      "types": [
+        "water",
+        "flying"
+      ],
+      "spe_base": 65,
+      "spe_max": 128,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "サーナイト",
+      "types": [
+        "psychic",
+        "fairy"
+      ],
+      "spe_base": 80,
+      "spe_max": 145,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ヤミラミ",
+      "types": [
+        "dark",
+        "ghost"
+      ],
+      "spe_base": 50,
+      "spe_max": 112,
+      "cat": "phy_atk",
+      "ghost": true
+    },
+    {
+      "name": "ボスゴドラ",
+      "types": [
+        "steel",
+        "rock"
+      ],
+      "spe_base": 50,
+      "spe_max": 112,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "チャーレム",
+      "types": [
+        "fighting",
+        "psychic"
+      ],
+      "spe_base": 80,
+      "spe_max": 145,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ライボルト",
+      "types": [
+        "electric"
+      ],
+      "spe_base": 105,
+      "spe_max": 172,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "サメハダー",
+      "types": [
+        "water",
+        "dark"
+      ],
+      "spe_base": 95,
+      "spe_max": 161,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "バクーダ",
+      "types": [
+        "fire",
+        "ground"
+      ],
+      "spe_base": 40,
+      "spe_max": 101,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "コータス",
+      "types": [
+        "fire"
+      ],
+      "spe_base": 20,
+      "spe_max": 79,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "チルタリス",
+      "types": [
+        "dragon",
+        "flying"
+      ],
+      "spe_base": 80,
+      "spe_max": 145,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "ミロカロス",
+      "types": [
+        "water"
+      ],
+      "spe_base": 81,
+      "spe_max": 146,
+      "cat": "wall",
+      "ghost": false
+    },
+    {
+      "name": "ポワルン",
+      "types": [
+        "normal"
+      ],
+      "spe_base": 70,
+      "spe_max": 134,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ジュペッタ",
+      "types": [
+        "ghost"
+      ],
+      "spe_base": 65,
+      "spe_max": 128,
+      "cat": "phy_atk",
+      "ghost": true
+    },
+    {
+      "name": "チリーン",
+      "types": [
+        "psychic"
+      ],
+      "spe_base": 65,
+      "spe_max": 128,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "アブソル",
+      "types": [
+        "dark"
+      ],
+      "spe_base": 75,
+      "spe_max": 139,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "オニゴーリ",
+      "types": [
+        "ice"
+      ],
+      "spe_base": 80,
+      "spe_max": 145,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ドダイトス",
+      "types": [
+        "grass",
+        "ground"
+      ],
+      "spe_base": 56,
+      "spe_max": 118,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ゴウカザル",
+      "types": [
+        "fire",
+        "fighting"
+      ],
+      "spe_base": 108,
+      "spe_max": 176,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "エンペルト",
+      "types": [
+        "water",
+        "steel"
+      ],
+      "spe_base": 60,
+      "spe_max": 123,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "レントラー",
+      "types": [
+        "electric"
+      ],
+      "spe_base": 70,
+      "spe_max": 134,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ロズレイド",
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "spe_base": 90,
+      "spe_max": 156,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ラムパルド",
+      "types": [
+        "rock"
+      ],
+      "spe_base": 58,
+      "spe_max": 121,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "トリデプス",
+      "types": [
+        "rock",
+        "steel"
+      ],
+      "spe_base": 30,
+      "spe_max": 90,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "ミミロップ",
+      "types": [
+        "normal"
+      ],
+      "spe_base": 105,
+      "spe_max": 172,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ミカルゲ",
+      "types": [
+        "ghost",
+        "dark"
+      ],
+      "spe_base": 35,
+      "spe_max": 95,
+      "cat": "support",
+      "ghost": true
+    },
+    {
+      "name": "ガブリアス",
+      "types": [
+        "dragon",
+        "ground"
+      ],
+      "spe_base": 102,
+      "spe_max": 169,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ルカリオ",
+      "types": [
+        "fighting",
+        "steel"
+      ],
+      "spe_base": 90,
+      "spe_max": 156,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "カバルドン",
+      "types": [
+        "ground"
+      ],
+      "spe_base": 47,
+      "spe_max": 108,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ドクロッグ",
+      "types": [
+        "poison",
+        "fighting"
+      ],
+      "spe_base": 85,
+      "spe_max": 150,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ユキノオー",
+      "types": [
+        "grass",
+        "ice"
+      ],
+      "spe_base": 60,
+      "spe_max": 123,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "マニューラ",
+      "types": [
+        "dark",
+        "ice"
+      ],
+      "spe_base": 125,
+      "spe_max": 194,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ドサイドン",
+      "types": [
+        "ground",
+        "rock"
+      ],
+      "spe_base": 40,
+      "spe_max": 101,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "リーフィア",
+      "types": [
+        "grass"
+      ],
+      "spe_base": 95,
+      "spe_max": 161,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "グレイシア",
+      "types": [
+        "ice"
+      ],
+      "spe_base": 65,
+      "spe_max": 128,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "グライオン",
+      "types": [
+        "ground",
+        "flying"
+      ],
+      "spe_base": 95,
+      "spe_max": 161,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "マンムー",
+      "types": [
+        "ice",
+        "ground"
+      ],
+      "spe_base": 80,
+      "spe_max": 145,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "エルレイド",
+      "types": [
+        "psychic",
+        "fighting"
+      ],
+      "spe_base": 80,
+      "spe_max": 145,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ユキメノコ",
+      "types": [
+        "ice",
+        "ghost"
+      ],
+      "spe_base": 110,
+      "spe_max": 178,
+      "cat": "phy_atk",
+      "ghost": true
+    },
+    {
+      "name": "ロトム",
+      "types": [
+        "electric",
+        "ghost"
+      ],
+      "spe_base": 91,
+      "spe_max": 157,
+      "cat": "spe_atk",
+      "ghost": true
+    },
+    {
+      "name": "ヒートロトム",
+      "types": [
+        "electric",
+        "fire"
+      ],
+      "spe_base": 86,
+      "spe_max": 151,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ウォッシュロトム",
+      "types": [
+        "electric",
+        "water"
+      ],
+      "spe_base": 86,
+      "spe_max": 151,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "フロストロトム",
+      "types": [
+        "electric",
+        "ice"
+      ],
+      "spe_base": 86,
+      "spe_max": 151,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "スピンロトム",
+      "types": [
+        "electric",
+        "flying"
+      ],
+      "spe_base": 86,
+      "spe_max": 151,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "カットロトム",
+      "types": [
+        "electric",
+        "grass"
+      ],
+      "spe_base": 86,
+      "spe_max": 151,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ジャローダ",
+      "types": [
+        "grass"
+      ],
+      "spe_base": 113,
+      "spe_max": 181,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "エンブオー",
+      "types": [
+        "fire",
+        "fighting"
+      ],
+      "spe_base": 65,
+      "spe_max": 128,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ダイケンキ",
+      "types": [
+        "water"
+      ],
+      "spe_base": 70,
+      "spe_max": 134,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ミルホッグ",
+      "types": [
+        "normal"
+      ],
+      "spe_base": 77,
+      "spe_max": 141,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "レパルダス",
+      "types": [
+        "dark"
+      ],
+      "spe_base": 106,
+      "spe_max": 173,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ヤナッキー",
+      "types": [
+        "grass"
+      ],
+      "spe_base": 101,
+      "spe_max": 168,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "バオッキー",
+      "types": [
+        "fire"
+      ],
+      "spe_base": 101,
+      "spe_max": 168,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ヒヤッキー",
+      "types": [
+        "water"
+      ],
+      "spe_base": 101,
+      "spe_max": 168,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ドリュウズ",
+      "types": [
+        "ground",
+        "steel"
+      ],
+      "spe_base": 88,
+      "spe_max": 154,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "タブンネ",
+      "types": [
+        "normal"
+      ],
+      "spe_base": 50,
+      "spe_max": 112,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "ローブシン",
+      "types": [
+        "fighting"
+      ],
+      "spe_base": 45,
+      "spe_max": 106,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "エルフーン",
+      "types": [
+        "grass",
+        "fairy"
+      ],
+      "spe_base": 116,
+      "spe_max": 184,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ワルビアル",
+      "types": [
+        "ground",
+        "dark"
+      ],
+      "spe_base": 92,
+      "spe_max": 158,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "デスカーン",
+      "types": [
+        "ghost"
+      ],
+      "spe_base": 30,
+      "spe_max": 90,
+      "cat": "support",
+      "ghost": true
+    },
+    {
+      "name": "ダストダス",
+      "types": [
+        "poison"
+      ],
+      "spe_base": 75,
+      "spe_max": 139,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ゾロアーク",
+      "types": [
+        "dark"
+      ],
+      "spe_base": 105,
+      "spe_max": 172,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ランクルス",
+      "types": [
+        "psychic"
+      ],
+      "spe_base": 30,
+      "spe_max": 90,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "バイバニラ",
+      "types": [
+        "ice"
+      ],
+      "spe_base": 79,
+      "spe_max": 144,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "エモンガ",
+      "types": [
+        "electric",
+        "flying"
+      ],
+      "spe_base": 103,
+      "spe_max": 170,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "シャンデラ",
+      "types": [
+        "ghost",
+        "fire"
+      ],
+      "spe_base": 80,
+      "spe_max": 145,
+      "cat": "spe_atk",
+      "ghost": true
+    },
+    {
+      "name": "ツンベアー",
+      "types": [
+        "ice"
+      ],
+      "spe_base": 50,
+      "spe_max": 112,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "マッギョ",
+      "types": [
+        "ground",
+        "electric"
+      ],
+      "spe_base": 32,
+      "spe_max": 92,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "ゴルーグ",
+      "types": [
+        "ground",
+        "ghost"
+      ],
+      "spe_base": 55,
+      "spe_max": 117,
+      "cat": "phy_atk",
+      "ghost": true
+    },
+    {
+      "name": "サザンドラ",
+      "types": [
+        "dark",
+        "dragon"
+      ],
+      "spe_base": 98,
+      "spe_max": 165,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ウルガモス",
+      "types": [
+        "bug",
+        "fire"
+      ],
+      "spe_base": 100,
+      "spe_max": 167,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ブリガロン",
+      "types": [
+        "grass",
+        "fighting"
+      ],
+      "spe_base": 64,
+      "spe_max": 127,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "マフォクシー",
+      "types": [
+        "fire",
+        "psychic"
+      ],
+      "spe_base": 104,
+      "spe_max": 171,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ゲッコウガ",
+      "types": [
+        "water",
+        "dark"
+      ],
+      "spe_base": 122,
+      "spe_max": 191,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ホルード",
+      "types": [
+        "normal",
+        "ground"
+      ],
+      "spe_base": 78,
+      "spe_max": 143,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ファイアロー",
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "spe_base": 126,
+      "spe_max": 195,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ビビヨン",
+      "types": [
+        "bug",
+        "flying"
+      ],
+      "spe_base": 89,
+      "spe_max": 155,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "フラージェス",
+      "types": [
+        "fairy"
+      ],
+      "spe_base": 75,
+      "spe_max": 139,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ゴロンダ",
+      "types": [
+        "fighting",
+        "dark"
+      ],
+      "spe_base": 58,
+      "spe_max": 121,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "トリミアン",
+      "types": [
+        "normal"
+      ],
+      "spe_base": 102,
+      "spe_max": 169,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ニャオニクス♂",
+      "types": [
+        "psychic"
+      ],
+      "spe_base": 104,
+      "spe_max": 171,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ニャオニクス♀",
+      "types": [
+        "psychic"
+      ],
+      "spe_base": 104,
+      "spe_max": 171,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "フレフワン",
+      "types": [
+        "fairy"
+      ],
+      "spe_base": 29,
+      "spe_max": 89,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "ペロリーム",
+      "types": [
+        "fairy"
+      ],
+      "spe_base": 72,
+      "spe_max": 136,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ブロスター",
+      "types": [
+        "water"
+      ],
+      "spe_base": 59,
+      "spe_max": 122,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "エレザード",
+      "types": [
+        "electric",
+        "normal"
+      ],
+      "spe_base": 109,
+      "spe_max": 177,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ガチゴラス",
+      "types": [
+        "rock",
+        "dragon"
+      ],
+      "spe_base": 71,
+      "spe_max": 135,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "アマルルガ",
+      "types": [
+        "rock",
+        "ice"
+      ],
+      "spe_base": 58,
+      "spe_max": 121,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "ニンフィア",
+      "types": [
+        "fairy"
+      ],
+      "spe_base": 60,
+      "spe_max": 123,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ルチャブル",
+      "types": [
+        "fighting",
+        "flying"
+      ],
+      "spe_base": 118,
+      "spe_max": 187,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "デデンネ",
+      "types": [
+        "electric",
+        "fairy"
+      ],
+      "spe_base": 101,
+      "spe_max": 168,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ヌメルゴン",
+      "types": [
+        "dragon"
+      ],
+      "spe_base": 80,
+      "spe_max": 145,
+      "cat": "wall",
+      "ghost": false
+    },
+    {
+      "name": "クレッフィ",
+      "types": [
+        "steel",
+        "fairy"
+      ],
+      "spe_base": 75,
+      "spe_max": 139,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "オーロット",
+      "types": [
+        "ghost",
+        "grass"
+      ],
+      "spe_base": 56,
+      "spe_max": 118,
+      "cat": "phy_atk",
+      "ghost": true
+    },
+    {
+      "name": "クレベース",
+      "types": [
+        "ice"
+      ],
+      "spe_base": 28,
+      "spe_max": 88,
+      "cat": "wall",
+      "ghost": false
+    },
+    {
+      "name": "オンバーン",
+      "types": [
+        "flying",
+        "dragon"
+      ],
+      "spe_base": 123,
+      "spe_max": 192,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ジュナイパー",
+      "types": [
+        "grass",
+        "ghost"
+      ],
+      "spe_base": 70,
+      "spe_max": 134,
+      "cat": "phy_atk",
+      "ghost": true
+    },
+    {
+      "name": "ガオガエン",
+      "types": [
+        "fire",
+        "dark"
+      ],
+      "spe_base": 60,
+      "spe_max": 123,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "アシレーヌ",
+      "types": [
+        "water",
+        "fairy"
+      ],
+      "spe_base": 60,
+      "spe_max": 123,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ドデカバシ",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "spe_base": 60,
+      "spe_max": 123,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ケケンカニ",
+      "types": [
+        "fighting",
+        "ice"
+      ],
+      "spe_base": 43,
+      "spe_max": 104,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ドヒドイデ",
+      "types": [
+        "poison",
+        "water"
+      ],
+      "spe_base": 35,
+      "spe_max": 95,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "バンバドロ",
+      "types": [
+        "ground"
+      ],
+      "spe_base": 35,
+      "spe_max": 95,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "オニシズクモ",
+      "types": [
+        "water",
+        "bug"
+      ],
+      "spe_base": 42,
+      "spe_max": 103,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "エンニュート",
+      "types": [
+        "poison",
+        "fire"
+      ],
+      "spe_base": 117,
+      "spe_max": 185,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "アマージョ",
+      "types": [
+        "grass"
+      ],
+      "spe_base": 72,
+      "spe_max": 136,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ヤレユータン",
+      "types": [
+        "normal",
+        "psychic"
+      ],
+      "spe_base": 60,
+      "spe_max": 123,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "ナゲツケサル",
+      "types": [
+        "fighting"
+      ],
+      "spe_base": 80,
+      "spe_max": 145,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ミミッキュ",
+      "types": [
+        "ghost",
+        "fairy"
+      ],
+      "spe_base": 96,
+      "spe_max": 162,
+      "cat": "phy_atk",
+      "ghost": true
+    },
+    {
+      "name": "ジジーロン",
+      "types": [
+        "normal",
+        "dragon"
+      ],
+      "spe_base": 36,
+      "spe_max": 96,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ジャラランガ",
+      "types": [
+        "dragon",
+        "fighting"
+      ],
+      "spe_base": 85,
+      "spe_max": 150,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "アーマーガア",
+      "types": [
+        "flying",
+        "steel"
+      ],
+      "spe_base": 67,
+      "spe_max": 130,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "アップリュー",
+      "types": [
+        "grass",
+        "dragon"
+      ],
+      "spe_base": 70,
+      "spe_max": 134,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "タルップル",
+      "types": [
+        "grass",
+        "dragon"
+      ],
+      "spe_base": 30,
+      "spe_max": 90,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "サダイジャ",
+      "types": [
+        "ground"
+      ],
+      "spe_base": 71,
+      "spe_max": 135,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ポットデス",
+      "types": [
+        "ghost"
+      ],
+      "spe_base": 70,
+      "spe_max": 134,
+      "cat": "spe_atk",
+      "ghost": true
+    },
+    {
+      "name": "ブリムオン",
+      "types": [
+        "psychic",
+        "fairy"
+      ],
+      "spe_base": 29,
+      "spe_max": 89,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "バリコオル",
+      "types": [
+        "ice",
+        "psychic"
+      ],
+      "spe_base": 70,
+      "spe_max": 134,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "デスバーン",
+      "types": [
+        "ground",
+        "ghost"
+      ],
+      "spe_base": 30,
+      "spe_max": 90,
+      "cat": "support",
+      "ghost": true
+    },
+    {
+      "name": "マホイップ",
+      "types": [
+        "fairy"
+      ],
+      "spe_base": 64,
+      "spe_max": 127,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "モルペコ",
+      "types": [
+        "electric",
+        "dark"
+      ],
+      "spe_base": 97,
+      "spe_max": 163,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ドラパルト",
+      "types": [
+        "dragon",
+        "ghost"
+      ],
+      "spe_base": 142,
+      "spe_max": 213,
+      "cat": "phy_atk",
+      "ghost": true
+    },
+    {
+      "name": "アヤシシ",
+      "types": [
+        "normal",
+        "psychic"
+      ],
+      "spe_base": 65,
+      "spe_max": 128,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "バサギリ",
+      "types": [
+        "bug",
+        "rock"
+      ],
+      "spe_base": 85,
+      "spe_max": 150,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "イダイトウ♂",
+      "types": [
+        "water",
+        "ghost"
+      ],
+      "spe_base": 78,
+      "spe_max": 143,
+      "cat": "phy_atk",
+      "ghost": true
+    },
+    {
+      "name": "イダイトウ♀",
+      "types": [
+        "water",
+        "ghost"
+      ],
+      "spe_base": 78,
+      "spe_max": 143,
+      "cat": "spe_atk",
+      "ghost": true
+    },
+    {
+      "name": "オオニューラ",
+      "types": [
+        "fighting",
+        "poison"
+      ],
+      "spe_base": 120,
+      "spe_max": 189,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "マスカーニャ",
+      "types": [
+        "grass",
+        "dark"
+      ],
+      "spe_base": 123,
+      "spe_max": 192,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ラウドボーン",
+      "types": [
+        "fire",
+        "ghost"
+      ],
+      "spe_base": 66,
+      "spe_max": 129,
+      "cat": "spe_atk",
+      "ghost": true
+    },
+    {
+      "name": "ウェーニバル",
+      "types": [
+        "water",
+        "fighting"
+      ],
+      "spe_base": 85,
+      "spe_max": 150,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "イッカネズミ",
+      "types": [
+        "normal"
+      ],
+      "spe_base": 111,
+      "spe_max": 179,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "キョジオーン",
+      "types": [
+        "rock"
+      ],
+      "spe_base": 35,
+      "spe_max": 95,
+      "cat": "wall",
+      "ghost": false
+    },
+    {
+      "name": "グレンアルマ",
+      "types": [
+        "fire",
+        "psychic"
+      ],
+      "spe_base": 75,
+      "spe_max": 139,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ソウブレイズ",
+      "types": [
+        "fire",
+        "ghost"
+      ],
+      "spe_base": 85,
+      "spe_max": 150,
+      "cat": "phy_atk",
+      "ghost": true
+    },
+    {
+      "name": "ハラバリー",
+      "types": [
+        "electric"
+      ],
+      "spe_base": 45,
+      "spe_max": 106,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "スコヴィラン",
+      "types": [
+        "grass",
+        "fire"
+      ],
+      "spe_base": 75,
+      "spe_max": 139,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "クエスパトラ",
+      "types": [
+        "psychic"
+      ],
+      "spe_base": 105,
+      "spe_max": 172,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "デカヌチャン",
+      "types": [
+        "fairy",
+        "steel"
+      ],
+      "spe_base": 94,
+      "spe_max": 160,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "ミミズズ",
+      "types": [
+        "steel"
+      ],
+      "spe_base": 65,
+      "spe_max": 128,
+      "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "キラフロル",
+      "types": [
+        "rock",
+        "poison"
+      ],
+      "spe_base": 86,
+      "spe_max": 151,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "リキキリン",
+      "types": [
+        "normal",
+        "psychic"
+      ],
+      "spe_base": 60,
+      "spe_max": 123,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ドドゲザン",
+      "types": [
+        "dark",
+        "steel"
+      ],
+      "spe_base": 50,
+      "spe_max": 112,
+      "cat": "wall",
+      "ghost": false
+    },
+    {
+      "name": "ヤバソチャ",
+      "types": [
+        "grass",
+        "ghost"
+      ],
+      "spe_base": 70,
+      "spe_max": 134,
+      "cat": "spe_atk",
+      "ghost": true
+    },
+    {
+      "name": "ブリジュラス",
+      "types": [
+        "steel",
+        "dragon"
+      ],
+      "spe_base": 85,
+      "spe_max": 150,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "カミツオロチ",
+      "types": [
+        "grass",
+        "dragon"
+      ],
+      "spe_base": 44,
+      "spe_max": 105,
+      "cat": "spe_atk",
+      "ghost": false
     }
   ]
 }
