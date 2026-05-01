@@ -388,7 +388,8 @@ function updateUI(){
 
 // ===== RENDER =====
 function renderGrid(){
-  document.getElementById('pick-grid').innerHTML=POKEDB.map(p=>`<div class="pick-btn${p.ghost?' ghost-type':''}" data-id="${p.id}" onclick="togglePick(${p.id})">${p.name}</div>`).join('');
+  const sorted=[...POKEDB].sort((a,b)=>a.name.localeCompare(b.name,'ja'));
+  document.getElementById('pick-grid').innerHTML=sorted.map(p=>`<div class="pick-btn${p.ghost?' ghost-type':''}" data-id="${p.id}" onclick="togglePick(${p.id})">${p.name}</div>`).join('');
 }
 const TC={ghost:'var(--ghost)',poison:'var(--poison)',steel:'var(--steel)',flying:'var(--flying)',water:'var(--water)',fairy:'var(--fairy)',ground:'var(--ground)',dragon:'var(--dragon)',dark:'var(--dark)',fire:'var(--fire)',grass:'var(--grass)',electric:'var(--electric)',ice:'var(--ice)',fighting:'var(--fighting)',psychic:'var(--psychic)',bug:'var(--bug)',rock:'var(--rock)',normal:'var(--normal)'};
 function renderParty(){
