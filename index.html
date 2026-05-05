@@ -191,7 +191,7 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
 
 <h2>戦績</h2>
 <div id="battle-log"></div>
-<div style="text-align:right;margin-top:4px"><button class="reset-btn" onclick="if(confirm('戦績を全てクリアしますか？')){localStorage.removeItem('poke_battles');renderBattleLog()}">戦績クリア</button></div>
+<div style="display:flex;gap:6px;justify-content:flex-end;margin-top:4px"><button class="reset-btn" onclick="exportBattles()">📋 JSONコピー</button><button class="reset-btn" onclick="if(confirm('戦績を全てクリアしますか？')){localStorage.removeItem('poke_battles');renderBattleLog()}">戦績クリア</button></div>
 </div>
 
 <!-- TAB 2: パーティ -->
@@ -498,6 +498,33 @@ function saveBattle(result){
   localStorage.setItem(STORAGE_KEY,JSON.stringify(battles));
   renderBattleLog();
   resetPicks();
+}
+function exportBattles(){
+  const data=localStorage.getItem(STORAGE_KEY)||'[]';
+  const n=JSON.parse(data).length;
+  if(!n){alert('戦績がありません');return}
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(data).then(
+      ()=>alert(n+'件の戦績JSONをコピーしました'),
+      ()=>showExportFallback(data,n)
+    );
+  } else showExportFallback(data,n);
+}
+function showExportFallback(data,n){
+  const bg=document.createElement('div');
+  bg.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;padding:20px;display:flex;flex-direction:column;gap:10px';
+  bg.innerHTML=`<div style="color:#fff;font-size:13px">${n}件の戦績JSON。長押し→全選択→コピー</div>`;
+  const ta=document.createElement('textarea');
+  ta.value=data;
+  ta.style.cssText='flex:1;width:100%;font-size:11px;padding:8px;background:#fff;color:#000;border-radius:8px;font-family:monospace';
+  ta.readOnly=true;
+  const close=document.createElement('button');
+  close.textContent='閉じる';
+  close.style.cssText='padding:12px;background:#ff4d6d;color:#fff;border:none;border-radius:8px;font-weight:700;font-size:14px';
+  close.onclick=()=>bg.remove();
+  bg.appendChild(ta);bg.appendChild(close);
+  document.body.appendChild(bg);
+  ta.focus();ta.select();
 }
 function renderBattleLog(){
   const el=document.getElementById('battle-log');
