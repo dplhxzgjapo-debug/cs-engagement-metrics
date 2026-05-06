@@ -153,7 +153,7 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
 </head>
 <body>
 <button class="reload-fab" onclick="forceReload()" aria-label="リロード">↻</button>
-<div id="ver-tag" style="position:fixed;top:calc(env(safe-area-inset-top,0) + 14px);left:8px;font-size:9px;color:var(--muted);z-index:50">v2026-05-06e</div>
+<div id="ver-tag" style="position:fixed;top:calc(env(safe-area-inset-top,0) + 14px);left:8px;font-size:9px;color:var(--muted);z-index:50">v2026-05-06f</div>
 
 <!-- TAB 1: 選出 -->
 <div class="page active" id="p-select">
@@ -266,7 +266,7 @@ const MY_TEAM=[
   {name:"アーマーガア",types:["steel","flying"],item:"たべのこし",moves:["ボディプレス","てっぺき","はねやすめ","とんぼがえり"],nature:"わんぱく",ev:"H252 B252 D4",speed:130,role:"物理受け / サイクル"},
   {name:"アシレーヌ",types:["water","fairy"],item:"かいがらのすず",moves:["うたかたのアリア","ムーンフォース","クイックターン","アンコール"],nature:"ひかえめ",ev:"H252 B252 C4",speed:123,role:"特殊クッション / サイクル"},
   {name:"カバルドン",types:["ground"],item:"オボンのみ",moves:["じしん","ステルスロック","あくび","ふきとばし"],nature:"わんぱく",ev:"H252 B160 D96",speed:47,role:"ステロ+あくび起点"},
-  {name:"ガブリアス",types:["dragon","ground"],item:"きあいのタスキ",moves:["じしん","げきりん","つるぎのまい","がんせきふうじ"],nature:"ようき",ev:"A252 S252 H4",speed:169,role:"タスキ積みエース"},
+  {name:"メガルカリオ",types:["fighting","steel"],item:"ルカリオナイト",moves:["つるぎのまい","インファイト","バレットパンチ","アイアンヘッド"],nature:"ようき",ev:"A252 S252 H4",speed:172,role:"剣舞物理エース / 副メガ"},
   {name:"サザンドラ",types:["dark","dragon"],item:"こだわりスカーフ",moves:["あくのはどう","りゅうせいぐん","とんぼがえり","かえんほうしゃ"],nature:"おくびょう",ev:"C252 S252 H4",speed:165,role:"スカーフスイーパー"}
 ];
 
@@ -339,9 +339,9 @@ const POKEDB=[
 // ===== 選出パターン =====
 const PATTERNS=[
   {id:1,name:"① 基本",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","サザンドラ"],desc:"ガアとんぼ→受けにゲンガー(かげふみ)→スカーフサザンで掃除",shortWhen:"受けポケ+物理中心"},
-  {id:2,name:"② ステロ展開",lead:"カバルドン",members:["カバルドン","ガブリアス","flex"],desc:"カバステロ+あくび→ゲンガーかげふみで起点崩し→ガブ剣舞で全抜き",shortWhen:"積みアタッカーが多い"},
-  {id:3,name:"③ アシレサイクル",lead:"アシレーヌ",members:["アシレーヌ","メガゲンガー","ガブリアス"],desc:"アシレで特殊エース受け→クイックターンで撃ち逃げ→ゲンガーで受け破壊→ガブ着地",shortWhen:"特殊エース多/竜多"},
-  {id:4,name:"④ 対受けループ",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","ガブリアス"],desc:"ガアとんぼ→ゲンガーかげふみで受け処理→ガブ全抜き",shortWhen:"受け2体以上"}
+  {id:2,name:"② ステロ展開",lead:"カバルドン",members:["カバルドン","メガルカリオ","メガゲンガー"],desc:"カバステロ+あくび→ゲンガーかげふみで起点崩し→メガルカ剣舞で全抜き",shortWhen:"積みアタッカーが多い"},
+  {id:3,name:"③ アシレサイクル",lead:"アシレーヌ",members:["アシレーヌ","メガゲンガー","メガルカリオ"],desc:"アシレで特殊エース受け→クイックターンで撃ち逃げ→ゲンガーで受け破壊→メガルカ着地",shortWhen:"特殊エース多/竜多"},
+  {id:4,name:"④ 対受けループ",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","メガルカリオ"],desc:"ガアとんぼ→ゲンガーかげふみで受け処理→メガルカ剣舞で詰め",shortWhen:"受け2体以上"}
 ];
 
 // ===== RECOMMENDER =====
@@ -373,15 +373,15 @@ function scorePick(ids){
   sc[2].score+=speAtk.length*8+dragons.length*10+fires.length*8+(hasMafo?15:0);
   sc[3].score+=walls.length*25+(walls.length>=2?20:0)-(opp.length-walls.length)*3-fireSpe.length*15;
   sc.sort((a,b)=>b.score-a.score);
-  // flex2 デフォルトはメガゲンガー(エース欠落防止)。特殊な状況のみ別ポケへ
-  let flex2="メガゲンガー";
-  if(traps.length===0&&phyAtk.length>=3)flex2="アーマーガア"; // 物理重・受けポケなし
-  else if(speAtk.length>=3&&!ghosts.length)flex2="アシレーヌ"; // 特殊3体以上+ゴースト無
+  // flex2 デフォルトはメガルカリオ(物理エース)。特殊な状況のみ別ポケへ
+  let flex2="メガルカリオ";
+  if(speAtk.length>=3&&!ghosts.length)flex2="アシレーヌ"; // 特殊3体以上+ゴースト無
+  else if(traps.length>=2)flex2="メガゲンガー"; // 受けポケ多→かげふみ詰め
   let warns=[];
   if(opp.find(p=>p.name==="ミミロップ"))warns.push("メガミミロップ(S205)→メガゲンガー(S200)抜かれる！ガアで受ける");
   if(opp.find(p=>p.name==="ドラパルト"))warns.push("ドラパルト(S213)→全員抜かれる。スカーフサザン(247)で抜ける");
   if(ghosts.length>=2)warns.push("ゴースト"+ghosts.length+"体→かげふみが効かない、ゲンガー詰め役にならない");
-  if(opp.find(p=>p.name==="ガブリアス"))warns.push("ガブがスカーフ(S253)なら全員抜かれる→ガアで受ける");
+  if(opp.find(p=>p.name==="ガブリアス"))warns.push("ガブがスカーフ(S253)なら全員抜かれる→ガアで受ける。自軍ガブいないのでミラー突破はメガルカ・メガゲンで");
   if(hasRiza)warns.push("リザードンY型→炎でガアが焼かれる。ガブ岩封(4倍)で処理、ガアを出さない");
   if(hasMafo)warns.push("マフォクシー→ガアは炎4倍で焼ける。ゲンガーシャドボ(超2倍)/カバ天候上書きで処理");
   if(hasHisuiWind)warns.push("ヒスイウインディ→ガアが炎4倍+岩2倍で即死。初手にしない、ガブじしん4倍で処理");
@@ -441,9 +441,9 @@ function renderSpeed(){
     {n:"メガゲンガー",s:200,m:1},{n:"サンダース",s:200,m:0},
     {n:"マスカーニャ",s:192,m:0},{n:"オオニューラ",s:192,m:0},
     {n:"ゲッコウガ",s:191,m:0},{n:"ゲンガー(メガ前)/ヒスイゾロアーク",s:178,m:0},{n:"エーフィ",s:178,m:0},
-    {n:"ガブリアス",s:169,m:1},{n:"リザードン/ウルガモス",s:167,m:0},{n:"メガガルーラ",s:167,m:0},
+    {n:"ガブリアス",s:169,m:0},{n:"リザードン/ウルガモス",s:167,m:0},{n:"メガガルーラ",s:167,m:0},
     {n:"サザンドラ",s:165,m:1},{n:"ミミッキュ",s:162,m:0},
-    {n:"ウインディ/ヒスイウインディ",s:161,m:0},{n:"ルカリオ",s:156,m:0},{n:"ドリュウズ",s:154,m:0},
+    {n:"ウインディ/ヒスイウインディ",s:161,m:0},{n:"メガルカリオ",s:172,m:1},{n:"ドリュウズ",s:154,m:0},
     {n:"ソウブレイズ/ブリジュラス",s:150,m:0},{n:"カイリュー",s:145,m:0},{n:"ホルード",s:143,m:0},
     {n:"ウォッシュロトム",s:138,m:0},{n:"アーマーガア",s:130,m:1},{n:"ラウドボーン",s:129,m:0},{n:"ハッサム",s:128,m:0},
     {n:"アシレーヌ",s:123,m:1},{n:"ガオガエン",s:123,m:0},{n:"ギルガルド",s:123,m:0}
