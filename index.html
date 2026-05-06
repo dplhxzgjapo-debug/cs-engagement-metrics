@@ -177,11 +177,11 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
   </div>
 </div>
 <div class="fold" onclick="this.classList.toggle('open')">
-  <div class="fold-h"><span>③ 積み詰め</span><span class="fold-arrow">▾</span></div>
-  <div class="fold-sub">物理中心の相手</div>
+  <div class="fold-h"><span>③ アシレサイクル</span><span class="fold-arrow">▾</span></div>
+  <div class="fold-sub">特殊エース・竜が多い時</div>
   <div class="fold-body">
-    <b>初手ガア</b>→物理完封→アシレめいそう積み(ラムであくび無効)<br>
-    <b>対象:</b> ガブ,カイリュー,ハッサム等物理ばかりで特殊薄い構築
+    <b>初手アシレ</b>→特殊受け→クイックターンで撃ち逃げ→ガアとんぼ→ガブ着地で詰める<br>
+    <b>対象:</b> マフォクシー,リザード,ドラパルト等の特殊エース or カイリュー等の竜が多い時
   </div>
 </div>
 <div class="fold" onclick="this.classList.toggle('open')">
@@ -255,7 +255,7 @@ const DATA_VERSION="2026-04-30";
 const MY_TEAM=[
   {name:"メガゲンガー",types:["ghost","poison"],item:"ゲンガナイト",moves:["シャドーボール","ヘドロウェーブ","きあいだま","まもる"],nature:"おくびょう",ev:"C252 S252 B4",speed:200,role:"かげふみエース"},
   {name:"アーマーガア",types:["steel","flying"],item:"たべのこし",moves:["ボディプレス","てっぺき","はねやすめ","とんぼがえり"],nature:"わんぱく",ev:"H252 B252 D4",speed:130,role:"物理受け / サイクル"},
-  {name:"ウォッシュロトム",types:["electric","water"],item:"ラムのみ",moves:["ハイドロポンプ","ボルトチェンジ","10まんボルト","おにび"],nature:"ひかえめ",ev:"H252 C252 D4",speed:138,role:"特殊サイクル / 起点封じ"},
+  {name:"アシレーヌ",types:["water","fairy"],item:"ラムのみ",moves:["うたかたのアリア","ムーンフォース","クイックターン","アンコール"],nature:"ひかえめ",ev:"H252 B252 C4",speed:123,role:"特殊クッション / サイクル"},
   {name:"カバルドン",types:["ground"],item:"オボンのみ",moves:["じしん","ステルスロック","あくび","ふきとばし"],nature:"わんぱく",ev:"H252 B160 D96",speed:47,role:"ステロ+あくび起点"},
   {name:"ガブリアス",types:["dragon","ground"],item:"きあいのタスキ",moves:["じしん","げきりん","つるぎのまい","がんせきふうじ"],nature:"ようき",ev:"A252 S252 H4",speed:169,role:"タスキ積みエース"},
   {name:"サザンドラ",types:["dark","dragon"],item:"こだわりスカーフ",moves:["あくのはどう","りゅうせいぐん","とんぼがえり","かえんほうしゃ"],nature:"おくびょう",ev:"C252 S252 H4",speed:165,role:"スカーフスイーパー"}
@@ -266,7 +266,7 @@ const POKEDB=[
 // ア行
 {id:1,name:"アーマーガア",types:["steel","flying"],spd:130,cat:"wall",ghost:false,sets:"鉄壁ボディプレ(残飯)/ちょうはつ型",moves:["ボディプレス","てっぺき","はねやすめ","とんぼがえり","ちょうはつ","アイアンヘッド"],answer:"ゲンガーかげふみ/サザン炎",warn:""},
 {id:2,name:"アシレーヌ",types:["water","fairy"],spd:123,cat:"spe_atk",ghost:false,sets:"めいそうアンコ(オボン)/タスキCS",moves:["うたかたのアリア","ムーンフォース","めいそう","アンコール","アクアジェット","クイックターン"],answer:"ゲンガーヘドウェ(かげふみ)",warn:"めいそう積まれる前に処理"},
-{id:3,name:"ウォッシュロトム",types:["electric","water"],spd:138,cat:"spe_atk",ghost:false,sets:"ボルチェンサイクル/おにび",moves:["ボルトチェンジ","ハイドロポンプ","おにび","10まんボルト","トリック"],answer:"ガブじしん不可(浮遊)→サザンとんぼ/ガアおにび乱戦",warn:"浮遊でじしん無効。ミラー戦はおにびゲー"},
+{id:3,name:"ウォッシュロトム",types:["electric","water"],spd:138,cat:"spe_atk",ghost:false,sets:"ボルチェンサイクル/おにび",moves:["ボルトチェンジ","ハイドロポンプ","おにび","10まんボルト","トリック"],answer:"ガブじしん不可(浮遊)→サザンとんぼ/アシレで水半減",warn:"浮遊でじしん無効"},
 {id:4,name:"ウルガモス",types:["bug","fire"],spd:167,cat:"setup",ghost:false,sets:"ちょうのまい特殊",moves:["ちょうのまい","だいもんじ","むしのさざめき","サイコキネシス","ギガドレイン"],answer:"ガブ岩封(4倍)/カバステロ(4倍)",warn:"蝶舞1回で手がつけられない"},
 {id:5,name:"エーフィ",types:["psychic"],spd:178,cat:"spe_atk",ghost:false,sets:"マジックミラー特殊アタッカー",moves:["サイコキネシス","シャドーボール","めいそう","あさのひざし","マジカルシャイン"],answer:"サザンあくは(エスパー無効)/ゲンガーシャドボ",warn:"マジミラでステロ・あくび跳ね返される"},
 {id:6,name:"エルレイド",types:["psychic","fighting"],spd:145,cat:"phy_atk",ghost:false,sets:"メガエルレイド物理/剣舞",moves:["インファイト","サイコカッター","つるぎのまい","かげうち","れいとうパンチ"],answer:"ゲンガー(ゴーストで格闘無効+上から攻撃)",warn:"メガ時の火力注意"},
@@ -274,12 +274,12 @@ const POKEDB=[
 // カ行
 {id:8,name:"ガブリアス",types:["dragon","ground"],spd:169,cat:"phy_atk",ghost:false,sets:"タスキ剣舞/スカーフ/ステロ撒き",moves:["じしん","げきりん","つるぎのまい","がんせきふうじ","ステルスロック","どくづき","アイアンヘッド"],answer:"ガア受け(げきりん無効+じしん半減)",warn:"スカーフ型S253→全員抜かれる→ガア"},
 {id:9,name:"カイリュー",types:["dragon","flying"],spd:145,cat:"phy_atk",ghost:false,sets:"マルスケ竜舞物理/メガカイリュー(特殊・S145)",moves:["げきりん","じしん","りゅうのまい","しんそく","りゅうせいぐん","ほのおのパンチ"],answer:"ガア受け(竜無効+飛半減)/ステロでマルスケ潰す",warn:"メガ時C145の特殊型あり。竜舞積まれるときつい"},
-{id:10,name:"カバルドン",types:["ground"],spd:47,cat:"support",ghost:false,sets:"ステロあくび(オボン)/なまける型",moves:["じしん","ステルスロック","あくび","ふきとばし","なまける"],answer:"ゲンガーかげふみ/ロトム水技",warn:"あくびはガブのタスキで耐えて剣舞起点"},
+{id:10,name:"カバルドン",types:["ground"],spd:47,cat:"support",ghost:false,sets:"ステロあくび(オボン)/なまける型",moves:["じしん","ステルスロック","あくび","ふきとばし","なまける"],answer:"ゲンガーかげふみ/アシレ水技",warn:"ラムアシレであくび1回無効"},
 {id:11,name:"ガルーラ",types:["normal"],spd:167,cat:"phy_atk",ghost:false,sets:"メガガルーラ(おやこあい)高火力",moves:["すてみタックル","からげんき","ふいうち","じしん","ねこだまし","れいとうパンチ"],answer:"ガア受け(ノーマル・格闘半減)/ゲンガー(ノーマル無効)",warn:"おやこあいの火力が異常。グロウパンチは没収"},
 {id:12,name:"キラフロル",types:["rock","poison"],spd:86,cat:"support",ghost:false,sets:"どくびし+ステロ/特殊アタッカー",moves:["パワージェム","ヘドロばくだん","だいちのちから","ステルスロック","どくびし"],answer:"ガブじしん/カバじしん",warn:"どくびし注意→毒が撒かれる"},
-{id:13,name:"ギャラドス",types:["water","flying"],spd:132,cat:"setup",ghost:false,sets:"メガギャラドス竜舞/いかく",moves:["たきのぼり","りゅうのまい","じしん","こおりのキバ","ちょうはつ","でんじは"],answer:"ロトム10まん(電気抜群)/ガアてっぺき受け",warn:"竜舞積まれる前にロトム着地。ボルチェンで撃ち逃げ"},
+{id:13,name:"ギャラドス",types:["water","flying"],spd:132,cat:"setup",ghost:false,sets:"メガギャラドス竜舞/いかく",moves:["たきのぼり","りゅうのまい","じしん","こおりのキバ","ちょうはつ","でんじは"],answer:"アシレムーンフォース(妖抜群)/ガアてっぺき受け",warn:"竜舞積まれると止まらない"},
 {id:14,name:"ギルガルド",types:["steel","ghost"],spd:123,cat:"phy_atk",ghost:true,sets:"シールド→攻撃→キンシのサイクル",moves:["シャドーボール","ラスターカノン","キングシールド","かげうち","せいなるつるぎ"],answer:"ゲンガーシャドボ/サザンあくは",warn:"キンシに物理触ると攻撃-2"},
-{id:15,name:"ゲッコウガ",types:["water","dark"],spd:191,cat:"spe_atk",ghost:false,sets:"へんげんじざい特殊/メガ(S213)",moves:["ハイドロカノン","あくのはどう","れいとうビーム","くさむすび","みずしゅりけん","とんぼがえり"],answer:"スカーフサザン(S247で抜ける)/ロトムで水半減",warn:"技範囲広く読みにくい"},
+{id:15,name:"ゲッコウガ",types:["water","dark"],spd:191,cat:"spe_atk",ghost:false,sets:"へんげんじざい特殊/メガ(S213)",moves:["ハイドロカノン","あくのはどう","れいとうビーム","くさむすび","みずしゅりけん","とんぼがえり"],answer:"スカーフサザン(S247で抜ける)/アシレで水半減",warn:"技範囲広く読みにくい"},
 {id:16,name:"ゲンガー",types:["ghost","poison"],spd:178,cat:"spe_atk",ghost:true,sets:"メガゲンガー(かげふみ)/おにびたたりめ型/みちづれ型",moves:["シャドーボール","ヘドロウェーブ","きあいだま","おにび","たたりめ","みちづれ"],answer:"サザンあくは",warn:"ゴーストでかげふみ無効。サザンで処理"},
 // サ行
 {id:17,name:"サーナイト",types:["psychic","fairy"],spd:145,cat:"spe_atk",ghost:false,sets:"メガサーナイト特殊/トレース",moves:["ハイパーボイス","サイコキネシス","きあいだま","めいそう","みちづれ"],answer:"ゲンガーヘドウェ(毒抜群)/サザンあくは",warn:"トレースでかげふみコピー注意"},
@@ -289,8 +289,8 @@ const POKEDB=[
 {id:21,name:"ソウブレイズ",types:["fire","ghost"],spd:150,cat:"setup",ghost:true,sets:"つるぎのまい+炎/ゴースト",moves:["むねんのつるぎ","かげうち","つるぎのまい","ニトロチャージ","サイコカッター"],answer:"ガブじしん/カバあくび",warn:"ゴーストでかげふみ無効"},
 // タ行
 {id:22,name:"ドドゲザン",types:["dark","steel"],spd:50,cat:"phy_atk",ghost:false,sets:"ふいうち+アイヘ/総大将",moves:["ふいうち","アイアンヘッド","ドゲザン","つるぎのまい","はたきおとす"],answer:"ガブじしん(地面4倍)/ガアボディプレス(格闘抜群)",warn:"そうだいしょうで火力上昇"},
-{id:23,name:"ドラパルト",types:["dragon","ghost"],spd:213,cat:"phy_atk",ghost:true,sets:"最速物理/特殊/両刀",moves:["ドラゴンアロー","シャドーボール","りゅうせいぐん","とんぼがえり","おにび","ふいうち"],answer:"スカーフサザンあくは(霊2倍・S247で抜ける)/ロトムボルチェンで撃ち逃げ",warn:"S213で全員上取られる。みがわり/おにびに警戒"},
-{id:24,name:"ドリュウズ",types:["ground","steel"],spd:154,cat:"phy_atk",ghost:false,sets:"すなかき(砂下S2倍)/つるぎのまい",moves:["じしん","アイアンヘッド","いわなだれ","つるぎのまい","がんせきふうじ"],answer:"ガア受け(じしん半減+アイヘ半減)/ロトム水技",warn:"砂下だと最速S224→全員抜かれる"},
+{id:23,name:"ドラパルト",types:["dragon","ghost"],spd:213,cat:"phy_atk",ghost:true,sets:"最速物理/特殊/両刀",moves:["ドラゴンアロー","シャドーボール","りゅうせいぐん","とんぼがえり","おにび","ふいうち"],answer:"アシレムーンフォース(妖2倍)/スカーフサザンあくは(霊2倍・S247で抜ける)",warn:"S213で全員上取られる。みがわり/おにびに警戒"},
+{id:24,name:"ドリュウズ",types:["ground","steel"],spd:154,cat:"phy_atk",ghost:false,sets:"すなかき(砂下S2倍)/つるぎのまい",moves:["じしん","アイアンヘッド","いわなだれ","つるぎのまい","がんせきふうじ"],answer:"ガア受け(じしん半減+アイヘ半減)/アシレ水技",warn:"砂下だと最速S224→全員抜かれる"},
 // ナ行
 {id:26,name:"ヌメルゴン",types:["dragon"],spd:145,cat:"spe_atk",ghost:false,sets:"特殊耐久竜/アシッドボム",moves:["りゅうせいぐん","ヘドロばくだん","かえんほうしゃ","アシッドボム","10まんボルト"],answer:"ガブげきりん/サザンりゅうせい/ガアてっぺき耐久勝負",warn:"特防が非常に高い。妖喪失で4倍取れず長期戦"},
 // ハ行
@@ -300,38 +300,38 @@ const POKEDB=[
 {id:32,name:"ピクシー",types:["fairy"],spd:90,cat:"wall",ghost:false,sets:"てんねん+めいそう/アンコール",moves:["ムーンフォース","めいそう","つきのひかり","アンコール","ステルスロック","かえんほうしゃ"],answer:"ゲンガーかげふみ(ヘドウェ毒抜群)",warn:"てんねんで積み技が無効化される"},
 {id:33,name:"フシギバナ",types:["grass","poison"],spd:100,cat:"wall",ghost:false,sets:"メガフシギバナ(あついしぼう)耐久",moves:["ギガドレイン","ヘドロばくだん","やどりぎのタネ","こうごうせい","じしん"],answer:"ゲンガーかげふみ(シャドボ等倍ゴリ押し)",warn:"メガ時の耐久がかなり高い"},
 {id:34,name:"ブラッキー",types:["dark"],spd:128,cat:"wall",ghost:false,sets:"ねがいごと+まもる/あくび耐久/アンコール型",moves:["イカサマ","ねがいごと","まもる","あくび","ちょうはつ","アンコール"],answer:"ゲンガーかげふみ→きあいだま(格闘抜群)",warn:"耐久が非常に高い。きあいだま必須"},
-{id:35,name:"ブリジュラス",types:["steel","dragon"],spd:150,cat:"spe_atk",ghost:false,sets:"ステロでんじは撒き/特殊アタッカー",moves:["ラスターカノン","りゅうせいぐん","でんじは","ステルスロック","ミラーコート","エレクトロビーム"],answer:"ロトム先発(でんじは無効)→ガブじしん2倍で処理",warn:"でんじは食らうとサザン麻痺で詰む。ガア・サザン素出し厳禁。ボディプレスは没収"},
+{id:35,name:"ブリジュラス",types:["steel","dragon"],spd:150,cat:"spe_atk",ghost:false,sets:"ステロでんじは撒き/特殊アタッカー",moves:["ラスターカノン","りゅうせいぐん","でんじは","ステルスロック","ミラーコート","エレクトロビーム"],answer:"ラムアシレで透かす→ガブじしん(2倍)で処理",warn:"でんじは食らうとサザン麻痺で詰む。ラムアシレが起点封じの要。ボディプレスは没収"},
 {id:36,name:"フラエッテ",types:["fairy"],spd:82,cat:"spe_atk",ghost:false,sets:"えいえんのはな/特殊耐久",moves:["ムーンフォース","サイコキネシス","めいそう","ねがいごと","アロマセラピー"],answer:"ゲンガーヘドウェ(毒抜群)",warn:""},
-{id:39,name:"ホルード",types:["normal","ground"],spd:143,cat:"phy_atk",ghost:false,sets:"ちからもち高火力物理",moves:["じしん","からげんき","でんこうせっか","とんぼがえり","つるぎのまい","がんせきふうじ"],answer:"ガア受け(ノーマル無効)/ロトム水技",warn:"ちからもちで実質A2倍"},
+{id:39,name:"ホルード",types:["normal","ground"],spd:143,cat:"phy_atk",ghost:false,sets:"ちからもち高火力物理",moves:["じしん","からげんき","でんこうせっか","とんぼがえり","つるぎのまい","がんせきふうじ"],answer:"ガア受け(ノーマル無効)/アシレ水技",warn:"ちからもちで実質A2倍"},
 // マ行
 {id:40,name:"マスカーニャ",types:["grass","dark"],spd:192,cat:"phy_atk",ghost:false,sets:"へんげんじざい高速物理",moves:["トリックフラワー","はたきおとす","ふいうち","とんぼがえり","じゃれつく"],answer:"ガア受け/スカーフサザン(S247で抜ける)",warn:"変幻自在でタイプ変わる"},
-{id:41,name:"マフォクシー",types:["fire","psychic"],spd:136,cat:"spe_atk",ghost:false,sets:"メガマフォクシー高火力特殊",moves:["だいもんじ","サイコキネシス","シャドーボール","わるだくみ","マジカルフレイム"],answer:"ロトムハイドロ(火2倍・電水で炎半減耐え)/ゲンガーシャドボ(超2倍・S先制)",warn:"ガアは炎4倍で即死。①基本選出は禁忌。③ロトムサイクル選択"},
-{id:42,name:"マンムー",types:["ice","ground"],spd:145,cat:"phy_atk",ghost:false,sets:"ステロ+氷柱/タスキ",moves:["じしん","つららばり","こおりのつぶて","ステルスロック","はたきおとす"],answer:"ロトムハイドロ(水抜群)/ガア受け(氷半減+地面半減)",warn:"こおりのつぶてでガブが縛られる"},
+{id:41,name:"マフォクシー",types:["fire","psychic"],spd:136,cat:"spe_atk",ghost:false,sets:"メガマフォクシー高火力特殊",moves:["だいもんじ","サイコキネシス","シャドーボール","わるだくみ","マジカルフレイム"],answer:"ゲンガーシャドボ(超2倍・S先制)/カバ天候上書き+じしん/アシレで水半減耐え",warn:"ガアは炎4倍で即死。①基本選出は禁忌"},
+{id:42,name:"マンムー",types:["ice","ground"],spd:145,cat:"phy_atk",ghost:false,sets:"ステロ+氷柱/タスキ",moves:["じしん","つららばり","こおりのつぶて","ステルスロック","はたきおとす"],answer:"アシレ水技(水抜群)/ガア受け(氷半減+地面半減)",warn:"こおりのつぶてでガブが縛られる"},
 {id:43,name:"ミミッキュ",types:["ghost","fairy"],spd:162,cat:"setup",ghost:true,sets:"ばけのかわ+剣舞+じゃれ/かげうち",moves:["じゃれつく","かげうち","つるぎのまい","シャドークロー","トリックルーム","のろい"],answer:"ガア受け(じゃれ半減・かげうち無効)",warn:"ゴーストでかげふみ無効。ばけのかわで1発無効"},
 {id:44,name:"ミミロップ",types:["normal"],spd:145,cat:"phy_atk",ghost:false,sets:"メガミミロップ(きもったま/S205)",moves:["インファイト","からげんき","ねこだまし","とんぼがえり","れいとうパンチ","みがわり"],answer:"ガア受け",warn:"メガ時S205でメガゲンガー(200)抜かれる！きもったまでゴースト殴れる"},
 {id:45,name:"メガニウム",types:["grass"],spd:100,cat:"wall",ghost:false,sets:"メガメガニウム(草/妖・メガソーラー)/耐久型",moves:["ソーラービーム","ウェザーボール","こうごうせい","やどりぎのタネ","ギガドレイン","アロマセラピー"],answer:"ゲンガーかげふみ(ヘドウェ毒2倍)/サザン炎",warn:"メガ時タイプ草/妖。メガソーラーでソラビ即撃ち"},
 // ラ行
-{id:48,name:"リザードン",types:["fire","flying"],spd:167,cat:"spe_atk",ghost:false,sets:"メガY(日照り特殊)/メガX(竜舞物理)",moves:["だいもんじ","オーバーヒート","ソーラービーム","エアスラッシュ","りゅうのまい","フレアドライブ"],answer:"ロトムハイドロ(水4倍で確殺)/ガブ岩封(岩4倍)/カバ天候上書き",warn:"Y型でガアが焼かれる→ガア出さない。S167で先制取られるので後出し前提"},
+{id:48,name:"リザードン",types:["fire","flying"],spd:167,cat:"spe_atk",ghost:false,sets:"メガY(日照り特殊)/メガX(竜舞物理)",moves:["だいもんじ","オーバーヒート","ソーラービーム","エアスラッシュ","りゅうのまい","フレアドライブ"],answer:"ガブ岩封(岩4倍)/カバ天候上書き+ステロ/アシレで水半減耐え",warn:"Y型でガアが焼かれる→ガア出さない。S167で先制取られるので後出し前提"},
 {id:49,name:"ルカリオ",types:["fighting","steel"],spd:156,cat:"setup",ghost:false,sets:"メガルカリオ(てきおうりょく)剣舞/特殊わるだくみ",moves:["インファイト","バレットパンチ","つるぎのまい","しんそく","しんくうは","わるだくみ"],answer:"ガブじしん(鋼弱点)/カバあくび",warn:"メガ時てきおうりょくで火力1.5倍。先制技豊富"},
 // 追加
-{id:51,name:"イダイトウ♂",types:["water","ghost"],spd:78,cat:"phy_atk",ghost:true,sets:"すいすいor適応力物理",moves:["ウェーブタックル","おはかまいり","アクアジェット","サイコファング","こおりのキバ"],answer:"ガア受け/ロトム10まん(電気抜群)",warn:"ゴーストでかげふみ無効"},
+{id:51,name:"イダイトウ♂",types:["water","ghost"],spd:78,cat:"phy_atk",ghost:true,sets:"すいすいor適応力物理",moves:["ウェーブタックル","おはかまいり","アクアジェット","サイコファング","こおりのキバ"],answer:"ガア受け/アシレで水半減",warn:"ゴーストでかげふみ無効"},
 {id:55,name:"ヘラクロス",types:["bug","fighting"],spd:150,cat:"phy_atk",ghost:false,sets:"メガヘラクロス/こんじょう",moves:["インファイト","ミサイルばり","ロックブラスト","タネマシンガン","つるぎのまい"],answer:"ガア受け(飛行で虫・格闘・草半減)/ゲンガー(格闘無効)",warn:"メガ時スキルリンクミサイルばりが痛い"},
-{id:57,name:"ミロカロス",types:["water"],spd:132,cat:"wall",ghost:false,sets:"かちき+特殊耐久/めいそう",moves:["ねっとう","れいとうビーム","めいそう","じこさいせい","ミラーコート"],answer:"ゲンガーかげふみ/ロトム10まん(電気抜群)",warn:"かちきでいかく→特攻2段階UP。ロトムにトリック有効"},
+{id:57,name:"ミロカロス",types:["water"],spd:132,cat:"wall",ghost:false,sets:"かちき+特殊耐久/めいそう",moves:["ねっとう","れいとうビーム","めいそう","じこさいせい","ミラーコート"],answer:"ゲンガーかげふみ/アシレ(水半減+フェアリー等倍)",warn:"かちきでいかく→特攻2段階UP"},
 // 追加2 (使用率上位・環境)
 {id:58,name:"ガオガエン",types:["fire","dark"],spd:123,cat:"support",ghost:false,sets:"いかく+すてゼリフサイクル/鉢巻物理",moves:["フレアドライブ","DDラリアット","すてゼリフ","ちょうはつ","じしん","オーバーヒート"],answer:"ガブじしん(地面抜群)/カバじしん",warn:"いかくで物理AT弱体化。すてゼリフでA,C-1。とんぼがえり・はたきおとすは没収"},
 {id:59,name:"ラウドボーン",types:["fire","ghost"],spd:129,cat:"wall",ghost:true,sets:"てんねん+フレアソング/おにび耐久",moves:["フレアソング","シャドーボール","おにび","なまける","のろい","だいちのちから"],answer:"サザンあくは/ガブじしん",warn:"ゴーストでかげふみ無効。てんねんで積み技無効化。フレアソングでC上昇"},
 {id:60,name:"ドヒドイデ",types:["poison","water"],spd:95,cat:"wall",ghost:false,sets:"さいせいりょく+どくどく受け",moves:["どくどく","じこさいせい","トーチカ","くろいきり","ヘドロばくだん","れいとうビーム"],answer:"ゲンガーかげふみ(シャドボゴリ押し)/ガブじしん",warn:"さいせいりょくで交代時HP1/3回復。ねっとうは没収"},
 {id:61,name:"ウインディ",types:["fire"],spd:161,cat:"phy_atk",ghost:false,sets:"いかく+フレドラ物理/おにび型",moves:["フレアドライブ","しんそく","おにび","インファイト","ワイルドボルト","もえつきる"],answer:"ガブじしん/カバじしん",warn:"いかくで物理AT弱体化。しんそく先制に注意"},
-{id:62,name:"ヒスイウインディ",types:["fire","rock"],spd:161,cat:"phy_atk",ghost:false,sets:"いしあたま+もろはのずつき/フレドラ",moves:["もろはのずつき","フレアドライブ","インファイト","しんそく","おにび","ワイルドボルト"],answer:"ガブじしん(地面4倍)/ロトムハイドロ(水4倍)",warn:"いしあたまで反動なし。もろは高火力"},
+{id:62,name:"ヒスイウインディ",types:["fire","rock"],spd:161,cat:"phy_atk",ghost:false,sets:"いしあたま+もろはのずつき/フレドラ",moves:["もろはのずつき","フレアドライブ","インファイト","しんそく","おにび","ワイルドボルト"],answer:"ガブじしん(地面4倍)/アシレ水技(水4倍)",warn:"いしあたまで反動なし。もろは高火力"},
 {id:63,name:"ヒスイゾロアーク",types:["normal","ghost"],spd:178,cat:"spe_atk",ghost:true,sets:"イリュージョン特殊/わるだくみ",moves:["シャドーボール","ハイパーボイス","わるだくみ","はどうだん","くさむすび","ちょうはつ"],answer:"サザンあくは(ゴースト半減+悪抜群)",warn:"ゴーストでかげふみ無効。イリュージョンで別ポケに化ける。格闘・ノーマル無効"},
-{id:64,name:"キョジオーン",types:["rock"],spd:95,cat:"wall",ghost:false,sets:"きよめのしお+しおづけ/てっぺき型",moves:["しおづけ","じこさいせい","てっぺき","ボディプレス","ステルスロック","じしん"],answer:"ロトムハイドロ/ガブじしん(地面抜群)",warn:"しおづけで毎ターンHP1/8(水地面は1/4)。きよめのしおで状態異常無効"},
+{id:64,name:"キョジオーン",types:["rock"],spd:95,cat:"wall",ghost:false,sets:"きよめのしお+しおづけ/てっぺき型",moves:["しおづけ","じこさいせい","てっぺき","ボディプレス","ステルスロック","じしん"],answer:"アシレ水技/ガブじしん(地面抜群)",warn:"しおづけで毎ターンHP1/8(水地面は1/4)。きよめのしおで状態異常無効"},
 ];
 
 // ===== 選出パターン =====
 const PATTERNS=[
   {id:1,name:"① 基本",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","サザンドラ"],desc:"ガアとんぼ→受けにゲンガー(かげふみ)→スカーフサザンで掃除",shortWhen:"受けポケ+物理中心"},
   {id:2,name:"② ステロ展開",lead:"カバルドン",members:["カバルドン","ガブリアス","flex"],desc:"カバステロ+あくび→ガブ剣舞で全抜き",shortWhen:"積みアタッカーが多い"},
-  {id:3,name:"③ ロトムサイクル",lead:"ウォッシュロトム",members:["ウォッシュロトム","ガブリアス","メガゲンガー"],desc:"ロトムでんじは透かし+起点封じ→ガブじしんで鋼/竜処理→ゲンガーで受け破壊",shortWhen:"特殊炎エース or でんじは絡み"},
+  {id:3,name:"③ アシレサイクル",lead:"アシレーヌ",members:["アシレーヌ","アーマーガア","ガブリアス"],desc:"アシレで特殊エース受け→クイックターンで撃ち逃げ→ガアとんぼ・ガブ着地で詰める",shortWhen:"特殊エース多/竜多"},
   {id:4,name:"④ 対受けループ",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","ガブリアス"],desc:"ガアとんぼ→ゲンガーかげふみで受け処理→ガブ全抜き",shortWhen:"受け2体以上"}
 ];
 
@@ -348,28 +348,34 @@ function scorePick(ids){
   const traps=opp.filter(p=>!p.ghost&&(p.cat==="wall"||p.cat==="support"));
   const fires=opp.filter(p=>p.types.includes("fire"));
   const fireSpe=fires.filter(p=>p.cat==="spe_atk");
+  const firePhy=fires.filter(p=>p.cat==="phy_atk"||p.cat==="setup");
+  const dragons=opp.filter(p=>p.types.includes("dragon"));
   const elecs=opp.filter(p=>p.types.includes("electric"));
   const hasRiza=opp.some(p=>p.name==="リザードン");
   const hasUlga=opp.some(p=>p.name==="ウルガモス");
   const hasMafo=opp.some(p=>p.name==="マフォクシー");
   const hasBuri=opp.some(p=>p.name==="ブリジュラス");
+  const hasHisuiWind=opp.some(p=>p.name==="ヒスイウインディ");
+  const hasOppKaba=opp.some(p=>p.name==="カバルドン");
   let sc=[{pat:PATTERNS[0],score:45},{pat:PATTERNS[1],score:25},{pat:PATTERNS[2],score:15},{pat:PATTERNS[3],score:15}];
-  sc[0].score+=traps.length*18+(opp.length>=3?10:0)-ghosts.length*8-fireSpe.length*25;
+  sc[0].score+=traps.length*18+(opp.length>=3?10:0)-ghosts.length*8-fireSpe.length*25-firePhy.length*22;
   sc[1].score+=setup.length*20+phyAtk.length*5+(hasRiza?20:0)+(hasUlga?20:0);
-  sc[2].score+=fireSpe.length*30+(hasBuri?35:0)+(hasMafo?20:0)+speAtk.length*8;
+  sc[2].score+=speAtk.length*8+dragons.length*10+fires.length*8+(hasMafo?15:0);
   sc[3].score+=walls.length*25+(walls.length>=2?20:0)-(opp.length-walls.length)*3-fireSpe.length*15;
   sc.sort((a,b)=>b.score-a.score);
   let flex2="アーマーガア";
-  if(speAtk.length>phyAtk.length||opp.some(p=>p.types.includes("dragon")))flex2="ウォッシュロトム";
+  if(speAtk.length>phyAtk.length||dragons.length)flex2="アシレーヌ";
   let warns=[];
   if(opp.find(p=>p.name==="ミミロップ"))warns.push("メガミミロップ(S205)→メガゲンガー(S200)抜かれる！ガアで受ける");
   if(opp.find(p=>p.name==="ドラパルト"))warns.push("ドラパルト(S213)→全員抜かれる。スカーフサザン(247)で抜ける");
-  if(ghosts.length>=2)warns.push("ゴースト"+ghosts.length+"体→かげふみが効かない相手が多い");
+  if(ghosts.length>=2)warns.push("ゴースト"+ghosts.length+"体→かげふみが効かない、ゲンガー詰め役にならない");
   if(opp.find(p=>p.name==="ガブリアス"))warns.push("ガブがスカーフ(S253)なら全員抜かれる→ガアで受ける");
-  if(hasRiza)warns.push("リザードンY型→炎でガアが焼かれる。ロトムハイドロ4倍で確殺、ガアを出さない");
-  if(hasMafo)warns.push("マフォクシー→ガアは炎4倍で焼ける。ロトムハイドロ4倍 or ゲンガーシャドボで処理");
-  if(hasBuri)warns.push("ブリジュラスでんじは→サザンに撃たれると詰む。ロトム先発でんじは無効化、ガブじしん2倍で処理");
-  if(elecs.length)warns.push("電気タイプ→ガアが弱点。ロトム/ガブ/カバで受ける");
+  if(hasRiza)warns.push("リザードンY型→炎でガアが焼かれる。ガブ岩封(4倍)で処理、ガアを出さない");
+  if(hasMafo)warns.push("マフォクシー→ガアは炎4倍で焼ける。ゲンガーシャドボ(超2倍)/カバ天候上書きで処理");
+  if(hasHisuiWind)warns.push("ヒスイウインディ→ガアが炎4倍+岩2倍で即死。初手にしない、ガブじしん4倍で処理");
+  if(hasBuri)warns.push("ブリジュラスでんじは→サザン・ガア麻痺で詰む。ラムアシレで透かす or ガブじしん(2倍)で処理");
+  if(hasOppKaba)warns.push("相手カバルドン→あくび合戦リスク。ラムアシレで起点封じ");
+  if(elecs.length)warns.push("電気タイプ→ガアとアシレが弱点。ガブかカバで受ける");
   if(opp.find(p=>p.name==="エーフィ"))warns.push("マジックミラー→ステロ・あくびが跳ね返される。カバ選出注意");
   if(opp.find(p=>p.name==="ドリュウズ")&&opp.find(p=>p.name==="カバルドン"))warns.push("砂パ警戒→ドリュウズがすなかきで最速S224");
   let answers=opp.map(p=>({name:p.name,answer:p.answer,warn:p.warn,moves:p.liveMoves||p.moves||[]}));
@@ -416,7 +422,7 @@ function renderSpeed(){
     {n:"ウインディ/ヒスイウインディ",s:161,m:0},{n:"ルカリオ",s:156,m:0},{n:"ドリュウズ",s:154,m:0},
     {n:"ソウブレイズ/ブリジュラス",s:150,m:0},{n:"カイリュー",s:145,m:0},{n:"ホルード",s:143,m:0},
     {n:"ウォッシュロトム",s:138,m:0},{n:"アーマーガア",s:130,m:1},{n:"ラウドボーン",s:129,m:0},{n:"ハッサム",s:128,m:0},
-    {n:"アシレーヌ/ガオガエン",s:123,m:1},{n:"ギルガルド",s:123,m:0}
+    {n:"アシレーヌ",s:123,m:1},{n:"ガオガエン",s:123,m:0},{n:"ギルガルド",s:123,m:0}
   ].sort((a,b)=>b.s-a.s);
   const mx=220;
   document.getElementById('speed-chart').innerHTML=a.map(p=>{
