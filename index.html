@@ -153,7 +153,7 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
 </head>
 <body>
 <button class="reload-fab" onclick="forceReload()" aria-label="リロード">↻</button>
-<div id="ver-tag" style="position:fixed;top:calc(env(safe-area-inset-top,0) + 14px);left:8px;font-size:9px;color:var(--muted);z-index:50">v2026-05-06g</div>
+<div id="ver-tag" style="position:fixed;top:calc(env(safe-area-inset-top,0) + 14px);left:8px;font-size:9px;color:var(--muted);z-index:50">v2026-05-06h</div>
 
 <!-- TAB 1: 選出 -->
 <div class="page active" id="p-select">
@@ -169,37 +169,39 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
 
 <h2>選出パターン</h2>
 <div class="fold" onclick="this.classList.toggle('open')">
-  <div class="fold-h"><span>① 基本</span><span class="fold-arrow">▾</span></div>
-  <div class="fold-sub">迷ったらコレ / 受けポケがいる</div>
+  <div class="fold-h"><span>① 基本 (ゲン軸)</span><span class="fold-arrow">▾</span></div>
+  <div class="fold-sub">物理中心・汎用</div>
   <div class="fold-body">
-    <b>初手ガア</b>→とんぼ→受けにゲンガー着地(かげふみ)→サザンで掃除<br>
-    <b>対象:</b> ガア,カバ,ブラッキー,ピクシー,アシレーヌ等がいる時
+    <b>初手ガア</b>→とんぼ→メガゲン着地(かげふみ)→サザンで掃除<br>
+    <b>対象:</b> 物理アタッカーが多い構築、受けポケ含む万能型<br>
+    <b>メガ:</b> メガゲンガー
   </div>
 </div>
 <div class="fold" onclick="this.classList.toggle('open')">
-  <div class="fold-h"><span>② ステロ展開</span><span class="fold-arrow">▾</span></div>
-  <div class="fold-sub">対面的・積み多め</div>
-  <div class="fold-body">
-    <b>初手カバ</b>→ステロ+あくび→ガブ剣舞全抜き<br>
-    <b>対象:</b> ミミッキュ,ソウブレイズ,ルカリオ等の積みが多い時<br>
-    3体目: 基本メガゲンガー / 物理重・受け無→ガア / 特殊3体以上→アシレ
-  </div>
-</div>
-<div class="fold" onclick="this.classList.toggle('open')">
-  <div class="fold-h"><span>③ アシレサイクル</span><span class="fold-arrow">▾</span></div>
+  <div class="fold-h"><span>② アシレサイクル (ゲン軸)</span><span class="fold-arrow">▾</span></div>
   <div class="fold-sub">特殊エース・竜が多い時</div>
   <div class="fold-body">
-    <b>初手アシレ</b>→特殊受け→クイックターンで撃ち逃げ→ゲンガーかげふみで受け破壊→ガブ着地<br>
-    <b>対象:</b> マフォクシー,リザード,ドラパルト等の特殊エース or カイリュー等の竜が多い時
+    <b>初手アシレ</b>→クイックターンで撃ち逃げ→メガゲンかげふみで詰め→カバで起点保険<br>
+    <b>対象:</b> マフォクシー,リザード,ドラパルト等の特殊エース or カイリュー等の竜が多い時<br>
+    <b>メガ:</b> メガゲンガー
   </div>
 </div>
 <div class="fold" onclick="this.classList.toggle('open')">
-  <div class="fold-h"><span>④ 対受けループ</span><span class="fold-arrow">▾</span></div>
+  <div class="fold-h"><span>③ ステロ展開 (ルカ軸)</span><span class="fold-arrow">▾</span></div>
+  <div class="fold-sub">対面的・積み多め</div>
+  <div class="fold-body">
+    <b>初手カバ</b>→ステロ+あくび→メガルカ剣舞→アシレで保険<br>
+    <b>対象:</b> ミミッキュ,ソウブレイズ,ルカリオ等の積みが多い時<br>
+    <b>メガ:</b> メガルカリオ
+  </div>
+</div>
+<div class="fold" onclick="this.classList.toggle('open')">
+  <div class="fold-h"><span>④ 対受けループ (ルカ軸)</span><span class="fold-arrow">▾</span></div>
   <div class="fold-sub">耐久寄り構築</div>
   <div class="fold-body">
-    <b>初手ガア</b>→とんぼ→ゲンガーかげふみで受け処理→ガブ全抜き<br>
+    <b>初手ガア</b>→とんぼ→カバステロでお膳立て→メガルカ剣舞で受け破壊<br>
     <b>対象:</b> ブラッキー,ピクシー,メガニウム等受け2体以上<br>
-    ⚠ゴーストはかげふみ無効
+    <b>メガ:</b> メガルカリオ
   </div>
 </div>
 
@@ -338,10 +340,10 @@ const POKEDB=[
 
 // ===== 選出パターン =====
 const PATTERNS=[
-  {id:1,name:"① 基本",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","サザンドラ"],desc:"ガアとんぼ→受けにゲンガー(かげふみ)→スカーフサザンで掃除",shortWhen:"受けポケ+物理中心"},
-  {id:2,name:"② ステロ展開",lead:"カバルドン",members:["カバルドン","メガルカリオ","メガゲンガー"],desc:"カバステロ+あくび→ゲンガーかげふみで起点崩し→メガルカ剣舞で全抜き",shortWhen:"積みアタッカーが多い"},
-  {id:3,name:"③ アシレサイクル",lead:"アシレーヌ",members:["アシレーヌ","メガゲンガー","メガルカリオ"],desc:"アシレで特殊エース受け→クイックターンで撃ち逃げ→ゲンガーで受け破壊→メガルカ着地",shortWhen:"特殊エース多/竜多"},
-  {id:4,name:"④ 対受けループ",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","メガルカリオ"],desc:"ガアとんぼ→ゲンガーかげふみで受け処理→メガルカ剣舞で詰め",shortWhen:"受け2体以上"}
+  {id:1,name:"① 基本 (ゲン軸)",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","サザンドラ"],desc:"ガアとんぼ→メガゲンかげふみで受け破壊→サザン掃除",shortWhen:"物理中心・汎用"},
+  {id:2,name:"② アシレサイクル (ゲン軸)",lead:"アシレーヌ",members:["アシレーヌ","メガゲンガー","カバルドン"],desc:"アシレで特殊受け→クイックターン→メガゲンかげふみで詰め",shortWhen:"特殊エース多/竜多"},
+  {id:3,name:"③ ステロ展開 (ルカ軸)",lead:"カバルドン",members:["カバルドン","メガルカリオ","アシレーヌ"],desc:"カバステロ+あくび起点→メガルカ剣舞で全抜き",shortWhen:"積みアタッカー多"},
+  {id:4,name:"④ 対受けループ (ルカ軸)",lead:"アーマーガア",members:["アーマーガア","メガルカリオ","カバルドン"],desc:"ガアとんぼ+カバステロでお膳立て→メガルカ剣舞で受け破壊",shortWhen:"受け2体以上"}
 ];
 
 // ===== RECOMMENDER =====
@@ -373,10 +375,8 @@ function scorePick(ids){
   sc[2].score+=speAtk.length*8+dragons.length*10+fires.length*8+(hasMafo?15:0);
   sc[3].score+=walls.length*25+(walls.length>=2?20:0)-(opp.length-walls.length)*3-fireSpe.length*15;
   sc.sort((a,b)=>b.score-a.score);
-  // flex2 デフォルトはメガルカリオ(物理エース)。特殊な状況のみ別ポケへ
+  // 1メガ/パターンに整理したのでflexは未使用、後方互換のためダミー保持
   let flex2="メガルカリオ";
-  if(speAtk.length>=3&&!ghosts.length)flex2="アシレーヌ"; // 特殊3体以上+ゴースト無
-  else if(traps.length>=2)flex2="メガゲンガー"; // 受けポケ多→かげふみ詰め
   let warns=[];
   if(opp.find(p=>p.name==="ミミロップ"))warns.push("メガミミロップ(S205)→メガゲンガー(S200)抜かれる！ガアで受ける");
   if(opp.find(p=>p.name==="ドラパルト"))warns.push("ドラパルト(S213)→全員抜かれる。スカーフサザン(247)で抜ける");
