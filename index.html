@@ -121,9 +121,14 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
 .rec-mv-row .mv-tag{font-size:9px;padding:1px 5px}
 
 /* Battle Record */
-.battle-btns{display:flex;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06)}
+.battle-btns{display:flex;gap:8px;margin-top:8px}
 .battle-btn{flex:1;padding:12px;border:none;border-radius:var(--radius-sm);font-size:15px;font-weight:800;cursor:pointer;transition:all .2s;letter-spacing:1px}
 .battle-btn:active{transform:scale(.93)}
+.pat-select{display:flex;gap:5px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+.pat-chip{flex:1;min-width:65px;padding:7px 4px;border:1px solid var(--bdr);border-radius:var(--radius-sm);background:var(--card);color:var(--sub);font-size:10px;font-weight:700;cursor:pointer;transition:all .2s;text-align:center}
+.pat-chip.on{border-color:var(--hi);background:linear-gradient(135deg,rgba(255,77,109,.15),rgba(123,47,247,.1));color:var(--txt);box-shadow:0 0 8px var(--glow)}
+.pat-chip:active{transform:scale(.95)}
+.pat-select-label{font-size:10px;color:var(--muted);margin-top:10px;text-align:center}
 .btn-win{background:linear-gradient(135deg,#0d9488,#14b8a6);color:#fff;box-shadow:0 4px 16px rgba(20,184,166,.3)}
 .btn-lose{background:linear-gradient(135deg,#dc2626,#ef4444);color:#fff;box-shadow:0 4px 16px rgba(239,68,68,.3)}
 .stats-bar{display:flex;gap:6px;margin:10px 0;justify-content:center;flex-wrap:wrap}
@@ -255,7 +260,7 @@ const DATA_VERSION="2026-04-30";
 const MY_TEAM=[
   {name:"メガゲンガー",types:["ghost","poison"],item:"ゲンガナイト",moves:["シャドーボール","ヘドロウェーブ","きあいだま","まもる"],nature:"おくびょう",ev:"C252 S252 B4",speed:200,role:"かげふみエース"},
   {name:"アーマーガア",types:["steel","flying"],item:"たべのこし",moves:["ボディプレス","てっぺき","はねやすめ","とんぼがえり"],nature:"わんぱく",ev:"H252 B252 D4",speed:130,role:"物理受け / サイクル"},
-  {name:"アシレーヌ",types:["water","fairy"],item:"ラムのみ",moves:["うたかたのアリア","ムーンフォース","クイックターン","アンコール"],nature:"ひかえめ",ev:"H252 B252 C4",speed:123,role:"特殊クッション / サイクル"},
+  {name:"アシレーヌ",types:["water","fairy"],item:"かいがらのすず",moves:["うたかたのアリア","ムーンフォース","クイックターン","アンコール"],nature:"ひかえめ",ev:"H252 B252 C4",speed:123,role:"特殊クッション / サイクル"},
   {name:"カバルドン",types:["ground"],item:"オボンのみ",moves:["じしん","ステルスロック","あくび","ふきとばし"],nature:"わんぱく",ev:"H252 B160 D96",speed:47,role:"ステロ+あくび起点"},
   {name:"ガブリアス",types:["dragon","ground"],item:"きあいのタスキ",moves:["じしん","げきりん","つるぎのまい","がんせきふうじ"],nature:"ようき",ev:"A252 S252 H4",speed:169,role:"タスキ積みエース"},
   {name:"サザンドラ",types:["dark","dragon"],item:"こだわりスカーフ",moves:["あくのはどう","りゅうせいぐん","とんぼがえり","かえんほうしゃ"],nature:"おくびょう",ev:"C252 S252 H4",speed:165,role:"スカーフスイーパー"}
@@ -337,6 +342,7 @@ const PATTERNS=[
 
 // ===== RECOMMENDER =====
 let picked=[];
+let selectedPatId=null;
 function scorePick(ids){
   const opp=ids.map(id=>POKEDB.find(p=>p.id===id)).filter(Boolean);
   if(!opp.length)return null;
@@ -391,11 +397,15 @@ function renderRec(){
   h+=`<div class="rec-answers">${r.answers.map(a=>`<div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)"><div class="rec-ans-row"><span class="rec-ans-name">${a.name}</span><span class="rec-ans-how">${a.answer}</span></div><div class="rec-mv-row mv-list">${a.moves.map(m=>`<span class="mv-tag">${m}</span>`).join('')}</div></div>`).join('')}</div>`;
   let sm=[...r.second.pat.members].map(x=>x==="flex"?r.flex2:x);
   h+=`<div class="rec-alt">次点: <b>${r.second.pat.name}</b> → ${sm.join(' / ')}</div>`;
+  if(selectedPatId==null)selectedPatId=r.best.pat.id;
+  h+=`<div class="pat-select-label">実際の選出パターン</div>`;
+  h+=`<div class="pat-select">${PATTERNS.map(p=>`<button class="pat-chip${selectedPatId===p.id?' on':''}" data-pid="${p.id}" onclick="selectPat(${p.id})">${p.name}</button>`).join('')}</div>`;
   h+=`<div class="battle-btns"><button class="battle-btn btn-win" onclick="saveBattle('win')">⭕ WIN</button><button class="battle-btn btn-lose" onclick="saveBattle('lose')">✕ LOSE</button></div></div>`;
   el.innerHTML=h;
 }
-function togglePick(id){const i=picked.indexOf(id);if(i>=0)picked.splice(i,1);else if(picked.length<6)picked.push(id);updateUI();renderRec()}
-function resetPicks(){picked=[];updateUI();renderRec()}
+function togglePick(id){const i=picked.indexOf(id);if(i>=0)picked.splice(i,1);else if(picked.length<6)picked.push(id);selectedPatId=null;updateUI();renderRec()}
+function resetPicks(){picked=[];selectedPatId=null;updateUI();renderRec()}
+function selectPat(id){selectedPatId=id;document.querySelectorAll('.pat-chip').forEach(c=>c.classList.toggle('on',+c.dataset.pid===id))}
 function updateUI(){
   document.querySelectorAll('.pick-btn').forEach(b=>{b.classList.toggle('on',picked.includes(+b.dataset.id))});
   const bar=document.getElementById('picked-bar');
@@ -503,11 +513,13 @@ function saveBattle(result){
   if(!picked.length)return;
   const r=scorePick(picked);
   const battles=loadBattles();
+  const usedPatId=selectedPatId||r?.best?.pat?.id;
+  const usedPat=PATTERNS.find(p=>p.id===usedPatId);
   battles.unshift({
     date:new Date().toISOString().slice(0,10),
     time:new Date().toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit'}),
     opp:picked.map(id=>{const p=POKEDB.find(x=>x.id===id);return p?p.name:null}).filter(Boolean),
-    pattern:r?.best?.pat?.name||'?',
+    pattern:usedPat?.name||r?.best?.pat?.name||'?',
     result
   });
   if(battles.length>200)battles.length=200;
