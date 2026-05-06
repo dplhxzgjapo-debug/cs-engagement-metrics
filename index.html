@@ -153,7 +153,7 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
 </head>
 <body>
 <button class="reload-fab" onclick="forceReload()" aria-label="リロード">↻</button>
-<div id="ver-tag" style="position:fixed;top:calc(env(safe-area-inset-top,0) + 14px);left:8px;font-size:9px;color:var(--muted);z-index:50">v2026-05-06b</div>
+<div id="ver-tag" style="position:fixed;top:calc(env(safe-area-inset-top,0) + 14px);left:8px;font-size:9px;color:var(--muted);z-index:50">v2026-05-06c</div>
 
 <!-- TAB 1: 選出 -->
 <div class="page active" id="p-select">
@@ -182,14 +182,14 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
   <div class="fold-body">
     <b>初手カバ</b>→ステロ+あくび→ガブ剣舞全抜き<br>
     <b>対象:</b> ミミッキュ,ソウブレイズ,ルカリオ等の積みが多い時<br>
-    3体目: 物理重→ガア / 特殊・竜重→アシレ
+    3体目: 基本メガゲンガー / 物理重・受け無→ガア / 特殊3体以上→アシレ
   </div>
 </div>
 <div class="fold" onclick="this.classList.toggle('open')">
   <div class="fold-h"><span>③ アシレサイクル</span><span class="fold-arrow">▾</span></div>
   <div class="fold-sub">特殊エース・竜が多い時</div>
   <div class="fold-body">
-    <b>初手アシレ</b>→特殊受け→クイックターンで撃ち逃げ→ガアとんぼ→ガブ着地で詰める<br>
+    <b>初手アシレ</b>→特殊受け→クイックターンで撃ち逃げ→ゲンガーかげふみで受け破壊→ガブ着地<br>
     <b>対象:</b> マフォクシー,リザード,ドラパルト等の特殊エース or カイリュー等の竜が多い時
   </div>
 </div>
@@ -339,8 +339,8 @@ const POKEDB=[
 // ===== 選出パターン =====
 const PATTERNS=[
   {id:1,name:"① 基本",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","サザンドラ"],desc:"ガアとんぼ→受けにゲンガー(かげふみ)→スカーフサザンで掃除",shortWhen:"受けポケ+物理中心"},
-  {id:2,name:"② ステロ展開",lead:"カバルドン",members:["カバルドン","ガブリアス","flex"],desc:"カバステロ+あくび→ガブ剣舞で全抜き",shortWhen:"積みアタッカーが多い"},
-  {id:3,name:"③ アシレサイクル",lead:"アシレーヌ",members:["アシレーヌ","アーマーガア","ガブリアス"],desc:"アシレで特殊エース受け→クイックターンで撃ち逃げ→ガアとんぼ・ガブ着地で詰める",shortWhen:"特殊エース多/竜多"},
+  {id:2,name:"② ステロ展開",lead:"カバルドン",members:["カバルドン","ガブリアス","flex"],desc:"カバステロ+あくび→ゲンガーかげふみで起点崩し→ガブ剣舞で全抜き",shortWhen:"積みアタッカーが多い"},
+  {id:3,name:"③ アシレサイクル",lead:"アシレーヌ",members:["アシレーヌ","メガゲンガー","ガブリアス"],desc:"アシレで特殊エース受け→クイックターンで撃ち逃げ→ゲンガーで受け破壊→ガブ着地",shortWhen:"特殊エース多/竜多"},
   {id:4,name:"④ 対受けループ",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","ガブリアス"],desc:"ガアとんぼ→ゲンガーかげふみで受け処理→ガブ全抜き",shortWhen:"受け2体以上"}
 ];
 
@@ -373,8 +373,10 @@ function scorePick(ids){
   sc[2].score+=speAtk.length*8+dragons.length*10+fires.length*8+(hasMafo?15:0);
   sc[3].score+=walls.length*25+(walls.length>=2?20:0)-(opp.length-walls.length)*3-fireSpe.length*15;
   sc.sort((a,b)=>b.score-a.score);
-  let flex2="アーマーガア";
-  if(speAtk.length>phyAtk.length||dragons.length)flex2="アシレーヌ";
+  // flex2 デフォルトはメガゲンガー(エース欠落防止)。特殊な状況のみ別ポケへ
+  let flex2="メガゲンガー";
+  if(traps.length===0&&phyAtk.length>=3)flex2="アーマーガア"; // 物理重・受けポケなし
+  else if(speAtk.length>=3&&!ghosts.length)flex2="アシレーヌ"; // 特殊3体以上+ゴースト無
   let warns=[];
   if(opp.find(p=>p.name==="ミミロップ"))warns.push("メガミミロップ(S205)→メガゲンガー(S200)抜かれる！ガアで受ける");
   if(opp.find(p=>p.name==="ドラパルト"))warns.push("ドラパルト(S213)→全員抜かれる。スカーフサザン(247)で抜ける");
