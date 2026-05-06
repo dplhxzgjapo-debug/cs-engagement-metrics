@@ -1,0 +1,9 @@
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/data.json
+  Cache-Control: public, max-age=300
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
