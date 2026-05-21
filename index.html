@@ -3,9 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>CS Dashboard</title>
@@ -124,14 +121,9 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
 .rec-mv-row .mv-tag{font-size:9px;padding:1px 5px}
 
 /* Battle Record */
-.battle-btns{display:flex;gap:8px;margin-top:8px}
+.battle-btns{display:flex;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06)}
 .battle-btn{flex:1;padding:12px;border:none;border-radius:var(--radius-sm);font-size:15px;font-weight:800;cursor:pointer;transition:all .2s;letter-spacing:1px}
 .battle-btn:active{transform:scale(.93)}
-.my-select{display:flex;gap:5px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
-.my-chip{flex:1 1 30%;min-width:88px;padding:7px 4px;border:1px solid var(--bdr);border-radius:var(--radius-sm);background:var(--card);color:var(--sub);font-size:11px;font-weight:700;cursor:pointer;transition:all .2s;text-align:center}
-.my-chip.on{border-color:var(--hi);background:linear-gradient(135deg,rgba(255,77,109,.15),rgba(123,47,247,.1));color:var(--txt);box-shadow:0 0 8px var(--glow)}
-.my-chip:active{transform:scale(.95)}
-.my-select-label{font-size:10px;color:var(--muted);margin-top:10px;text-align:center}
 .btn-win{background:linear-gradient(135deg,#0d9488,#14b8a6);color:#fff;box-shadow:0 4px 16px rgba(20,184,166,.3)}
 .btn-lose{background:linear-gradient(135deg,#dc2626,#ef4444);color:#fff;box-shadow:0 4px 16px rgba(239,68,68,.3)}
 .stats-bar{display:flex;gap:6px;margin:10px 0;justify-content:center;flex-wrap:wrap}
@@ -145,19 +137,19 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
 .weak-row{display:flex;align-items:center;justify-content:space-between;padding:4px 0;font-size:11px;border-bottom:1px solid rgba(255,255,255,.03)}
 .weak-name{font-weight:700;color:var(--txt)}.weak-stat{color:var(--sub)}
 .weak-bar{height:4px;border-radius:2px;background:linear-gradient(90deg,#ef4444,#dc2626);margin-top:2px}
-
-/* Reload FAB */
-.reload-fab{position:fixed;top:calc(env(safe-area-inset-top,0) + 8px);right:8px;width:34px;height:34px;border-radius:50%;background:rgba(28,28,58,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);color:var(--hi);font-size:18px;cursor:pointer;z-index:50;display:flex;align-items:center;justify-content:center;transition:transform .3s;font-weight:700}
-.reload-fab:active{transform:rotate(360deg) scale(.9)}
+.team-sel{display:flex;gap:4px;margin:8px 0;justify-content:center;flex-wrap:wrap}
+.team-btn{padding:7px 14px;border:1.5px solid var(--bdr);border-radius:20px;font-size:11px;font-weight:700;background:var(--card);color:var(--sub);cursor:pointer;transition:all .2s}
+.team-btn:active{transform:scale(.95)}
+.team-btn.active{border-color:var(--hi);color:var(--hi);background:linear-gradient(135deg,rgba(255,77,109,.12),rgba(123,47,247,.06));box-shadow:0 0 10px var(--glow)}
+.team-label{text-align:center;font-size:10px;color:var(--muted);margin-bottom:2px;font-weight:600}
 </style>
 </head>
 <body>
-<button class="reload-fab" onclick="forceReload()" aria-label="リロード">↻</button>
-<div id="ver-tag" style="position:fixed;top:calc(env(safe-area-inset-top,0) + 14px);left:8px;font-size:9px;color:var(--muted);z-index:50">v2026-05-06h</div>
 
 <!-- TAB 1: 選出 -->
 <div class="page active" id="p-select">
 <h1>SELECT ASSISTANT</h1>
+<div class="team-sel" id="team-sel-select"></div>
 <p class="sm" style="text-align:center;margin-bottom:4px">相手のポケモンをタップして選出提案を受ける</p>
 
 <div class="picked-bar" id="picked-bar">
@@ -168,50 +160,19 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
 <div id="rec-result"></div>
 
 <h2>選出パターン</h2>
-<div class="fold" onclick="this.classList.toggle('open')">
-  <div class="fold-h"><span>① 基本 (ゲン軸)</span><span class="fold-arrow">▾</span></div>
-  <div class="fold-sub">物理中心・汎用</div>
-  <div class="fold-body">
-    <b>初手ガア</b>→とんぼ→メガゲン着地(かげふみ)→サザンで掃除<br>
-    <b>対象:</b> 物理アタッカーが多い構築、受けポケ含む万能型<br>
-    <b>メガ:</b> メガゲンガー
-  </div>
-</div>
-<div class="fold" onclick="this.classList.toggle('open')">
-  <div class="fold-h"><span>② アシレサイクル (ゲン軸)</span><span class="fold-arrow">▾</span></div>
-  <div class="fold-sub">特殊エース・竜が多い時</div>
-  <div class="fold-body">
-    <b>初手アシレ</b>→クイックターンで撃ち逃げ→メガゲンかげふみで詰め→カバで起点保険<br>
-    <b>対象:</b> マフォクシー,リザード,ドラパルト等の特殊エース or カイリュー等の竜が多い時<br>
-    <b>メガ:</b> メガゲンガー
-  </div>
-</div>
-<div class="fold" onclick="this.classList.toggle('open')">
-  <div class="fold-h"><span>③ ステロ展開 (ルカ軸)</span><span class="fold-arrow">▾</span></div>
-  <div class="fold-sub">対面的・積み多め</div>
-  <div class="fold-body">
-    <b>初手カバ</b>→ステロ+あくび→メガルカ剣舞→アシレで保険<br>
-    <b>対象:</b> ミミッキュ,ソウブレイズ,ルカリオ等の積みが多い時<br>
-    <b>メガ:</b> メガルカリオ
-  </div>
-</div>
-<div class="fold" onclick="this.classList.toggle('open')">
-  <div class="fold-h"><span>④ 対受けループ (ルカ軸)</span><span class="fold-arrow">▾</span></div>
-  <div class="fold-sub">耐久寄り構築</div>
-  <div class="fold-body">
-    <b>初手ガア</b>→とんぼ→カバステロでお膳立て→メガルカ剣舞で受け破壊<br>
-    <b>対象:</b> ブラッキー,ピクシー,メガニウム等受け2体以上<br>
-    <b>メガ:</b> メガルカリオ
-  </div>
-</div>
+<div id="patterns-container"></div>
 
 <h2>戦績</h2>
 <div id="battle-log"></div>
-<div style="display:flex;gap:6px;justify-content:flex-end;margin-top:4px"><button class="reset-btn" onclick="exportBattles()">📋 JSONコピー</button><button class="reset-btn" onclick="if(confirm('戦績を全てクリアしますか？')){localStorage.removeItem('poke_battles');renderBattleLog()}">戦績クリア</button></div>
+<div style="text-align:right;margin-top:4px"><button class="reset-btn" onclick="if(confirm('戦績を全てクリアしますか？')){localStorage.removeItem('poke_battles');renderBattleLog()}">戦績クリア</button></div>
 </div>
 
 <!-- TAB 2: パーティ -->
-<div class="page" id="p-party"><h1>MY TEAM</h1><div id="party-cards"></div></div>
+<div class="page" id="p-party">
+<h1>MY TEAM</h1>
+<div class="team-sel" id="team-sel-party"></div>
+<div id="party-cards"></div>
+</div>
 
 <!-- TAB 3: 素早さ -->
 <div class="page" id="p-speed">
@@ -263,14 +224,54 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
 <script>
 const DATA_VERSION="2026-04-30";
 
-const MY_TEAM=[
-  {name:"メガゲンガー",types:["ghost","poison"],item:"ゲンガナイト",moves:["シャドーボール","ヘドロウェーブ","きあいだま","まもる"],nature:"おくびょう",ev:"C252 S252 B4",speed:200,role:"かげふみエース"},
-  {name:"アーマーガア",types:["steel","flying"],item:"たべのこし",moves:["ボディプレス","てっぺき","はねやすめ","とんぼがえり"],nature:"わんぱく",ev:"H252 B252 D4",speed:130,role:"物理受け / サイクル"},
-  {name:"アシレーヌ",types:["water","fairy"],item:"かいがらのすず",moves:["うたかたのアリア","ムーンフォース","クイックターン","アンコール"],nature:"ひかえめ",ev:"H252 B252 C4",speed:123,role:"特殊クッション / サイクル"},
-  {name:"カバルドン",types:["ground"],item:"メンタルハーブ",moves:["じしん","ステルスロック","あくび","ふきとばし"],nature:"わんぱく",ev:"H252 B160 D96",speed:47,role:"ステロ+あくび起点 / 挑発耐性"},
-  {name:"メガルカリオ",types:["fighting","steel"],item:"ルカリオナイト",moves:["つるぎのまい","インファイト","バレットパンチ","アイアンヘッド"],nature:"ようき",ev:"A252 S252 H4",speed:172,role:"剣舞物理エース / 副メガ"},
-  {name:"サザンドラ",types:["dark","dragon"],item:"こだわりスカーフ",moves:["あくのはどう","りゅうせいぐん","とんぼがえり","かえんほうしゃ"],nature:"おくびょう",ev:"C252 S252 H4",speed:165,role:"スカーフスイーパー"}
-];
+const TEAMS={
+tenkai:{name:"展開構築",sub:"メガリザードンX軸",
+members:[
+  {name:"リザードン",types:["fire","dragon"],item:"リザードナイトX",moves:["フレアドライブ","ドラゴンクロー","りゅうのまい","ニトロチャージ"],nature:"ようき",ev:"A252 S252 H4",speed:167,role:"メガX 竜舞エース"},
+  {name:"カバルドン",types:["ground"],item:"オボンのみ",moves:["じしん","ステルスロック","あくび","ふきとばし"],nature:"わんぱく",ev:"H252 B160 D96",speed:47,role:"ステロ+あくび起点"},
+  {name:"ウルガモス",types:["bug","fire"],item:"ラムのみ",moves:["ちょうのまい","ほのおのまい","むしのさざめき","ギガドレイン"],nature:"ひかえめ",ev:"C252 S252 H4",speed:167,role:"蝶舞 特殊エース"},
+  {name:"ミミッキュ",types:["ghost","fairy"],item:"きあいのタスキ",moves:["つるぎのまい","じゃれつく","かげうち","シャドークロー"],nature:"ようき",ev:"A252 S252 H4",speed:162,role:"ストッパー / 第3エース"},
+  {name:"ガブリアス",types:["dragon","ground"],item:"こだわりスカーフ",moves:["じしん","げきりん","がんせきふうじ","どくづき"],nature:"ようき",ev:"A252 S252 H4",speed:169,role:"スカーフストッパー"},
+  {name:"ドドゲザン",types:["dark","steel"],item:"たべのこし",moves:["つるぎのまい","アイアンヘッド","ふいうち","はたきおとす"],nature:"いじっぱり",ev:"H252 A252 D4",speed:112,role:"積み+先制エース"}
+],patterns:[
+  {id:1,name:"① 基本展開",lead:"カバルドン",members:["カバルドン","リザードン","ウルガモス"],desc:"カバステロ+あくび→催眠中にリザX竜舞→全抜き",shortWhen:"バランス型/受けがいる"},
+  {id:2,name:"② 対物理",lead:"カバルドン",members:["カバルドン","ウルガモス","ミミッキュ"],desc:"カバ起点→ウルガ蝶舞で物理受け貫通。ミミッキュストッパー",shortWhen:"物理中心の相手"},
+  {id:3,name:"③ 対HO",lead:"ミミッキュ",members:["ミミッキュ","ガブリアス","リザードン"],desc:"ばけのかわ+スカーフで先制対面。カバ不要",shortWhen:"相手も積み/高速"},
+  {id:4,name:"④ 鋼崩し",lead:"カバルドン",members:["カバルドン","リザードン","ドドゲザン"],desc:"カバ起点→リザX炎で鋼処理→ドドゲザンふいうちで掃除",shortWhen:"鋼が2体以上"}
+]},
+taimen:{name:"対面構築",sub:"メガミミロップ軸",
+members:[
+  {name:"ミミロップ",types:["normal","fighting"],item:"ミミロップナイト",moves:["ねこだまし","インファイト","からげんき","とんぼがえり"],nature:"ようき",ev:"A252 S252 H4",speed:205,role:"メガ S205 きもったま"},
+  {name:"ガブリアス",types:["dragon","ground"],item:"きあいのタスキ",moves:["じしん","げきりん","がんせきふうじ","どくづき"],nature:"ようき",ev:"A252 S252 H4",speed:169,role:"タスキ対面"},
+  {name:"マスカーニャ",types:["grass","dark"],item:"こだわりスカーフ",moves:["トリックフラワー","はたきおとす","ふいうち","とんぼがえり"],nature:"ようき",ev:"A252 S252 H4",speed:192,role:"スカーフS288制圧"},
+  {name:"ミミッキュ",types:["ghost","fairy"],item:"オボンのみ",moves:["じゃれつく","かげうち","シャドークロー","のろい"],nature:"ようき",ev:"A252 S252 H4",speed:162,role:"ばけのかわストッパー"},
+  {name:"イダイトウ♂",types:["water","ghost"],item:"ラムのみ",moves:["ウェーブタックル","おはかまいり","アクアジェット","サイコファング"],nature:"いじっぱり",ev:"A252 S252 H4",speed:143,role:"てきおうりょく+先制"},
+  {name:"ドドゲザン",types:["dark","steel"],item:"たべのこし",moves:["ふいうち","アイアンヘッド","はたきおとす","つるぎのまい"],nature:"いじっぱり",ev:"H252 A252 D4",speed:112,role:"そうだいしょう+ふいうち"}
+],patterns:[
+  {id:1,name:"① 基本対面",lead:"ミミロップ",members:["ミミロップ","ガブリアス","ミミッキュ"],desc:"猫+格闘で1体処理→タスキガブ→ミミッキュストッパー",shortWhen:"万能/迷ったらコレ"},
+  {id:2,name:"② 対ゴースト",lead:"ミミロップ",members:["ミミロップ","ドドゲザン","マスカーニャ"],desc:"きもったまでゴースト貫通+悪打点で処理",shortWhen:"ゴースト多い"},
+  {id:3,name:"③ 先制詰め",lead:"マスカーニャ",members:["マスカーニャ","イダイトウ♂","ミミッキュ"],desc:"スカーフで削り→アクジェ・かげうち先制リレー",shortWhen:"物理受けが少ない"},
+  {id:4,name:"④ 対耐久",lead:"ミミロップ",members:["ミミロップ","イダイトウ♂","ドドゲザン"],desc:"猫+インファ→てきおうりょく水技→ふいうち",shortWhen:"耐久ポケが多い"}
+]},
+cycle:{name:"サイクル構築",sub:"メガゲンガー軸",
+members:[
+  {name:"メガゲンガー",types:["ghost","poison"],item:"ゲンガナイト",moves:["おにび","たたりめ","シャドーボール","みちづれ"],nature:"おくびょう",ev:"C252 S252 H4",speed:200,role:"かげふみ受け崩し"},
+  {name:"アーマーガア",types:["steel","flying"],item:"たべのこし",moves:["ボディプレス","てっぺき","はねやすめ","とんぼがえり"],nature:"わんぱく",ev:"H252 B252 D4",speed:130,role:"物理受け+とんぼ"},
+  {name:"アシレーヌ",types:["water","fairy"],item:"オボンのみ",moves:["うたかたのアリア","ムーンフォース","クイックターン","アンコール"],nature:"ひかえめ",ev:"H252 B252 C4",speed:123,role:"竜悪受け+クイタン"},
+  {name:"ウォッシュロトム",types:["electric","water"],item:"ラムのみ",moves:["ボルトチェンジ","ハイドロポンプ","おにび","トリック"],nature:"ひかえめ",ev:"H252 C252 S4",speed:138,role:"ボルチェン+鬼火"},
+  {name:"ガブリアス",types:["dragon","ground"],item:"こだわりスカーフ",moves:["じしん","げきりん","がんせきふうじ","どくづき"],nature:"ようき",ev:"A252 S252 H4",speed:169,role:"スカーフストッパー"},
+  {name:"ブリジュラス",types:["steel","dragon"],item:"きあいのタスキ",moves:["ラスターカノン","りゅうせいぐん","ステルスロック","でんじは"],nature:"ひかえめ",ev:"C252 S252 H4",speed:150,role:"ステロ+でんじは撒き"}
+],patterns:[
+  {id:1,name:"① 基本サイクル",lead:"アーマーガア",members:["アーマーガア","アシレーヌ","メガゲンガー"],desc:"ガアとんぼ→アシレクイタン→ゲンガーかげふみで受け処理",shortWhen:"受けポケがいる"},
+  {id:2,name:"② ピボット回し",lead:"ウォッシュロトム",members:["ウォッシュロトム","アーマーガア","アシレーヌ"],desc:"ボルチェン→とんぼ→クイタン3枚ピボットで有利対面維持",shortWhen:"サイクル勝ち狙い"},
+  {id:3,name:"③ ステロ展開",lead:"ブリジュラス",members:["ブリジュラス","メガゲンガー","ガブリアス"],desc:"ステロ+でんじは→ゲンガーかげふみ→スカーフガブ掃除",shortWhen:"積みアタッカー多い"},
+  {id:4,name:"④ 対受けループ",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","ガブリアス"],desc:"ガアとんぼ→ゲンガーかげふみで受け封殺→ガブ掃除",shortWhen:"受け2体以上"}
+]}
+};
+let currentTeamKey='tenkai';
+function getTeam(){return TEAMS[currentTeamKey]}
+let MY_TEAM=TEAMS.tenkai.members;
+let PATTERNS=TEAMS.tenkai.patterns;
 
 // ===== POKEDB (五十音順・約60体) =====
 const POKEDB=[
@@ -288,22 +289,22 @@ const POKEDB=[
 {id:10,name:"カバルドン",types:["ground"],spd:47,cat:"support",ghost:false,sets:"ステロあくび(オボン)/なまける型",moves:["じしん","ステルスロック","あくび","ふきとばし","なまける"],answer:"ゲンガーかげふみ/アシレ水技",warn:"ラムアシレであくび1回無効"},
 {id:11,name:"ガルーラ",types:["normal"],spd:167,cat:"phy_atk",ghost:false,sets:"メガガルーラ(おやこあい)高火力",moves:["すてみタックル","からげんき","ふいうち","じしん","ねこだまし","れいとうパンチ"],answer:"ガア受け(ノーマル・格闘半減)/ゲンガー(ノーマル無効)",warn:"おやこあいの火力が異常。グロウパンチは没収"},
 {id:12,name:"キラフロル",types:["rock","poison"],spd:86,cat:"support",ghost:false,sets:"どくびし+ステロ/特殊アタッカー",moves:["パワージェム","ヘドロばくだん","だいちのちから","ステルスロック","どくびし"],answer:"ガブじしん/カバじしん",warn:"どくびし注意→毒が撒かれる"},
-{id:13,name:"ギャラドス",types:["water","flying"],spd:132,cat:"setup",ghost:false,sets:"メガギャラドス竜舞/いかく",moves:["たきのぼり","りゅうのまい","じしん","こおりのキバ","ちょうはつ","でんじは"],answer:"アシレムーンフォース(妖抜群)/ガアてっぺき受け",warn:"竜舞積まれると止まらない"},
+{id:13,name:"ギャラドス",types:["water","flying"],spd:132,cat:"setup",ghost:false,sets:"メガギャラドス竜舞/いかく",moves:["たきのぼり","りゅうのまい","じしん","こおりのキバ","ちょうはつ","でんじは"],answer:"アシレムーンフォース(フェアリー抜群)",warn:"竜舞積まれると止まらない"},
 {id:14,name:"ギルガルド",types:["steel","ghost"],spd:123,cat:"phy_atk",ghost:true,sets:"シールド→攻撃→キンシのサイクル",moves:["シャドーボール","ラスターカノン","キングシールド","かげうち","せいなるつるぎ"],answer:"ゲンガーシャドボ/サザンあくは",warn:"キンシに物理触ると攻撃-2"},
-{id:15,name:"ゲッコウガ",types:["water","dark"],spd:191,cat:"spe_atk",ghost:false,sets:"へんげんじざい特殊/メガ(S213)",moves:["ハイドロカノン","あくのはどう","れいとうビーム","くさむすび","みずしゅりけん","とんぼがえり"],answer:"スカーフサザン(S247で抜ける)/アシレで水半減",warn:"技範囲広く読みにくい"},
+{id:15,name:"ゲッコウガ",types:["water","dark"],spd:191,cat:"spe_atk",ghost:false,sets:"へんげんじざい特殊/メガ(S213)",moves:["ハイドロカノン","あくのはどう","れいとうビーム","くさむすび","みずしゅりけん","とんぼがえり"],answer:"スカーフサザン(S247で抜ける)/アシレ水半減",warn:"技範囲広く読みにくい"},
 {id:16,name:"ゲンガー",types:["ghost","poison"],spd:178,cat:"spe_atk",ghost:true,sets:"メガゲンガー(かげふみ)/おにびたたりめ型/みちづれ型",moves:["シャドーボール","ヘドロウェーブ","きあいだま","おにび","たたりめ","みちづれ"],answer:"サザンあくは",warn:"ゴーストでかげふみ無効。サザンで処理"},
 // サ行
 {id:17,name:"サーナイト",types:["psychic","fairy"],spd:145,cat:"spe_atk",ghost:false,sets:"メガサーナイト特殊/トレース",moves:["ハイパーボイス","サイコキネシス","きあいだま","めいそう","みちづれ"],answer:"ゲンガーヘドウェ(毒抜群)/サザンあくは",warn:"トレースでかげふみコピー注意"},
-{id:18,name:"サザンドラ",types:["dark","dragon"],spd:165,cat:"spe_atk",ghost:false,sets:"スカーフ/わるだくみ",moves:["あくのはどう","りゅうせいぐん","かえんほうしゃ","とんぼがえり","わるだくみ","ラスターカノン"],answer:"ガアてっぺき+ボディプレ(格闘抜群)/ガブげきりん",warn:"妖喪失で4倍弱点突く手段なし。受け回しで対応"},
+{id:18,name:"サザンドラ",types:["dark","dragon"],spd:165,cat:"spe_atk",ghost:false,sets:"スカーフ/わるだくみ",moves:["あくのはどう","りゅうせいぐん","かえんほうしゃ","とんぼがえり","わるだくみ","ラスターカノン"],answer:"アシレムーンフォース(フェアリー4倍)",warn:""},
 {id:19,name:"サンダース",types:["electric"],spd:200,cat:"spe_atk",ghost:false,sets:"高速ボルチェン/10万",moves:["10まんボルト","ボルトチェンジ","シャドーボール","あくび","でんじは"],answer:"ガブじしん(電気無効)/カバじしん",warn:"S200でメガゲンガーと同速"},
 {id:20,name:"シャンデラ",types:["ghost","fire"],spd:145,cat:"spe_atk",ghost:true,sets:"もらいび特殊/トリル",moves:["シャドーボール","だいもんじ","エナジーボール","トリックルーム","おにび"],answer:"サザンあくは/ガブじしん",warn:"ゴーストでかげふみ無効"},
 {id:21,name:"ソウブレイズ",types:["fire","ghost"],spd:150,cat:"setup",ghost:true,sets:"つるぎのまい+炎/ゴースト",moves:["むねんのつるぎ","かげうち","つるぎのまい","ニトロチャージ","サイコカッター"],answer:"ガブじしん/カバあくび",warn:"ゴーストでかげふみ無効"},
 // タ行
 {id:22,name:"ドドゲザン",types:["dark","steel"],spd:50,cat:"phy_atk",ghost:false,sets:"ふいうち+アイヘ/総大将",moves:["ふいうち","アイアンヘッド","ドゲザン","つるぎのまい","はたきおとす"],answer:"ガブじしん(地面4倍)/ガアボディプレス(格闘抜群)",warn:"そうだいしょうで火力上昇"},
-{id:23,name:"ドラパルト",types:["dragon","ghost"],spd:213,cat:"phy_atk",ghost:true,sets:"最速物理/特殊/両刀",moves:["ドラゴンアロー","シャドーボール","りゅうせいぐん","とんぼがえり","おにび","ふいうち"],answer:"アシレムーンフォース(妖2倍)/スカーフサザンあくは(霊2倍・S247で抜ける)",warn:"S213で全員上取られる。みがわり/おにびに警戒"},
+{id:23,name:"ドラパルト",types:["dragon","ghost"],spd:213,cat:"phy_atk",ghost:true,sets:"最速物理/特殊/両刀",moves:["ドラゴンアロー","シャドーボール","りゅうせいぐん","とんぼがえり","おにび","ふいうち"],answer:"アシレムーンフォース/スカーフサザン(S247で抜ける)",warn:"S213で全員上取られる"},
 {id:24,name:"ドリュウズ",types:["ground","steel"],spd:154,cat:"phy_atk",ghost:false,sets:"すなかき(砂下S2倍)/つるぎのまい",moves:["じしん","アイアンヘッド","いわなだれ","つるぎのまい","がんせきふうじ"],answer:"ガア受け(じしん半減+アイヘ半減)/アシレ水技",warn:"砂下だと最速S224→全員抜かれる"},
 // ナ行
-{id:26,name:"ヌメルゴン",types:["dragon"],spd:145,cat:"spe_atk",ghost:false,sets:"特殊耐久竜/アシッドボム",moves:["りゅうせいぐん","ヘドロばくだん","かえんほうしゃ","アシッドボム","10まんボルト"],answer:"ガブげきりん/サザンりゅうせい/ガアてっぺき耐久勝負",warn:"特防が非常に高い。妖喪失で4倍取れず長期戦"},
+{id:26,name:"ヌメルゴン",types:["dragon"],spd:145,cat:"spe_atk",ghost:false,sets:"特殊耐久竜/アシッドボム",moves:["りゅうせいぐん","ヘドロばくだん","かえんほうしゃ","アシッドボム","10まんボルト"],answer:"アシレムーンフォース(フェアリー抜群)",warn:"特防が非常に高い"},
 // ハ行
 {id:27,name:"ハッサム",types:["bug","steel"],spd:128,cat:"phy_atk",ghost:false,sets:"テクニバレパン+とんぼ",moves:["バレットパンチ","とんぼがえり","つるぎのまい","ダブルウイング","はたきおとす"],answer:"ガアてっぺき完封/サザン炎(4倍)",warn:""},
 {id:30,name:"バンギラス",types:["rock","dark"],spd:122,cat:"phy_atk",ghost:false,sets:"メガバンギラス/砂起こし物理",moves:["ストーンエッジ","かみくだく","じしん","りゅうのまい","ステルスロック","れいとうパンチ"],answer:"ガブじしん(地面弱点)/ガアボディプレス(格闘4倍)",warn:"すなおこしで特防1.5倍"},
@@ -311,18 +312,18 @@ const POKEDB=[
 {id:32,name:"ピクシー",types:["fairy"],spd:90,cat:"wall",ghost:false,sets:"てんねん+めいそう/アンコール",moves:["ムーンフォース","めいそう","つきのひかり","アンコール","ステルスロック","かえんほうしゃ"],answer:"ゲンガーかげふみ(ヘドウェ毒抜群)",warn:"てんねんで積み技が無効化される"},
 {id:33,name:"フシギバナ",types:["grass","poison"],spd:100,cat:"wall",ghost:false,sets:"メガフシギバナ(あついしぼう)耐久",moves:["ギガドレイン","ヘドロばくだん","やどりぎのタネ","こうごうせい","じしん"],answer:"ゲンガーかげふみ(シャドボ等倍ゴリ押し)",warn:"メガ時の耐久がかなり高い"},
 {id:34,name:"ブラッキー",types:["dark"],spd:128,cat:"wall",ghost:false,sets:"ねがいごと+まもる/あくび耐久/アンコール型",moves:["イカサマ","ねがいごと","まもる","あくび","ちょうはつ","アンコール"],answer:"ゲンガーかげふみ→きあいだま(格闘抜群)",warn:"耐久が非常に高い。きあいだま必須"},
-{id:35,name:"ブリジュラス",types:["steel","dragon"],spd:150,cat:"spe_atk",ghost:false,sets:"ステロでんじは撒き/特殊アタッカー",moves:["ラスターカノン","りゅうせいぐん","でんじは","ステルスロック","ミラーコート","エレクトロビーム"],answer:"ラムアシレで透かす→ガブじしん(2倍)で処理",warn:"でんじは食らうとサザン麻痺で詰む。ラムアシレが起点封じの要。ボディプレスは没収"},
+{id:35,name:"ブリジュラス",types:["steel","dragon"],spd:150,cat:"spe_atk",ghost:false,sets:"ステロでんじは撒き/特殊アタッカー",moves:["ラスターカノン","りゅうせいぐん","でんじは","ステルスロック","ミラーコート","エレクトロビーム"],answer:"ガブじしん/カバじしん/アシレ水技",warn:"でんじはでガアやサザン麻痺注意。ボディプレスは没収"},
 {id:36,name:"フラエッテ",types:["fairy"],spd:82,cat:"spe_atk",ghost:false,sets:"えいえんのはな/特殊耐久",moves:["ムーンフォース","サイコキネシス","めいそう","ねがいごと","アロマセラピー"],answer:"ゲンガーヘドウェ(毒抜群)",warn:""},
 {id:39,name:"ホルード",types:["normal","ground"],spd:143,cat:"phy_atk",ghost:false,sets:"ちからもち高火力物理",moves:["じしん","からげんき","でんこうせっか","とんぼがえり","つるぎのまい","がんせきふうじ"],answer:"ガア受け(ノーマル無効)/アシレ水技",warn:"ちからもちで実質A2倍"},
 // マ行
 {id:40,name:"マスカーニャ",types:["grass","dark"],spd:192,cat:"phy_atk",ghost:false,sets:"へんげんじざい高速物理",moves:["トリックフラワー","はたきおとす","ふいうち","とんぼがえり","じゃれつく"],answer:"ガア受け/スカーフサザン(S247で抜ける)",warn:"変幻自在でタイプ変わる"},
-{id:41,name:"マフォクシー",types:["fire","psychic"],spd:136,cat:"spe_atk",ghost:false,sets:"メガマフォクシー高火力特殊",moves:["だいもんじ","サイコキネシス","シャドーボール","わるだくみ","マジカルフレイム"],answer:"ゲンガーシャドボ(超2倍・S先制)/カバ天候上書き+じしん/アシレで水半減耐え",warn:"ガアは炎4倍で即死。①基本選出は禁忌"},
+{id:41,name:"マフォクシー",types:["fire","psychic"],spd:136,cat:"spe_atk",ghost:false,sets:"メガマフォクシー高火力特殊",moves:["だいもんじ","サイコキネシス","シャドーボール","わるだくみ","マジカルフレイム"],answer:"ガブじしん/カバ(天候上書き+じしん)",warn:"ガアが炎で焼かれる"},
 {id:42,name:"マンムー",types:["ice","ground"],spd:145,cat:"phy_atk",ghost:false,sets:"ステロ+氷柱/タスキ",moves:["じしん","つららばり","こおりのつぶて","ステルスロック","はたきおとす"],answer:"アシレ水技(水抜群)/ガア受け(氷半減+地面半減)",warn:"こおりのつぶてでガブが縛られる"},
 {id:43,name:"ミミッキュ",types:["ghost","fairy"],spd:162,cat:"setup",ghost:true,sets:"ばけのかわ+剣舞+じゃれ/かげうち",moves:["じゃれつく","かげうち","つるぎのまい","シャドークロー","トリックルーム","のろい"],answer:"ガア受け(じゃれ半減・かげうち無効)",warn:"ゴーストでかげふみ無効。ばけのかわで1発無効"},
 {id:44,name:"ミミロップ",types:["normal"],spd:145,cat:"phy_atk",ghost:false,sets:"メガミミロップ(きもったま/S205)",moves:["インファイト","からげんき","ねこだまし","とんぼがえり","れいとうパンチ","みがわり"],answer:"ガア受け",warn:"メガ時S205でメガゲンガー(200)抜かれる！きもったまでゴースト殴れる"},
 {id:45,name:"メガニウム",types:["grass"],spd:100,cat:"wall",ghost:false,sets:"メガメガニウム(草/妖・メガソーラー)/耐久型",moves:["ソーラービーム","ウェザーボール","こうごうせい","やどりぎのタネ","ギガドレイン","アロマセラピー"],answer:"ゲンガーかげふみ(ヘドウェ毒2倍)/サザン炎",warn:"メガ時タイプ草/妖。メガソーラーでソラビ即撃ち"},
 // ラ行
-{id:48,name:"リザードン",types:["fire","flying"],spd:167,cat:"spe_atk",ghost:false,sets:"メガY(日照り特殊)/メガX(竜舞物理)",moves:["だいもんじ","オーバーヒート","ソーラービーム","エアスラッシュ","りゅうのまい","フレアドライブ"],answer:"ガブ岩封(岩4倍)/カバ天候上書き+ステロ/アシレで水半減耐え",warn:"Y型でガアが焼かれる→ガア出さない。S167で先制取られるので後出し前提"},
+{id:48,name:"リザードン",types:["fire","flying"],spd:167,cat:"spe_atk",ghost:false,sets:"メガY(日照り特殊)/メガX(竜舞物理)",moves:["だいもんじ","オーバーヒート","ソーラービーム","エアスラッシュ","りゅうのまい","フレアドライブ"],answer:"ガブ岩封(4倍)/カバ天候上書き+ステロ",warn:"Y型でガアが焼かれる→ガアで受けない"},
 {id:49,name:"ルカリオ",types:["fighting","steel"],spd:156,cat:"setup",ghost:false,sets:"メガルカリオ(てきおうりょく)剣舞/特殊わるだくみ",moves:["インファイト","バレットパンチ","つるぎのまい","しんそく","しんくうは","わるだくみ"],answer:"ガブじしん(鋼弱点)/カバあくび",warn:"メガ時てきおうりょくで火力1.5倍。先制技豊富"},
 // 追加
 {id:51,name:"イダイトウ♂",types:["water","ghost"],spd:78,cat:"phy_atk",ghost:true,sets:"すいすいor適応力物理",moves:["ウェーブタックル","おはかまいり","アクアジェット","サイコファング","こおりのキバ"],answer:"ガア受け/アシレで水半減",warn:"ゴーストでかげふみ無効"},
@@ -333,22 +334,21 @@ const POKEDB=[
 {id:59,name:"ラウドボーン",types:["fire","ghost"],spd:129,cat:"wall",ghost:true,sets:"てんねん+フレアソング/おにび耐久",moves:["フレアソング","シャドーボール","おにび","なまける","のろい","だいちのちから"],answer:"サザンあくは/ガブじしん",warn:"ゴーストでかげふみ無効。てんねんで積み技無効化。フレアソングでC上昇"},
 {id:60,name:"ドヒドイデ",types:["poison","water"],spd:95,cat:"wall",ghost:false,sets:"さいせいりょく+どくどく受け",moves:["どくどく","じこさいせい","トーチカ","くろいきり","ヘドロばくだん","れいとうビーム"],answer:"ゲンガーかげふみ(シャドボゴリ押し)/ガブじしん",warn:"さいせいりょくで交代時HP1/3回復。ねっとうは没収"},
 {id:61,name:"ウインディ",types:["fire"],spd:161,cat:"phy_atk",ghost:false,sets:"いかく+フレドラ物理/おにび型",moves:["フレアドライブ","しんそく","おにび","インファイト","ワイルドボルト","もえつきる"],answer:"ガブじしん/カバじしん",warn:"いかくで物理AT弱体化。しんそく先制に注意"},
-{id:62,name:"ヒスイウインディ",types:["fire","rock"],spd:161,cat:"phy_atk",ghost:false,sets:"いしあたま+もろはのずつき/フレドラ",moves:["もろはのずつき","フレアドライブ","インファイト","しんそく","おにび","ワイルドボルト"],answer:"ガブじしん(地面4倍)/アシレ水技(水4倍)",warn:"いしあたまで反動なし。もろは高火力"},
+{id:62,name:"ヒスイウインディ",types:["fire","rock"],spd:161,cat:"phy_atk",ghost:false,sets:"いしあたま+もろはのずつき/フレドラ",moves:["もろはのずつき","フレアドライブ","インファイト","しんそく","おにび","ワイルドボルト"],answer:"ガブじしん(地面4倍)/アシレ水技(4倍)",warn:"いしあたまで反動なし。もろは高火力"},
 {id:63,name:"ヒスイゾロアーク",types:["normal","ghost"],spd:178,cat:"spe_atk",ghost:true,sets:"イリュージョン特殊/わるだくみ",moves:["シャドーボール","ハイパーボイス","わるだくみ","はどうだん","くさむすび","ちょうはつ"],answer:"サザンあくは(ゴースト半減+悪抜群)",warn:"ゴーストでかげふみ無効。イリュージョンで別ポケに化ける。格闘・ノーマル無効"},
 {id:64,name:"キョジオーン",types:["rock"],spd:95,cat:"wall",ghost:false,sets:"きよめのしお+しおづけ/てっぺき型",moves:["しおづけ","じこさいせい","てっぺき","ボディプレス","ステルスロック","じしん"],answer:"アシレ水技/ガブじしん(地面抜群)",warn:"しおづけで毎ターンHP1/8(水地面は1/4)。きよめのしおで状態異常無効"},
 ];
 
 // ===== 選出パターン =====
 const PATTERNS=[
-  {id:1,name:"① 基本 (ゲン軸)",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","サザンドラ"],desc:"ガアとんぼ→メガゲンかげふみで受け破壊→サザン掃除",shortWhen:"物理中心・汎用"},
-  {id:2,name:"② アシレサイクル (ゲン軸)",lead:"アシレーヌ",members:["アシレーヌ","メガゲンガー","カバルドン"],desc:"アシレで特殊受け→クイックターン→メガゲンかげふみで詰め",shortWhen:"特殊エース多/竜多"},
-  {id:3,name:"③ ステロ展開 (ルカ軸)",lead:"カバルドン",members:["カバルドン","メガルカリオ","アシレーヌ"],desc:"カバステロ+あくび起点→メガルカ剣舞で全抜き",shortWhen:"積みアタッカー多"},
-  {id:4,name:"④ 対受けループ (ルカ軸)",lead:"アーマーガア",members:["アーマーガア","メガルカリオ","カバルドン"],desc:"ガアとんぼ+カバステロでお膳立て→メガルカ剣舞で受け破壊",shortWhen:"受け2体以上"}
+  {id:1,name:"① 基本",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","サザンドラ"],desc:"ガアとんぼ→受けにゲンガー(かげふみ)→スカーフサザンで掃除",shortWhen:"受けポケがいる/万能"},
+  {id:2,name:"② ステロ展開",lead:"カバルドン",members:["カバルドン","ガブリアス","flex"],desc:"カバステロ+あくび→ガブ剣舞で全抜き",shortWhen:"積みアタッカーが多い"},
+  {id:3,name:"③ 積み詰め",lead:"アーマーガア",members:["アーマーガア","アシレーヌ","メガゲンガー"],desc:"ガア物理完封→アシレめいそう積み→邪魔な受けはゲンガー処理",shortWhen:"物理中心で特殊薄い"},
+  {id:4,name:"④ 対受けループ",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","ガブリアス"],desc:"ガアとんぼ→ゲンガーかげふみで受け処理→ガブ全抜き",shortWhen:"受け2体以上"}
 ];
 
 // ===== RECOMMENDER =====
 let picked=[];
-let selectedMine=[];
 function scorePick(ids){
   const opp=ids.map(id=>POKEDB.find(p=>p.id===id)).filter(Boolean);
   if(!opp.length)return null;
@@ -359,34 +359,23 @@ function scorePick(ids){
   const ghosts=opp.filter(p=>p.ghost);
   const traps=opp.filter(p=>!p.ghost&&(p.cat==="wall"||p.cat==="support"));
   const fires=opp.filter(p=>p.types.includes("fire"));
-  const fireSpe=fires.filter(p=>p.cat==="spe_atk");
-  const firePhy=fires.filter(p=>p.cat==="phy_atk"||p.cat==="setup");
-  const dragons=opp.filter(p=>p.types.includes("dragon"));
   const elecs=opp.filter(p=>p.types.includes("electric"));
   const hasRiza=opp.some(p=>p.name==="リザードン");
   const hasUlga=opp.some(p=>p.name==="ウルガモス");
-  const hasMafo=opp.some(p=>p.name==="マフォクシー");
-  const hasBuri=opp.some(p=>p.name==="ブリジュラス");
-  const hasHisuiWind=opp.some(p=>p.name==="ヒスイウインディ");
-  const hasOppKaba=opp.some(p=>p.name==="カバルドン");
   let sc=[{pat:PATTERNS[0],score:45},{pat:PATTERNS[1],score:25},{pat:PATTERNS[2],score:15},{pat:PATTERNS[3],score:15}];
-  sc[0].score+=traps.length*18+(opp.length>=3?10:0)-ghosts.length*8-fireSpe.length*25-firePhy.length*22;
+  sc[0].score+=traps.length*18+(opp.length>=3?10:0)-ghosts.length*8;
   sc[1].score+=setup.length*20+phyAtk.length*5+(hasRiza?20:0)+(hasUlga?20:0);
-  sc[2].score+=speAtk.length*8+dragons.length*10+fires.length*8+(hasMafo?15:0);
-  sc[3].score+=walls.length*25+(walls.length>=2?20:0)-(opp.length-walls.length)*3-fireSpe.length*15;
+  sc[2].score+=phyAtk.length*15-speAtk.length*20-fires.length*15+(speAtk.length===0&&opp.length>=3?25:0);
+  sc[3].score+=walls.length*25+(walls.length>=2?20:0)-(opp.length-walls.length)*3;
   sc.sort((a,b)=>b.score-a.score);
-  // 1メガ/パターンに整理したのでflexは未使用、後方互換のためダミー保持
-  let flex2="メガルカリオ";
+  let flex2="アーマーガア";
+  if(speAtk.length>phyAtk.length||opp.some(p=>p.types.includes("dragon")))flex2="アシレーヌ";
   let warns=[];
   if(opp.find(p=>p.name==="ミミロップ"))warns.push("メガミミロップ(S205)→メガゲンガー(S200)抜かれる！ガアで受ける");
   if(opp.find(p=>p.name==="ドラパルト"))warns.push("ドラパルト(S213)→全員抜かれる。スカーフサザン(247)で抜ける");
-  if(ghosts.length>=2)warns.push("ゴースト"+ghosts.length+"体→かげふみが効かない、ゲンガー詰め役にならない");
-  if(opp.find(p=>p.name==="ガブリアス"))warns.push("ガブがスカーフ(S253)なら全員抜かれる→ガアで受ける。自軍ガブいないのでミラー突破はメガルカ・メガゲンで");
-  if(hasRiza)warns.push("リザードンY型→炎でガアが焼かれる。ガブ岩封(4倍)で処理、ガアを出さない");
-  if(hasMafo)warns.push("マフォクシー→ガアは炎4倍で焼ける。ゲンガーシャドボ(超2倍)/カバ天候上書きで処理");
-  if(hasHisuiWind)warns.push("ヒスイウインディ→ガアが炎4倍+岩2倍で即死。初手にしない、ガブじしん4倍で処理");
-  if(hasBuri)warns.push("ブリジュラスでんじは→サザン・ガア麻痺で詰む。ラムアシレで透かす or ガブじしん(2倍)で処理");
-  if(hasOppKaba)warns.push("相手カバルドン→あくび合戦リスク。ラムアシレで起点封じ");
+  if(ghosts.length>=2)warns.push("ゴースト"+ghosts.length+"体→かげふみが効かない相手が多い");
+  if(opp.find(p=>p.name==="ガブリアス"))warns.push("ガブがスカーフ(S253)なら全員抜かれる→ガアで受ける");
+  if(hasRiza)warns.push("リザードンY型→炎でガアが焼かれる。ガアを炎技に投げない");
   if(elecs.length)warns.push("電気タイプ→ガアとアシレが弱点。ガブかカバで受ける");
   if(opp.find(p=>p.name==="エーフィ"))warns.push("マジックミラー→ステロ・あくびが跳ね返される。カバ選出注意");
   if(opp.find(p=>p.name==="ドリュウズ")&&opp.find(p=>p.name==="カバルドン"))warns.push("砂パ警戒→ドリュウズがすなかきで最速S224");
@@ -403,23 +392,11 @@ function renderRec(){
   h+=`<div class="rec-answers">${r.answers.map(a=>`<div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)"><div class="rec-ans-row"><span class="rec-ans-name">${a.name}</span><span class="rec-ans-how">${a.answer}</span></div><div class="rec-mv-row mv-list">${a.moves.map(m=>`<span class="mv-tag">${m}</span>`).join('')}</div></div>`).join('')}</div>`;
   let sm=[...r.second.pat.members].map(x=>x==="flex"?r.flex2:x);
   h+=`<div class="rec-alt">次点: <b>${r.second.pat.name}</b> → ${sm.join(' / ')}</div>`;
-  if(selectedMine.length===0){
-    selectedMine=r.best.pat.members.map(x=>x==="flex"?r.flex2:x).slice(0,3);
-  }
-  h+=`<div class="my-select-label">実際の選出ポケモン (<span id="mine-cnt">${selectedMine.length}</span>/3)</div>`;
-  h+=`<div class="my-select">${MY_TEAM.map(p=>`<button class="my-chip${selectedMine.includes(p.name)?' on':''}" data-name="${p.name}" onclick="selectMine('${p.name}')">${p.name}</button>`).join('')}</div>`;
   h+=`<div class="battle-btns"><button class="battle-btn btn-win" onclick="saveBattle('win')">⭕ WIN</button><button class="battle-btn btn-lose" onclick="saveBattle('lose')">✕ LOSE</button></div></div>`;
   el.innerHTML=h;
 }
-function togglePick(id){const i=picked.indexOf(id);if(i>=0)picked.splice(i,1);else if(picked.length<6)picked.push(id);selectedMine=[];updateUI();renderRec()}
-function resetPicks(){picked=[];selectedMine=[];updateUI();renderRec()}
-function selectMine(name){
-  const i=selectedMine.indexOf(name);
-  if(i>=0)selectedMine.splice(i,1);
-  else if(selectedMine.length<3)selectedMine.push(name);
-  document.querySelectorAll('.my-chip').forEach(c=>c.classList.toggle('on',selectedMine.includes(c.dataset.name)));
-  const cnt=document.getElementById('mine-cnt');if(cnt)cnt.textContent=selectedMine.length;
-}
+function togglePick(id){const i=picked.indexOf(id);if(i>=0)picked.splice(i,1);else if(picked.length<6)picked.push(id);updateUI();renderRec()}
+function resetPicks(){picked=[];updateUI();renderRec()}
 function updateUI(){
   document.querySelectorAll('.pick-btn').forEach(b=>{b.classList.toggle('on',picked.includes(+b.dataset.id))});
   const bar=document.getElementById('picked-bar');
@@ -436,18 +413,20 @@ function renderParty(){
   document.getElementById('party-cards').innerHTML=MY_TEAM.map(p=>`<div class="p-card"><div class="p-head"><span class="p-name">${p.name}</span><span class="p-item">${p.item}</span></div>${p.types.map(t=>`<span class="badge" style="background:${TC[t]||'#666'}">${t}</span>`).join('')}<div class="p-moves">${p.moves.map(m=>`<div class="p-move">${m}</div>`).join('')}</div><div class="p-info"><span>${p.nature} ${p.ev}</span><span>S${p.speed}</span></div><span class="p-role">${p.role}</span></div>`).join('');
 }
 function renderSpeed(){
+  const myNames=new Set(MY_TEAM.map(p=>p.name));
   const a=[
-    {n:"メガゲッコウガ",s:213,m:0},{n:"ドラパルト",s:213,m:0},{n:"メガミミロップ",s:205,m:0},
-    {n:"メガゲンガー",s:200,m:1},{n:"サンダース",s:200,m:0},
-    {n:"マスカーニャ",s:192,m:0},{n:"オオニューラ",s:192,m:0},
-    {n:"ゲッコウガ",s:191,m:0},{n:"ゲンガー(メガ前)/ヒスイゾロアーク",s:178,m:0},{n:"エーフィ",s:178,m:0},
-    {n:"ガブリアス",s:169,m:0},{n:"リザードン/ウルガモス",s:167,m:0},{n:"メガガルーラ",s:167,m:0},
-    {n:"サザンドラ",s:165,m:1},{n:"ミミッキュ",s:162,m:0},
-    {n:"ウインディ/ヒスイウインディ",s:161,m:0},{n:"メガルカリオ",s:172,m:1},{n:"ドリュウズ",s:154,m:0},
-    {n:"ソウブレイズ/ブリジュラス",s:150,m:0},{n:"カイリュー",s:145,m:0},{n:"ホルード",s:143,m:0},
-    {n:"ウォッシュロトム",s:138,m:0},{n:"アーマーガア",s:130,m:1},{n:"ラウドボーン",s:129,m:0},{n:"ハッサム",s:128,m:0},
-    {n:"アシレーヌ",s:123,m:1},{n:"ガオガエン",s:123,m:0},{n:"ギルガルド",s:123,m:0}
-  ].sort((a,b)=>b.s-a.s);
+    {n:"メガゲッコウガ",s:213},{n:"ドラパルト",s:213},{n:"メガミミロップ",s:205},
+    {n:"メガゲンガー",s:200},{n:"サンダース",s:200},
+    {n:"マスカーニャ",s:192},{n:"オオニューラ",s:192},
+    {n:"ゲッコウガ",s:191},{n:"メガルカリオ",s:180},
+    {n:"ゲンガー(メガ前)/ヒスイゾロアーク",s:178},{n:"エーフィ",s:178},
+    {n:"ガブリアス",s:169},{n:"リザードン/ウルガモス",s:167},{n:"メガガルーラ",s:167},
+    {n:"サザンドラ",s:165},{n:"ミミッキュ",s:162},
+    {n:"ウインディ/ヒスイウインディ",s:161},{n:"ルカリオ",s:156},{n:"ドリュウズ",s:154},
+    {n:"ソウブレイズ/ブリジュラス",s:150},{n:"カイリュー/イダイトウ♂",s:145},{n:"ホルード",s:143},
+    {n:"ウォッシュロトム",s:138},{n:"アーマーガア",s:130},{n:"ラウドボーン",s:129},{n:"ハッサム",s:128},
+    {n:"アシレーヌ/ガオガエン",s:123},{n:"ギルガルド",s:123},{n:"ドドゲザン",s:112}
+  ].map(p=>({...p,m:p.n.split('/').some(x=>myNames.has(x.trim()))?1:0})).sort((a,b)=>b.s-a.s);
   const mx=220;
   document.getElementById('speed-chart').innerHTML=a.map(p=>{
     const pct=Math.round(p.s/mx*100);
@@ -525,57 +504,19 @@ const STORAGE_KEY='poke_battles';
 function loadBattles(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]')}catch(e){return[]}}
 function saveBattle(result){
   if(!picked.length)return;
+  const r=scorePick(picked);
   const battles=loadBattles();
   battles.unshift({
     date:new Date().toISOString().slice(0,10),
     time:new Date().toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit'}),
     opp:picked.map(id=>{const p=POKEDB.find(x=>x.id===id);return p?p.name:null}).filter(Boolean),
-    mine:[...selectedMine],
+    pattern:r?.best?.pat?.name||'?',
     result
   });
   if(battles.length>200)battles.length=200;
   localStorage.setItem(STORAGE_KEY,JSON.stringify(battles));
   renderBattleLog();
   resetPicks();
-}
-function forceReload(){
-  // Service worker / Cache APIをクリアしてから再読込
-  try{
-    if('serviceWorker' in navigator){
-      navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister()));
-    }
-    if('caches' in window){
-      caches.keys().then(ks=>ks.forEach(k=>caches.delete(k)));
-    }
-  }catch(e){}
-  setTimeout(()=>{location.replace(location.pathname+'?v='+Date.now()+location.hash);},150);
-}
-function exportBattles(){
-  const data=localStorage.getItem(STORAGE_KEY)||'[]';
-  const n=JSON.parse(data).length;
-  if(!n){alert('戦績がありません');return}
-  if(navigator.clipboard&&navigator.clipboard.writeText){
-    navigator.clipboard.writeText(data).then(
-      ()=>alert(n+'件の戦績JSONをコピーしました'),
-      ()=>showExportFallback(data,n)
-    );
-  } else showExportFallback(data,n);
-}
-function showExportFallback(data,n){
-  const bg=document.createElement('div');
-  bg.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;padding:20px;display:flex;flex-direction:column;gap:10px';
-  bg.innerHTML=`<div style="color:#fff;font-size:13px">${n}件の戦績JSON。長押し→全選択→コピー</div>`;
-  const ta=document.createElement('textarea');
-  ta.value=data;
-  ta.style.cssText='flex:1;width:100%;font-size:11px;padding:8px;background:#fff;color:#000;border-radius:8px;font-family:monospace';
-  ta.readOnly=true;
-  const close=document.createElement('button');
-  close.textContent='閉じる';
-  close.style.cssText='padding:12px;background:#ff4d6d;color:#fff;border:none;border-radius:8px;font-weight:700;font-size:14px';
-  close.onclick=()=>bg.remove();
-  bg.appendChild(ta);bg.appendChild(close);
-  document.body.appendChild(bg);
-  ta.focus();ta.select();
 }
 function renderBattleLog(){
   const el=document.getElementById('battle-log');
@@ -604,37 +545,34 @@ function renderBattleLog(){
     });
     h+='</div>';
   }
-  // 自軍ポケモン別貢献度（mineデータがある試合のみ）
-  const mineStats={};
-  battles.forEach(b=>{
-    if(!b.mine||!b.mine.length)return;
-    b.mine.forEach(name=>{
-      if(!mineStats[name])mineStats[name]={w:0,l:0};
-      b.result==='win'?mineStats[name].w++:mineStats[name].l++;
-    });
-  });
-  const mineRanked=Object.entries(mineStats).map(([name,s])=>({name,w:s.w,l:s.l,total:s.w+s.l,wrate:Math.round(s.w/(s.w+s.l)*100)})).sort((a,b)=>b.wrate-a.wrate||b.total-a.total);
-  if(mineRanked.length){
-    h+='<div class="card" style="margin:8px 0"><div style="font-size:11px;font-weight:700;color:var(--hi);margin-bottom:6px">自軍ポケモン別勝率</div>';
-    mineRanked.forEach(m=>{
-      const c=m.wrate>=60?'#14b8a6':m.wrate>=40?'#fbbf24':'#ef4444';
-      h+=`<div class="weak-row"><span class="weak-name">${m.name}</span><span class="weak-stat" style="color:${c}">${m.w}W ${m.l}L (勝率${m.wrate}%)</span></div>`;
-    });
-    h+='</div>';
-  }
   // 直近10戦
   const recent=battles.slice(0,10);
   h+='<div class="card" style="margin:8px 0">';
-  h+=recent.map(b=>{
-    const mineDisplay=b.mine&&b.mine.length?b.mine.join(' / '):(b.pattern||'?');
-    return `<div class="log-row"><span class="log-result ${b.result==='win'?'log-w':'log-l'}">${b.result==='win'?'W':'L'}</span><span class="log-opp">${b.opp.join(' ')}<br><span class="log-pat">選出: ${mineDisplay}</span></span><span class="log-date">${b.date}<br>${b.time||''}</span></div>`;
-  }).join('');
+  h+=recent.map(b=>`<div class="log-row"><span class="log-result ${b.result==='win'?'log-w':'log-l'}">${b.result==='win'?'W':'L'}</span><span class="log-opp">${b.opp.join(' ')}<br><span class="log-pat">${b.pattern}</span></span><span class="log-date">${b.date}<br>${b.time||''}</span></div>`).join('');
   if(battles.length>10)h+=`<div class="sm" style="text-align:center;padding:6px">他${battles.length-10}件</div>`;
   h+='</div>';
   el.innerHTML=h;
 }
 
-renderGrid();renderParty();renderSpeed();renderMatchups();renderType();renderBattleLog();
+// ===== TEAM SWITCH =====
+function switchTeam(key){
+  currentTeamKey=key;
+  MY_TEAM=TEAMS[key].members;
+  PATTERNS=TEAMS[key].patterns;
+  renderTeamSel();renderParty();renderSpeed();renderPatterns();resetPicks();
+}
+function renderTeamSel(){
+  const html=Object.entries(TEAMS).map(([k,t])=>`<button class="team-btn${k===currentTeamKey?' active':''}" onclick="switchTeam('${k}')">${t.name}</button>`).join('');
+  document.querySelectorAll('[id^=team-sel]').forEach(el=>{el.innerHTML=html});
+}
+function renderPatterns(){
+  const t=getTeam();
+  document.getElementById('patterns-container').innerHTML=t.patterns.map(p=>
+    `<div class="fold" onclick="this.classList.toggle('open')"><div class="fold-h"><span>${p.name}</span><span class="fold-arrow">▾</span></div><div class="fold-sub">${p.shortWhen}</div><div class="fold-body"><b>初手${p.lead}</b> → ${p.members.join(' / ')}<br>${p.desc}</div></div>`
+  ).join('');
+}
+
+renderTeamSel();renderGrid();renderParty();renderSpeed();renderMatchups();renderType();renderPatterns();renderBattleLog();
 fetchLiveData();
 </script>
 </body>
