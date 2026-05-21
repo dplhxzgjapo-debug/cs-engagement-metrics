@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-20T09:43:37Z",
+  "updated_at": "2026-05-21T09:52:49Z",
   "source": "yakkun.com",
   "format": "singles",
   "pokemon": [
@@ -113,6 +113,31 @@
     },
     {
       "rank": 5,
+      "name": "メガリザードンY",
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "stats": {
+        "hp": 78,
+        "atk": 104,
+        "def": 78,
+        "spa": 159,
+        "spd": 115,
+        "spe": 100
+      },
+      "abilities": [
+        "ひでり",
+        "ひでり"
+      ],
+      "moves_mentioned": [
+        "にほんばれ",
+        "ソーラービーム",
+        "ステルスロック"
+      ]
+    },
+    {
+      "rank": 6,
       "name": "アーマーガア",
       "types": [
         "flying",
@@ -136,31 +161,6 @@
         "ボディプレス",
         "はねやすめ",
         "とんぼがえり"
-      ]
-    },
-    {
-      "rank": 6,
-      "name": "メガリザードンY",
-      "types": [
-        "fire",
-        "flying"
-      ],
-      "stats": {
-        "hp": 78,
-        "atk": 104,
-        "def": 78,
-        "spa": 159,
-        "spd": 115,
-        "spe": 100
-      },
-      "abilities": [
-        "ひでり",
-        "ひでり"
-      ],
-      "moves_mentioned": [
-        "にほんばれ",
-        "ソーラービーム",
-        "ステルスロック"
       ]
     },
     {
@@ -216,28 +216,6 @@
     },
     {
       "rank": 9,
-      "name": "メガフラエッテ",
-      "types": [
-        "fairy"
-      ],
-      "stats": {
-        "hp": 74,
-        "atk": 85,
-        "def": 87,
-        "spa": 155,
-        "spd": 148,
-        "spe": 102
-      },
-      "abilities": [
-        "フェアリーオーラ",
-        "フェアリーオーラ"
-      ],
-      "moves_mentioned": [
-        "めいそう"
-      ]
-    },
-    {
-      "rank": 10,
       "name": "メガルカリオ",
       "types": [
         "fighting",
@@ -263,7 +241,7 @@
       ]
     },
     {
-      "rank": 11,
+      "rank": 10,
       "name": "メガギャラドス",
       "types": [
         "water",
@@ -286,7 +264,7 @@
       ]
     },
     {
-      "rank": 12,
+      "rank": 11,
       "name": "メガゲンガー",
       "types": [
         "ghost",
@@ -311,7 +289,73 @@
       ]
     },
     {
+      "rank": 12,
+      "name": "メガフラエッテ",
+      "types": [
+        "fairy"
+      ],
+      "stats": {
+        "hp": 74,
+        "atk": 85,
+        "def": 87,
+        "spa": 155,
+        "spd": 148,
+        "spe": 102
+      },
+      "abilities": [
+        "フェアリーオーラ",
+        "フェアリーオーラ"
+      ],
+      "moves_mentioned": [
+        "めいそう"
+      ]
+    },
+    {
       "rank": 13,
+      "name": "メガキラフロル",
+      "types": [
+        "rock",
+        "poison"
+      ],
+      "stats": {
+        "hp": 83,
+        "atk": 90,
+        "def": 105,
+        "spa": 150,
+        "spd": 96,
+        "spe": 101
+      },
+      "abilities": [
+        "てきおうりょく",
+        "てきおうりょく"
+      ],
+      "moves_mentioned": []
+    },
+    {
+      "rank": 14,
+      "name": "ギルガルド",
+      "types": [
+        "steel",
+        "ghost"
+      ],
+      "stats": {
+        "hp": 60,
+        "atk": 50,
+        "def": 140,
+        "spa": 50,
+        "spd": 140,
+        "spe": 60
+      },
+      "abilities": [
+        "バトルスイッチ",
+        "バトルスイッチ"
+      ],
+      "moves_mentioned": [
+        "キングシールド"
+      ]
+    },
+    {
+      "rank": 15,
       "name": "メガミミロップ",
       "types": [
         "normal",
@@ -337,7 +381,7 @@
       ]
     },
     {
-      "rank": 14,
+      "rank": 16,
       "name": "メガハッサム",
       "types": [
         "bug",
@@ -361,28 +405,7 @@
       ]
     },
     {
-      "rank": 15,
-      "name": "メガキラフロル",
-      "types": [
-        "rock",
-        "poison"
-      ],
-      "stats": {
-        "hp": 83,
-        "atk": 90,
-        "def": 105,
-        "spa": 150,
-        "spd": 96,
-        "spe": 101
-      },
-      "abilities": [
-        "てきおうりょく",
-        "てきおうりょく"
-      ],
-      "moves_mentioned": []
-    },
-    {
-      "rank": 16,
+      "rank": 17,
       "name": "メガカイリュー",
       "types": [
         "dragon",
@@ -402,29 +425,6 @@
       "moves_mentioned": [
         "りゅうせいぐん",
         "しんそく"
-      ]
-    },
-    {
-      "rank": 17,
-      "name": "ギルガルド",
-      "types": [
-        "steel",
-        "ghost"
-      ],
-      "stats": {
-        "hp": 60,
-        "atk": 50,
-        "def": 140,
-        "spa": 50,
-        "spd": 140,
-        "spe": 60
-      },
-      "abilities": [
-        "バトルスイッチ",
-        "バトルスイッチ"
-      ],
-      "moves_mentioned": [
-        "キングシールド"
       ]
     },
     {
@@ -524,6 +524,38 @@
     },
     {
       "rank": 22,
+      "name": "ウォッシュロトム",
+      "types": [
+        "electric",
+        "water"
+      ],
+      "stats": {
+        "hp": 50,
+        "atk": 65,
+        "def": 107,
+        "spa": 105,
+        "spd": 107,
+        "spe": 86
+      },
+      "abilities": [
+        "ふゆう",
+        "ふゆう"
+      ],
+      "moves_mentioned": [
+        "おにび",
+        "ボルトチェンジ"
+      ]
+    },
+    {
+      "rank": 23,
+      "name": "ダイケンキ(ヒスイ)",
+      "types": [],
+      "stats": {},
+      "abilities": [],
+      "moves_mentioned": []
+    },
+    {
+      "rank": 24,
       "name": "ドドゲザン",
       "types": [
         "dark",
@@ -549,31 +581,7 @@
       ]
     },
     {
-      "rank": 23,
-      "name": "ウォッシュロトム",
-      "types": [
-        "electric",
-        "water"
-      ],
-      "stats": {
-        "hp": 50,
-        "atk": 65,
-        "def": 107,
-        "spa": 105,
-        "spd": 107,
-        "spe": 86
-      },
-      "abilities": [
-        "ふゆう",
-        "ふゆう"
-      ],
-      "moves_mentioned": [
-        "おにび",
-        "ボルトチェンジ"
-      ]
-    },
-    {
-      "rank": 24,
+      "rank": 25,
       "name": "メガマフォクシー",
       "types": [
         "fire",
@@ -593,30 +601,6 @@
       ],
       "moves_mentioned": [
         "わるだくみ"
-      ]
-    },
-    {
-      "rank": 25,
-      "name": "ブラッキー",
-      "types": [
-        "dark"
-      ],
-      "stats": {
-        "hp": 95,
-        "atk": 65,
-        "def": 110,
-        "spa": 60,
-        "spd": 130,
-        "spe": 65
-      },
-      "abilities": [
-        "シンクロ",
-        "せいしんりょく"
-      ],
-      "moves_mentioned": [
-        "イカサマ",
-        "ちょうはつ",
-        "アンコール"
       ]
     }
   ],
