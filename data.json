@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-28T10:13:14Z",
+  "updated_at": "2026-05-29T10:02:14Z",
   "source": "yakkun.com",
   "format": "singles",
   "pokemon": [
@@ -165,6 +165,30 @@
     },
     {
       "rank": 7,
+      "name": "カバルドン",
+      "types": [
+        "ground"
+      ],
+      "stats": {
+        "hp": 108,
+        "atk": 112,
+        "def": 118,
+        "spa": 68,
+        "spd": 72,
+        "spe": 47
+      },
+      "abilities": [
+        "すなおこし",
+        "すなのちから",
+        "すなおこし"
+      ],
+      "moves_mentioned": [
+        "あくび",
+        "ステルスロック"
+      ]
+    },
+    {
+      "rank": 8,
       "name": "イダイトウ♂",
       "types": [
         "water",
@@ -188,30 +212,6 @@
         "おはかまいり",
         "ウェーブタックル",
         "アクアジェット"
-      ]
-    },
-    {
-      "rank": 8,
-      "name": "カバルドン",
-      "types": [
-        "ground"
-      ],
-      "stats": {
-        "hp": 108,
-        "atk": 112,
-        "def": 118,
-        "spa": 68,
-        "spd": 72,
-        "spe": 47
-      },
-      "abilities": [
-        "すなおこし",
-        "すなのちから",
-        "すなおこし"
-      ],
-      "moves_mentioned": [
-        "あくび",
-        "ステルスロック"
       ]
     },
     {
@@ -242,29 +242,6 @@
     },
     {
       "rank": 10,
-      "name": "メガギャラドス",
-      "types": [
-        "water",
-        "dark"
-      ],
-      "stats": {
-        "hp": 95,
-        "atk": 155,
-        "def": 109,
-        "spa": 70,
-        "spd": 130,
-        "spe": 81
-      },
-      "abilities": [
-        "かたやぶり",
-        "かたやぶり"
-      ],
-      "moves_mentioned": [
-        "りゅうのまい"
-      ]
-    },
-    {
-      "rank": 11,
       "name": "メガゲンガー",
       "types": [
         "ghost",
@@ -289,50 +266,7 @@
       ]
     },
     {
-      "rank": 12,
-      "name": "メガフラエッテ",
-      "types": [
-        "fairy"
-      ],
-      "stats": {
-        "hp": 74,
-        "atk": 85,
-        "def": 87,
-        "spa": 155,
-        "spd": 148,
-        "spe": 102
-      },
-      "abilities": [
-        "フェアリーオーラ",
-        "フェアリーオーラ"
-      ],
-      "moves_mentioned": [
-        "めいそう"
-      ]
-    },
-    {
-      "rank": 13,
-      "name": "メガキラフロル",
-      "types": [
-        "rock",
-        "poison"
-      ],
-      "stats": {
-        "hp": 83,
-        "atk": 90,
-        "def": 105,
-        "spa": 150,
-        "spd": 96,
-        "spe": 101
-      },
-      "abilities": [
-        "てきおうりょく",
-        "てきおうりょく"
-      ],
-      "moves_mentioned": []
-    },
-    {
-      "rank": 14,
+      "rank": 11,
       "name": "ギルガルド",
       "types": [
         "steel",
@@ -355,7 +289,30 @@
       ]
     },
     {
-      "rank": 15,
+      "rank": 12,
+      "name": "メガギャラドス",
+      "types": [
+        "water",
+        "dark"
+      ],
+      "stats": {
+        "hp": 95,
+        "atk": 155,
+        "def": 109,
+        "spa": 70,
+        "spd": 130,
+        "spe": 81
+      },
+      "abilities": [
+        "かたやぶり",
+        "かたやぶり"
+      ],
+      "moves_mentioned": [
+        "りゅうのまい"
+      ]
+    },
+    {
+      "rank": 13,
       "name": "メガミミロップ",
       "types": [
         "normal",
@@ -381,7 +338,7 @@
       ]
     },
     {
-      "rank": 16,
+      "rank": 14,
       "name": "メガハッサム",
       "types": [
         "bug",
@@ -405,7 +362,28 @@
       ]
     },
     {
-      "rank": 17,
+      "rank": 15,
+      "name": "メガキラフロル",
+      "types": [
+        "rock",
+        "poison"
+      ],
+      "stats": {
+        "hp": 83,
+        "atk": 90,
+        "def": 105,
+        "spa": 150,
+        "spd": 96,
+        "spe": 101
+      },
+      "abilities": [
+        "てきおうりょく",
+        "てきおうりょく"
+      ],
+      "moves_mentioned": []
+    },
+    {
+      "rank": 16,
       "name": "メガカイリュー",
       "types": [
         "dragon",
@@ -425,6 +403,28 @@
       "moves_mentioned": [
         "りゅうせいぐん",
         "しんそく"
+      ]
+    },
+    {
+      "rank": 17,
+      "name": "メガフラエッテ",
+      "types": [
+        "fairy"
+      ],
+      "stats": {
+        "hp": 74,
+        "atk": 85,
+        "def": 87,
+        "spa": 155,
+        "spd": 148,
+        "spe": 102
+      },
+      "abilities": [
+        "フェアリーオーラ",
+        "フェアリーオーラ"
+      ],
+      "moves_mentioned": [
+        "めいそう"
       ]
     },
     {
