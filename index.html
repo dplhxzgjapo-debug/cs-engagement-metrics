@@ -95,6 +95,16 @@ h2{font-size:13px;font-weight:700;color:var(--hi);margin:20px 0 8px;padding-left
 .sp-bar{height:20px;border-radius:6px;display:flex;align-items:center;padding-left:6px;font-size:9px;color:#fff;font-weight:700;position:relative;transition:width .5s}
 .sp-v{position:absolute;right:5px;font-size:9px}
 .mine-bar{box-shadow:0 0 10px var(--glow)}
+.spd-tiers{display:flex;gap:6px;margin:10px 0;flex-wrap:wrap}
+.spd-tier{flex:1;min-width:72px;text-align:center;padding:6px 4px;border-radius:var(--radius-sm);background:var(--card2);border:1px solid var(--bdr)}
+.spd-tier-l{font-size:9px;color:var(--muted);font-weight:700}
+.spd-tier-v{font-size:16px;font-weight:800;color:var(--hi)}
+.spd-row{display:flex;align-items:center;justify-content:space-between;padding:7px 8px;border-radius:8px;margin:3px 0;font-size:12px;background:var(--card2)}
+.spd-name{font-weight:700}
+.spd-spe{font-size:11px;color:var(--sub);margin-left:auto;margin-right:8px}
+.spd-win{color:#14b8a6;font-weight:800}
+.spd-lose{color:#ef4444;font-weight:800}
+.spd-tie{color:#fbbf24;font-weight:800}
 
 /* Type Table */
 .tt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--radius);border:1px solid var(--bdr)}
@@ -180,21 +190,20 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
 
 <!-- TAB 3: 素早さ -->
 <div class="page" id="p-speed">
-<h1>SPEED TIERS</h1>
+<h1>SPEED CHECK</h1>
+<h2>相手と素早さ比較 <span class="sm" style="font-weight:400">(選択中の構築と連動)</span></h2>
+<div class="card">
+  <select id="spd-select" onchange="renderSpdCompare()" style="width:100%;padding:10px;border-radius:var(--radius-sm);background:var(--card2);color:var(--txt);border:1px solid var(--bdr);font-size:14px;font-weight:600"></select>
+  <label class="sm" style="display:flex;align-items:center;gap:6px;margin-top:8px;cursor:pointer">
+    <input type="checkbox" id="spd-scarf" onchange="renderSpdCompare()" style="width:16px;height:16px"> 相手スカーフ想定 (×1.5)
+  </label>
+  <div id="spd-compare"></div>
+</div>
+<h2>環境スピードティア</h2>
 <div class="sm" style="margin-bottom:8px;text-align:center">
   <span style="color:var(--hi)">●</span> 自分　<span style="color:var(--muted)">●</span> 環境　(最速実数値)
 </div>
 <div id="speed-chart"></div>
-<h2>スカーフ計算</h2>
-<div class="card">
-  <div style="font-size:12px;line-height:2">
-  <b style="color:var(--hi)">スカーフサザン S247</b><br>
-  ✓ メガゲンガー(200) マスカーニャ(192) メガゲッコウガ(213)を抜く<br>
-  ✗ スカーフガブ(253) には負ける→ガアで受ける<br><br>
-  <b style="color:var(--accent)">相手スカーフガブ S253</b><br>
-  こちら全員抜かれる→アーマーガアで受けるしかない
-  </div>
-</div>
 </div>
 
 <!-- TAB 4: 対策 -->
@@ -488,6 +497,11 @@ async function fetchLiveData(){
         });
       });
     }
+    // Speed DB (全187体・素早さ種族値)
+    if(liveData && liveData.all_pokemon){
+      SPEED_DB = liveData.all_pokemon.map(ap=>({name:ap.name,base:ap.spe_base,types:ap.types})).sort((a,b)=>a.name.localeCompare(b.name,'ja'));
+      populateSpdSelect();
+    }
     // Re-render with full data
     renderGrid(); renderMatchups();
     document.getElementById('meta-updated').textContent =
@@ -550,12 +564,56 @@ function renderBattleLog(){
   el.innerHTML=h;
 }
 
+// ===== SPEED CHECK =====
+let SPEED_DB=[];
+function spdStat(base,ev,nat){return Math.floor((Math.floor((2*base+31+Math.floor(ev/4))*50/100)+5)*nat);}
+function populateSpdSelect(){
+  const sel=document.getElementById('spd-select');
+  if(!sel||!SPEED_DB.length)return;
+  const cur=sel.value;
+  sel.innerHTML='<option value="">― 相手ポケモンを選択 ―</option>'+SPEED_DB.map(p=>`<option value="${p.name}">${p.name} (S種${p.base})</option>`).join('');
+  if(cur)sel.value=cur;
+}
+function renderSpdCompare(){
+  const el=document.getElementById('spd-compare');if(!el)return;
+  const sel=document.getElementById('spd-select');
+  const name=sel?sel.value:'';
+  if(!name){el.innerHTML='';return}
+  const p=SPEED_DB.find(x=>x.name===name);if(!p){el.innerHTML='';return}
+  const scarf=document.getElementById('spd-scarf').checked;
+  const mul=scarf?1.5:1;
+  const tMax=Math.floor(spdStat(p.base,252,1.1)*mul);
+  const tNeu=Math.floor(spdStat(p.base,252,1.0)*mul);
+  const tMin=Math.floor(spdStat(p.base,0,1.0)*mul);
+  let h=`<div class="spd-tiers">
+    <div class="spd-tier"><div class="spd-tier-l">最速${scarf?'+スカ':''}</div><div class="spd-tier-v">${tMax}</div></div>
+    <div class="spd-tier"><div class="spd-tier-l">準速${scarf?'+スカ':''}</div><div class="spd-tier-v">${tNeu}</div></div>
+    <div class="spd-tier"><div class="spd-tier-l">無振り${scarf?'+スカ':''}</div><div class="spd-tier-v">${tMin}</div></div>
+  </div>`;
+  const mine=MY_TEAM.map(m=>{
+    const eff=m.item==='こだわりスカーフ'?Math.floor(m.speed*1.5):m.speed;
+    return{name:m.name,eff,scarf:m.item==='こだわりスカーフ'};
+  }).sort((a,b)=>b.eff-a.eff);
+  h+=mine.map(m=>{
+    let verdict,cls;
+    if(m.eff>tMax){verdict='最速も抜く';cls='spd-win';}
+    else if(m.eff===tMax){verdict='最速と同速';cls='spd-tie';}
+    else if(m.eff>tNeu){verdict='準速まで抜く';cls='spd-win';}
+    else if(m.eff===tNeu){verdict='準速と同速';cls='spd-tie';}
+    else if(m.eff>tMin){verdict='無振りのみ抜く';cls='spd-tie';}
+    else if(m.eff===tMin){verdict='無振りと同速';cls='spd-tie';}
+    else{verdict='抜けない';cls='spd-lose';}
+    return `<div class="spd-row"><span class="spd-name">${m.name}${m.scarf?'<span class="sm">@スカーフ</span>':''}</span><span class="spd-spe">S${m.eff}</span><span class="${cls}">${verdict}</span></div>`;
+  }).join('');
+  el.innerHTML=h;
+}
+
 // ===== TEAM SWITCH =====
 function switchTeam(key){
   currentTeamKey=key;
   MY_TEAM=TEAMS[key].members;
   PATTERNS=TEAMS[key].patterns;
-  renderTeamSel();renderParty();renderSpeed();renderPatterns();resetPicks();
+  renderTeamSel();renderParty();renderSpeed();renderPatterns();resetPicks();renderSpdCompare();
 }
 function renderTeamSel(){
   const html=Object.entries(TEAMS).map(([k,t])=>`<button class="team-btn${k===currentTeamKey?' active':''}" onclick="switchTeam('${k}')">${t.name}</button>`).join('');
