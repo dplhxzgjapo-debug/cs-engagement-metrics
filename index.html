@@ -105,6 +105,10 @@ h2{font-size:13px;font-weight:700;color:var(--hi);margin:20px 0 8px;padding-left
 .spd-win{color:#14b8a6;font-weight:800}
 .spd-lose{color:#ef4444;font-weight:800}
 .spd-tie{color:#fbbf24;font-weight:800}
+.spd-sug{padding:8px 10px;font-size:13px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.04)}
+.spd-sug:hover,.spd-sug.on{background:var(--card2)}
+.spd-sug:last-child{border-bottom:none}
+.spd-sug-meta{font-size:10px;color:var(--muted);margin-left:6px}
 
 /* Type Table */
 .tt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--radius);border:1px solid var(--bdr)}
@@ -193,7 +197,10 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
 <h1>SPEED CHECK</h1>
 <h2>相手と素早さ比較 <span class="sm" style="font-weight:400">(選択中の構築と連動)</span></h2>
 <div class="card">
-  <select id="spd-select" onchange="renderSpdCompare()" style="width:100%;padding:10px;border-radius:var(--radius-sm);background:var(--card2);color:var(--txt);border:1px solid var(--bdr);font-size:14px;font-weight:600"></select>
+  <div style="position:relative">
+    <input type="text" id="spd-input" oninput="onSpdInput()" onfocus="onSpdInput()" onblur="setTimeout(()=>{document.getElementById('spd-suggest').style.display='none'},150)" placeholder="ポケモン名を入力 (例: メガゲ → メガゲンガー)" autocomplete="off" style="width:100%;padding:10px;border-radius:var(--radius-sm);background:var(--card2);color:var(--txt);border:1px solid var(--bdr);font-size:14px;font-weight:600">
+    <div id="spd-suggest" style="display:none;position:absolute;top:100%;left:0;right:0;max-height:240px;overflow-y:auto;background:var(--card);border:1px solid var(--bdr);border-radius:var(--radius-sm);z-index:10;margin-top:4px;box-shadow:0 4px 16px rgba(0,0,0,.5)"></div>
+  </div>
   <label class="sm" style="display:flex;align-items:center;gap:6px;margin-top:8px;cursor:pointer">
     <input type="checkbox" id="spd-scarf" onchange="renderSpdCompare()" style="width:16px;height:16px"> 相手スカーフ想定 (×1.5)
   </label>
@@ -566,20 +573,66 @@ function renderBattleLog(){
 
 // ===== SPEED CHECK =====
 let SPEED_DB=[];
+// メガ進化形の素早さ種族値 (all_pokemonに含まれないので別途定義)
+const MEGA_SPEED={
+  "メガゲンガー":130,"メガリザードンX":100,"メガリザードンY":100,"メガサーナイト":100,
+  "メガガブリアス":92,"メガバンギラス":71,"メガルカリオ":112,"メガガルーラ":100,
+  "メガミミロップ":135,"メガフシギバナ":80,"メガヘラクロス":75,"メガエルレイド":110,
+  "メガオーダイル":78,"メガメガニウム":60,"メガエンブオー":55,"メガギャラドス":81,
+  "メガハッサム":75,"メガクチート":50,"メガアブソル":115,"メガスピアー":145,
+  "メガフーディン":150,"メガラティアス":110,"メガラティオス":110,"メガゲッコウガ":132,
+  "メガデンリュウ":75,"メガヘルガー":115,"メガジュペッタ":80,"メガピクシー":60,
+  "メガプテラ":150,"メガタブンネ":40,"メガユキノオー":30,
+  "メガフーパ":70,"メガサメハダー":105,"メガラグラージ":70,"メガジュカイン":120,
+  "メガバシャーモ":100,"メガレックウザ":115,"メガジガルデ":95
+};
+// メガ用タイプ変化 (メガで複合タイプが変わるケース)
+const MEGA_TYPES={
+  "メガリザードンX":["fire","dragon"],"メガサーナイト":["psychic","fairy"],
+  "メガメガニウム":["grass","fairy"],"メガオーダイル":["water","dragon"],
+  "メガエンブオー":["fire","fighting"],"メガミミロップ":["normal","fighting"],
+  "メガフーディン":["psychic"],"メガピクシー":["fairy"]
+};
 function spdStat(base,ev,nat){return Math.floor((Math.floor((2*base+31+Math.floor(ev/4))*50/100)+5)*nat);}
+function buildSpeedDB(){
+  const arr=SPEED_DB.slice();
+  Object.entries(MEGA_SPEED).forEach(([name,base])=>{
+    if(arr.some(x=>x.name===name))return;
+    // 元ポケのタイプを継承 (メガXXX → XXX)
+    const baseName=name.replace(/^メガ/,'').replace(/X$|Y$/,'');
+    const orig=SPEED_DB.find(x=>x.name===baseName);
+    const types=MEGA_TYPES[name]||(orig?orig.types:[]);
+    arr.push({name,base,types,isMega:true});
+  });
+  return arr.sort((a,b)=>a.name.localeCompare(b.name,'ja'));
+}
+function onSpdInput(){
+  const inp=document.getElementById('spd-input');
+  const sug=document.getElementById('spd-suggest');
+  if(!inp||!sug)return;
+  const q=(inp.value||'').trim();
+  const all=buildSpeedDB();
+  const list=q?all.filter(p=>p.name.includes(q)).slice(0,30):all.slice(0,30);
+  if(!list.length){sug.style.display='none';return}
+  sug.innerHTML=list.map(p=>`<div class="spd-sug" onmousedown="pickSpd('${p.name.replace(/'/g,"\\'")}')">${p.name}<span class="spd-sug-meta">S種${p.base}${p.isMega?' / メガ':''}</span></div>`).join('');
+  sug.style.display='block';
+}
+function pickSpd(name){
+  document.getElementById('spd-input').value=name;
+  document.getElementById('spd-suggest').style.display='none';
+  renderSpdCompare();
+}
 function populateSpdSelect(){
-  const sel=document.getElementById('spd-select');
-  if(!sel||!SPEED_DB.length)return;
-  const cur=sel.value;
-  sel.innerHTML='<option value="">― 相手ポケモンを選択 ―</option>'+SPEED_DB.map(p=>`<option value="${p.name}">${p.name} (S種${p.base})</option>`).join('');
-  if(cur)sel.value=cur;
+  // 入力UI移行に伴いプルダウン廃止。初回のサジェスト準備のみ。
+  onSpdInput();
 }
 function renderSpdCompare(){
   const el=document.getElementById('spd-compare');if(!el)return;
-  const sel=document.getElementById('spd-select');
-  const name=sel?sel.value:'';
+  const inp=document.getElementById('spd-input');
+  const name=inp?inp.value.trim():'';
   if(!name){el.innerHTML='';return}
-  const p=SPEED_DB.find(x=>x.name===name);if(!p){el.innerHTML='';return}
+  const p=buildSpeedDB().find(x=>x.name===name);
+  if(!p){el.innerHTML='<div class="sm" style="padding:8px;color:var(--muted)">候補から選択してください</div>';return}
   const scarf=document.getElementById('spd-scarf').checked;
   const mul=scarf?1.5:1;
   const tMax=Math.floor(spdStat(p.base,252,1.1)*mul);
