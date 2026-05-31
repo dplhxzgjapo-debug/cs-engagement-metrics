@@ -494,7 +494,7 @@ function cstNameInput(i){
   const inp=document.getElementById('cst-name-'+i);
   const sug=document.getElementById('cst-sug-'+i);
   if(!inp||!sug)return;
-  const q=(inp.value||'').trim();
+  const q=hira2kana((inp.value||'').trim());
   const all=buildSpeedDB();
   const list=q?all.filter(p=>p.name.includes(q)).slice(0,15):all.slice(0,15);
   if(!list.length){sug.style.display='none';return}
@@ -760,11 +760,13 @@ function buildSpeedDB(){
   });
   return arr.sort((a,b)=>a.name.localeCompare(b.name,'ja'));
 }
+// ひらがな→カタカナ変換 (ぴ→ピ等の小書きも含む)
+function hira2kana(s){return s.replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+0x60));}
 function onSpdInput(){
   const inp=document.getElementById('spd-input');
   const sug=document.getElementById('spd-suggest');
   if(!inp||!sug)return;
-  const q=(inp.value||'').trim();
+  const q=hira2kana((inp.value||'').trim());
   const all=buildSpeedDB();
   const list=q?all.filter(p=>p.name.includes(q)).slice(0,30):all.slice(0,30);
   if(!list.length){sug.style.display='none';return}
