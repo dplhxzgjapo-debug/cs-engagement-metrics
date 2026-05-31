@@ -740,13 +740,23 @@ const MEGA_TYPES={
   "メガフーディン":["psychic"],"メガピクシー":["fairy"]
 };
 function spdStat(base,ev,nat){return Math.floor((Math.floor((2*base+31+Math.floor(ev/4))*50/100)+5)*nat);}
+// all_pokemon に漏れている内定ポケの補完 (scraperがフォルム違い・特殊進化を取り逃す対応)
+const EXTRA_SPEED=[
+  {name:'フラエッテ',base:52,types:['fairy']},
+  {name:'ギルガルド',base:60,types:['steel','ghost']},
+  {name:'ダイケンキ(ヒスイ)',base:70,types:['water','fighting']}
+];
 function buildSpeedDB(){
   const arr=SPEED_DB.slice();
+  EXTRA_SPEED.forEach(e=>{
+    if(arr.some(x=>x.name===e.name))return;
+    arr.push({name:e.name,base:e.base,types:e.types});
+  });
   Object.entries(MEGA_SPEED).forEach(([name,base])=>{
     if(arr.some(x=>x.name===name))return;
     // 元ポケのタイプを継承 (メガXXX → XXX)
     const baseName=name.replace(/^メガ/,'').replace(/X$|Y$/,'');
-    const orig=SPEED_DB.find(x=>x.name===baseName);
+    const orig=arr.find(x=>x.name===baseName);
     const types=MEGA_TYPES[name]||(orig?orig.types:[]);
     arr.push({name,base,types,isMega:true});
   });
