@@ -789,10 +789,7 @@ function renderSpdCompare(){
     <div class="spd-tier"><div class="spd-tier-l">準速${scarf?'+スカ':''}</div><div class="spd-tier-v">${tNeu}</div></div>
     <div class="spd-tier"><div class="spd-tier-l">無振り${scarf?'+スカ':''}</div><div class="spd-tier-v">${tMin}</div></div>
   </div>`;
-  const mine=MY_TEAM.map(m=>{
-    const eff=m.item==='こだわりスカーフ'?Math.floor(m.speed*1.5):m.speed;
-    return{name:m.name,eff,scarf:m.item==='こだわりスカーフ'};
-  }).sort((a,b)=>b.eff-a.eff);
+  const mine=MY_TEAM.flatMap(memberForms).sort((a,b)=>b.eff-a.eff);
   h+=mine.map(m=>{
     let verdict,cls;
     if(m.eff>tMax){verdict='最速も抜く';cls='spd-win';}
@@ -802,9 +799,47 @@ function renderSpdCompare(){
     else if(m.eff>tMin){verdict='無振りのみ抜く';cls='spd-tie';}
     else if(m.eff===tMin){verdict='無振りと同速';cls='spd-tie';}
     else{verdict='抜けない';cls='spd-lose';}
-    return `<div class="spd-row"><span class="spd-name">${m.name}${m.scarf?'<span class="sm">@スカーフ</span>':''}</span><span class="spd-spe">S${m.eff}</span><span class="${cls}">${verdict}</span></div>`;
+    const subTag=m.sub?`<span class="sm" style="color:var(--muted);margin-left:4px">(${m.sub})</span>`:'';
+    const scarfTag=m.scarf?`<span class="sm" style="color:var(--accent);margin-left:4px">@スカーフ</span>`:'';
+    return `<div class="spd-row"><span class="spd-name">${m.label}${subTag}${scarfTag}</span><span class="spd-spe">S${m.eff}</span><span class="${cls}">${verdict}</span></div>`;
   }).join('');
   el.innerHTML=h;
+}
+// 努力値・性格構成を実数値から推定
+function spdConfigOf(base,observed){
+  for(const [ev,nat] of [[252,1.1],[252,1.0],[0,1.0],[252,0.9],[0,1.1],[0,0.9]]){
+    if(spdStat(base,ev,nat)===observed)return{ev,nat};
+  }
+  return{ev:252,nat:1.1};
+}
+// 自軍メンバー → メガ前/メガ後の両形態リスト
+function memberForms(m){
+  const scarf=m.item==='こだわりスカーフ';
+  const out=[];
+  const isMega=m.name.startsWith('メガ');
+  if(isMega){
+    out.push({label:m.name,eff:m.speed,scarf:false});
+    const baseName=m.name.replace(/^メガ/,'').replace(/X$|Y$/,'');
+    const baseEntry=SPEED_DB.find(p=>p.name===baseName);
+    const megaBase=MEGA_SPEED[m.name];
+    if(baseEntry&&megaBase){
+      const cfg=spdConfigOf(megaBase,m.speed);
+      const baseSpd=spdStat(baseEntry.base,cfg.ev,cfg.nat);
+      out.push({label:baseName,sub:'メガ前',eff:baseSpd,scarf:false});
+    }
+  }else{
+    out.push({label:m.name,eff:Math.floor(m.speed*(scarf?1.5:1)),scarf});
+    const baseEntry=SPEED_DB.find(p=>p.name===m.name);
+    if(baseEntry){
+      const cfg=spdConfigOf(baseEntry.base,m.speed);
+      Object.keys(MEGA_SPEED).filter(k=>k==='メガ'+m.name||k.startsWith('メガ'+m.name+'X')||k.startsWith('メガ'+m.name+'Y')).forEach(mn=>{
+        const megaBase=MEGA_SPEED[mn];
+        const megaSpd=spdStat(megaBase,cfg.ev,cfg.nat);
+        out.push({label:mn,sub:'メガ後',eff:megaSpd,scarf:false});
+      });
+    }
+  }
+  return out;
 }
 
 // ===== TEAM SWITCH =====
