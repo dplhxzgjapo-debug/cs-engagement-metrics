@@ -109,6 +109,13 @@ h2{font-size:13px;font-weight:700;color:var(--hi);margin:20px 0 8px;padding-left
 .spd-sug:hover,.spd-sug.on{background:var(--card2)}
 .spd-sug:last-child{border-bottom:none}
 .spd-sug-meta{font-size:10px;color:var(--muted);margin-left:6px}
+.edit-card{position:relative}
+.cst-input{flex:1;padding:7px 9px;border-radius:8px;background:var(--card2);color:var(--txt);border:1px solid var(--bdr);font-size:13px;font-weight:600;width:100%;box-sizing:border-box}
+.cst-input::placeholder{color:var(--muted);font-weight:400}
+.cst-row{display:flex;align-items:center;gap:6px;margin-top:6px}
+.cst-lbl{font-size:10px;color:var(--muted);font-weight:700;width:44px;flex-shrink:0}
+.cst-del{padding:4px 9px;background:rgba(239,68,68,.15);color:#ef4444;border:1px solid rgba(239,68,68,.3);border-radius:6px;font-weight:700;font-size:14px;cursor:pointer;flex-shrink:0}
+.cst-sug-box{position:absolute;left:14px;right:14px;background:var(--card);border:1px solid var(--bdr);border-radius:var(--radius-sm);z-index:10;max-height:240px;overflow-y:auto;box-shadow:0 4px 16px rgba(0,0,0,.5);margin-top:2px}
 
 /* Type Table */
 .tt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--radius);border:1px solid var(--bdr)}
@@ -244,6 +251,11 @@ table.tt th{background:var(--card);font-size:8px;font-weight:700;position:sticky
 <script>
 const DATA_VERSION="2026-04-30";
 
+// ===== TYPE CHART (offensive: E[atk][def]) =====
+const TYPE_EN={normal:0,fire:1,water:2,grass:3,electric:4,ice:5,fighting:6,poison:7,ground:8,flying:9,psychic:10,bug:11,rock:12,ghost:13,dragon:14,dark:15,steel:16,fairy:17};
+const TYPE_CHART=[[1,1,1,1,1,1,1,1,1,1,1,1,.5,0,1,1,.5,1],[1,.5,.5,2,1,2,1,1,1,1,1,2,.5,1,.5,1,2,1],[1,2,.5,.5,1,1,1,1,2,1,1,1,2,1,.5,1,1,1],[1,.5,2,.5,1,1,1,.5,2,.5,1,.5,2,1,.5,1,.5,1],[1,1,2,.5,.5,1,1,1,0,2,1,1,1,1,.5,1,1,1],[1,.5,.5,2,1,.5,1,1,2,2,1,1,1,1,2,1,.5,1],[2,1,1,1,1,2,1,.5,1,.5,.5,.5,2,0,1,2,2,.5],[1,1,1,2,1,1,1,.5,.5,1,1,1,.5,.5,1,1,0,2],[1,2,1,.5,2,1,1,2,1,0,1,.5,2,1,1,1,2,1],[1,1,1,2,.5,1,2,1,1,1,1,2,.5,1,1,1,.5,1],[1,1,1,1,1,1,2,2,1,1,.5,1,1,1,1,0,.5,1],[1,.5,1,2,1,1,.5,.5,1,.5,2,1,1,.5,1,2,.5,.5],[1,2,1,1,1,2,.5,1,.5,2,1,2,1,1,1,1,.5,1],[0,1,1,1,1,1,1,1,1,1,2,1,1,2,1,.5,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,.5,0],[1,1,1,1,1,1,.5,1,1,1,2,1,1,2,1,.5,1,.5],[1,.5,.5,1,.5,2,1,1,1,1,1,1,2,1,1,1,.5,2],[1,.5,1,1,1,1,2,.5,1,1,1,1,1,1,2,2,.5,1]];
+function typeMul(atk,defs){const i=TYPE_EN[atk];if(i==null)return 1;return defs.reduce((m,d)=>m*(TYPE_CHART[i][TYPE_EN[d]]??1),1);}
+
 const TEAMS={
 tenkai:{name:"展開構築",sub:"メガリザードンX軸",
 members:[
@@ -286,8 +298,23 @@ members:[
   {id:2,name:"② ピボット回し",lead:"ウォッシュロトム",members:["ウォッシュロトム","アーマーガア","アシレーヌ"],desc:"ボルチェン→とんぼ→クイタン3枚ピボットで有利対面維持",shortWhen:"サイクル勝ち狙い"},
   {id:3,name:"③ ステロ展開",lead:"ブリジュラス",members:["ブリジュラス","メガゲンガー","ガブリアス"],desc:"ステロ+でんじは→ゲンガーかげふみ→スカーフガブ掃除",shortWhen:"積みアタッカー多い"},
   {id:4,name:"④ 対受けループ",lead:"アーマーガア",members:["アーマーガア","メガゲンガー","ガブリアス"],desc:"ガアとんぼ→ゲンガーかげふみで受け封殺→ガブ掃除",shortWhen:"受け2体以上"}
-]}
+]},
+custom:{name:"カスタム",sub:"自分で組む",members:[],patterns:[]}
 };
+// カスタムチーム を localStorage から復元
+const CST_KEY='poke_custom_team';
+function loadCustomTeam(){
+  try{
+    const raw=localStorage.getItem(CST_KEY);
+    if(!raw)return;
+    const d=JSON.parse(raw);
+    TEAMS.custom.members=Array.isArray(d.members)?d.members:[];
+  }catch(e){}
+}
+function saveCustomTeam(){
+  try{localStorage.setItem(CST_KEY,JSON.stringify({members:TEAMS.custom.members}));}catch(e){}
+}
+loadCustomTeam();
 let currentTeamKey='tenkai';
 function getTeam(){return TEAMS[currentTeamKey]}
 let MY_TEAM=TEAMS.tenkai.members;
@@ -362,6 +389,7 @@ const POKEDB=[
 // ===== RECOMMENDER =====
 let picked=[];
 function scorePick(ids){
+  if(currentTeamKey==='custom')return customScorePick(ids);
   const opp=ids.map(id=>POKEDB.find(p=>p.id===id)).filter(Boolean);
   if(!opp.length)return null;
   const walls=opp.filter(p=>p.cat==="wall"||p.cat==="support");
@@ -422,7 +450,108 @@ function renderGrid(){
 }
 const TC={ghost:'var(--ghost)',poison:'var(--poison)',steel:'var(--steel)',flying:'var(--flying)',water:'var(--water)',fairy:'var(--fairy)',ground:'var(--ground)',dragon:'var(--dragon)',dark:'var(--dark)',fire:'var(--fire)',grass:'var(--grass)',electric:'var(--electric)',ice:'var(--ice)',fighting:'var(--fighting)',psychic:'var(--psychic)',bug:'var(--bug)',rock:'var(--rock)',normal:'var(--normal)'};
 function renderParty(){
+  if(currentTeamKey==='custom'){renderPartyEdit();return}
   document.getElementById('party-cards').innerHTML=MY_TEAM.map(p=>`<div class="p-card"><div class="p-head"><span class="p-name">${p.name}</span><span class="p-item">${p.item}</span></div>${p.types.map(t=>`<span class="badge" style="background:${TC[t]||'#666'}">${t}</span>`).join('')}<div class="p-moves">${p.moves.map(m=>`<div class="p-move">${m}</div>`).join('')}</div><div class="p-info"><span>${p.nature} ${p.ev}</span><span>S${p.speed}</span></div><span class="p-role">${p.role}</span></div>`).join('');
+}
+// ===== CUSTOM TEAM EDITOR =====
+const CST_ITEMS=['きあいのタスキ','こだわりスカーフ','オボンのみ','たべのこし','ラムのみ','しろいハーブ','せんせいのツメ','きあいのハチマキ','ひかりのこな','おうじゃのしるし','かいがらのすず','メンタルハーブ','ゲンガナイト','ルカリオナイト','リザードナイトX','リザードナイトY','サーナイトナイト','ガブリアスナイト','バンギラスナイト','ガルーラナイト','ミミロップナイト','フシギバナイト','ヘラクロスナイト','エルレイドナイト','ギャラドスナイト','オーダイルナイト','メガニウムナイト','エンブオーナイト'];
+function renderPartyEdit(){
+  let h='<div class="sm" style="text-align:center;margin:4px 0 8px;color:var(--muted)">名前を入力→候補から選択。持ち物・速度・役割は任意。自動保存。</div>';
+  for(let i=0;i<6;i++){
+    const m=MY_TEAM[i];
+    const types=m?m.types.map(t=>`<span class="badge" style="background:${TC[t]||'#666'}">${t}</span>`).join(''):'';
+    const nameVal=m?m.name:'';
+    h+=`<div class="p-card edit-card">
+      <div class="p-head" style="gap:6px">
+        <input class="cst-input" id="cst-name-${i}"
+          oninput="cstNameInput(${i})"
+          onfocus="cstNameInput(${i})"
+          onblur="setTimeout(()=>cstHideSug(${i}),200)"
+          value="${nameVal}" placeholder="ポケモン名" autocomplete="off" />
+        ${m?`<button class="cst-del" onclick="cstRemove(${i})">×</button>`:''}
+      </div>
+      <div id="cst-sug-${i}" class="cst-sug-box" style="display:none"></div>
+      ${m?`<div style="margin:4px 0">${types}</div>
+        <div class="cst-row">
+          <label class="cst-lbl">持ち物</label>
+          <input class="cst-input" list="cst-items" value="${m.item||''}" oninput="cstSet(${i},'item',this.value)" placeholder="持ち物" />
+        </div>
+        <div class="cst-row">
+          <label class="cst-lbl">速度</label>
+          <input type="number" class="cst-input" value="${m.speed}" onchange="cstSet(${i},'speed',+this.value)" placeholder="最速実数値" />
+          <span class="sm" style="color:var(--muted);margin-left:4px">(S種${m.spBase||'?'})</span>
+        </div>
+        <div class="cst-row">
+          <label class="cst-lbl">役割</label>
+          <input class="cst-input" value="${m.role||''}" oninput="cstSet(${i},'role',this.value)" placeholder="役割メモ" />
+        </div>`:`<div style="text-align:center;padding:16px;color:var(--muted);font-size:11px">↑ポケモン名を入力</div>`}
+    </div>`;
+  }
+  h+=`<datalist id="cst-items">${CST_ITEMS.map(x=>`<option value="${x}">`).join('')}</datalist>`;
+  document.getElementById('party-cards').innerHTML=h;
+}
+function cstNameInput(i){
+  const inp=document.getElementById('cst-name-'+i);
+  const sug=document.getElementById('cst-sug-'+i);
+  if(!inp||!sug)return;
+  const q=(inp.value||'').trim();
+  const all=buildSpeedDB();
+  const list=q?all.filter(p=>p.name.includes(q)).slice(0,15):all.slice(0,15);
+  if(!list.length){sug.style.display='none';return}
+  sug.innerHTML=list.map(p=>`<div class="spd-sug" onmousedown="cstPick(${i},'${p.name.replace(/'/g,"\\'")}')">${p.name}<span class="spd-sug-meta">S種${p.base}${p.isMega?' / メガ':''}</span></div>`).join('');
+  sug.style.display='block';
+}
+function cstHideSug(i){const s=document.getElementById('cst-sug-'+i);if(s)s.style.display='none';}
+function cstPick(i,name){
+  const all=buildSpeedDB();
+  const p=all.find(x=>x.name===name);if(!p)return;
+  // 最速実数値を初期値に
+  const spMax=Math.floor((Math.floor((2*p.base+31+63)*50/100)+5)*1.1);
+  const existing=MY_TEAM[i]||{};
+  MY_TEAM[i]={name:p.name,types:p.types||[],item:existing.item||'',moves:existing.moves||[],nature:'ようき',ev:'A252 S252 H4',speed:existing.speed||spMax,role:existing.role||'',spBase:p.base};
+  saveCustomTeam();
+  renderPartyEdit();renderSpeed();renderSpdCompare();
+}
+function cstRemove(i){
+  MY_TEAM.splice(i,1);
+  saveCustomTeam();
+  renderPartyEdit();renderSpeed();renderSpdCompare();
+}
+function cstSet(i,k,v){
+  if(!MY_TEAM[i])return;
+  MY_TEAM[i][k]=v;
+  saveCustomTeam();
+  if(k==='speed'){renderSpeed();renderSpdCompare();}
+}
+// 相性ベース選出推薦 (カスタム用)
+function customScorePick(picked){
+  const opp=picked.map(id=>POKEDB.find(p=>p.id===id)).filter(Boolean);
+  if(!opp.length||!MY_TEAM.length)return null;
+  const scored=MY_TEAM.map(m=>{
+    const mTypes=m.types||[];
+    let off=0,def=0;
+    opp.forEach(o=>{
+      const oTypes=o.types||[];
+      // 攻撃面: 自分のタイプ最大倍率
+      let bestOff=0;
+      mTypes.forEach(t=>{bestOff=Math.max(bestOff,typeMul(t,oTypes));});
+      off+=bestOff;
+      // 防御面: 相手のタイプ最大倍率(低い方が良い)
+      let worstDef=0;
+      oTypes.forEach(t=>{worstDef=Math.max(worstDef,typeMul(t,mTypes));});
+      def+=worstDef;
+    });
+    return{m,off,def,score:off-def*0.8};
+  }).sort((a,b)=>b.score-a.score);
+  const top3=scored.slice(0,3);
+  return{
+    best:{pat:{name:"自動推奨 (相性ベース)",members:top3.map(s=>s.m.name),desc:"型相性で攻撃力高+被弱点少の3体を抽出",shortWhen:"カスタムパーティ"},score:0},
+    second:{pat:{name:"次点",members:scored.slice(1,4).map(s=>s.m.name),desc:"2位~4位",shortWhen:""},score:0},
+    flex2:'',
+    warnings:[],
+    answers:opp.map(p=>({name:p.name,answer:p.answer||'-',warn:p.warn||'',moves:p.liveMoves||p.moves||[]})),
+    allScores:scored.map(s=>({pat:{name:s.m.name,desc:`攻${s.off.toFixed(1)} 防${s.def.toFixed(1)}`},score:Math.round(s.score*10)/10}))
+  };
 }
 function renderSpeed(){
   const myNames=new Set(MY_TEAM.map(p=>p.name));
