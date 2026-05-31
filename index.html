@@ -827,10 +827,11 @@ function memberForms(m){
   const scarf=m.item==='こだわりスカーフ';
   const out=[];
   const isMega=m.name.startsWith('メガ');
+  const fullDB=buildSpeedDB(); // EXTRA_SPEED と MEGA_SPEED 含む全DB
   if(isMega){
     out.push({label:m.name,eff:m.speed,scarf:false});
     const baseName=m.name.replace(/^メガ/,'').replace(/X$|Y$/,'');
-    const baseEntry=SPEED_DB.find(p=>p.name===baseName);
+    const baseEntry=fullDB.find(p=>p.name===baseName);
     const megaBase=MEGA_SPEED[m.name];
     if(baseEntry&&megaBase){
       const cfg=spdConfigOf(megaBase,m.speed);
@@ -839,7 +840,7 @@ function memberForms(m){
     }
   }else{
     out.push({label:m.name,eff:Math.floor(m.speed*(scarf?1.5:1)),scarf});
-    const baseEntry=SPEED_DB.find(p=>p.name===m.name);
+    const baseEntry=fullDB.find(p=>p.name===m.name);
     if(baseEntry){
       const cfg=spdConfigOf(baseEntry.base,m.speed);
       Object.keys(MEGA_SPEED).filter(k=>k==='メガ'+m.name||k.startsWith('メガ'+m.name+'X')||k.startsWith('メガ'+m.name+'Y')).forEach(mn=>{
