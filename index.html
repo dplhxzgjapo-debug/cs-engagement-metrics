@@ -636,8 +636,25 @@ async function fetchLiveData(){
     // Speed DB (全187体・素早さ種族値)
     if(liveData && liveData.all_pokemon){
       SPEED_DB = liveData.all_pokemon.map(ap=>({name:ap.name,base:ap.spe_base,types:ap.types})).sort((a,b)=>a.name.localeCompare(b.name,'ja'));
-      populateSpdSelect();
     }
+    // メガ進化形を data.json から取り込み (scraperが内定一覧+ランキングから収集)
+    const mergeMega=(name,stats,types)=>{
+      if(stats && typeof stats.spe==='number')MEGA_SPEED[name]=stats.spe;
+      if(types && types.length)MEGA_TYPES[name]=types;
+    };
+    if(liveData && liveData.all_megas){
+      // 内定一覧から全メガ
+      liveData.all_megas.forEach(m=>mergeMega(m.name,m.stats||{spe:m.spe_base},m.types));
+    }
+    if(liveData && liveData.pokemon){
+      // ランキング上位メガは詳細種族値で上書き
+      liveData.pokemon.forEach(lp=>{
+        if(!lp.name||!lp.name.startsWith('メガ'))return;
+        mergeMega(lp.name,lp.stats,lp.types);
+      });
+    }
+    populateSpdSelect();
+    if(currentTeamKey==='custom')renderPartyEdit(); // カスタム編集中ならサジェスト最新化
     // Re-render with full data
     renderGrid(); renderMatchups();
     document.getElementById('meta-updated').textContent =

@@ -67,6 +67,7 @@ def parse_pokedex(text):
         text, re.DOTALL
     )
     available = []
+    megas = []
     for did, dtypes, rest, content in items:
         if 'nodata' in rest:
             continue
@@ -74,14 +75,23 @@ def parse_pokedex(text):
         if not name_m:
             continue
         name = name_m.group(1).strip()
-        if name.startswith("\u30e1\u30ac"):
-            continue
         stats_m = re.findall(r'<span>(\d+)</span>', content)
         if len(stats_m) < 6:
             continue
         types = [TYPE_ID_MAP.get(t, t) for t in dtypes.split(',')]
         hp, atk, df, spa, spd_stat, spe = [int(s) for s in stats_m[:6]]
         is_ghost = 'ghost' in types
+        # \u30e1\u30ac\u306f\u5225\u914d\u5217\u306b
+        if name.startswith("\u30e1\u30ac"):
+            megas.append({
+                "name": name,
+                "types": types,
+                "spe_base": spe,
+                "spe_max": max_speed_lv50(spe),
+                "stats": {"hp":hp,"atk":atk,"def":df,"spa":spa,"spd":spd_stat,"spe":spe},
+                "ghost": is_ghost
+            })
+            continue
         if df + spd_stat >= 200 and hp >= 80:
             cat = 'wall'
         elif atk >= 100 and atk >= spa:
@@ -102,7 +112,7 @@ def parse_pokedex(text):
             "cat": cat,
             "ghost": is_ghost
         })
-    return available
+    return available, megas
 
 def main():
     print("Fetching ranking...")
@@ -113,19 +123,20 @@ def main():
 
     print("Fetching pokedex...")
     pokedex_text = fetch("https://yakkun.com/ch/zukan/offer/")
-    all_pokemon = parse_pokedex(pokedex_text)
-    print(f"Found {len(all_pokemon)} available (excl. megas)")
+    all_pokemon, all_megas = parse_pokedex(pokedex_text)
+    print(f"Found {len(all_pokemon)} available (excl. megas) + {len(all_megas)} megas")
 
     output = {
         "updated_at": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "source": "yakkun.com",
         "format": "singles",
         "pokemon": details,
-        "all_pokemon": all_pokemon
+        "all_pokemon": all_pokemon,
+        "all_megas": all_megas
     }
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
-    print(f"Done: {len(details)} ranked + {len(all_pokemon)} total")
+    print(f"Done: {len(details)} ranked + {len(all_pokemon)} non-mega + {len(all_megas)} megas")
 
 if __name__ == "__main__":
     main()
