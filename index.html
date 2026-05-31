@@ -739,9 +739,26 @@ const MEGA_TYPES={
 };
 function spdStat(base,ev,nat){return Math.floor((Math.floor((2*base+31+Math.floor(ev/4))*50/100)+5)*nat);}
 // all_pokemon に漏れている内定ポケの補完 (scraperがフォルム違い・特殊進化を取り逃す対応)
+// リージョンフォームは内定確認したもののみ追加
 const EXTRA_SPEED=[
+  // 進化前・フォルム特殊
   {name:'フラエッテ',base:52,types:['fairy']},
   {name:'ギルガルド',base:60,types:['steel','ghost']},
+  // ヒスイ系 (ZA出身、内定確認済)
+  {name:'ヒスイダイケンキ',base:70,types:['water','fighting']},
+  {name:'ヒスイバクフーン',base:73,types:['fire','ghost']},
+  {name:'ヒスイジュナイパー',base:70,types:['grass','fighting']},
+  {name:'ヒスイウインディ',base:95,types:['fire','rock']},
+  {name:'ヒスイゾロアーク',base:110,types:['normal','ghost']},
+  // アローラ系 (内定確認済)
+  {name:'アローラライチュウ',base:110,types:['electric','psychic']},
+  {name:'アローラペルシアン',base:115,types:['dark']},
+  {name:'アローラナッシー',base:45,types:['grass','dragon']},
+  {name:'アローラガラガラ',base:45,types:['fire','ghost']},
+  {name:'アローラベトベトン',base:50,types:['poison','dark']},
+  {name:'アローラサンドパン',base:40,types:['ice','steel']},
+  {name:'アローラキュウコン',base:109,types:['ice','fairy']},
+  // 旧表記の互換 (data.json側の表記対応)
   {name:'ダイケンキ(ヒスイ)',base:70,types:['water','fighting']}
 ];
 function buildSpeedDB(){
