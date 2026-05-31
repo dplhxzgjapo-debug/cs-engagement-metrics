@@ -5,6 +5,10 @@ on:
     # 毎日 UTC 6:00 (JST 15:00) に実行
     - cron: '0 6 * * *'
   workflow_dispatch: # 手動実行も可能
+  push:
+    paths:
+      - 'scraper.py'
+      - '.github/workflows/update-data.yml'
 
 permissions:
   contents: write
