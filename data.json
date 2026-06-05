@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-04T10:03:35Z",
+  "updated_at": "2026-06-05T10:00:55Z",
   "source": "yakkun.com",
   "format": "singles",
   "pokemon": [
@@ -165,30 +165,6 @@
     },
     {
       "rank": 7,
-      "name": "カバルドン",
-      "types": [
-        "ground"
-      ],
-      "stats": {
-        "hp": 108,
-        "atk": 112,
-        "def": 118,
-        "spa": 68,
-        "spd": 72,
-        "spe": 47
-      },
-      "abilities": [
-        "すなおこし",
-        "すなのちから",
-        "すなおこし"
-      ],
-      "moves_mentioned": [
-        "あくび",
-        "ステルスロック"
-      ]
-    },
-    {
-      "rank": 8,
       "name": "イダイトウ♂",
       "types": [
         "water",
@@ -212,6 +188,30 @@
         "おはかまいり",
         "ウェーブタックル",
         "アクアジェット"
+      ]
+    },
+    {
+      "rank": 8,
+      "name": "カバルドン",
+      "types": [
+        "ground"
+      ],
+      "stats": {
+        "hp": 108,
+        "atk": 112,
+        "def": 118,
+        "spa": 68,
+        "spd": 72,
+        "spe": 47
+      },
+      "abilities": [
+        "すなおこし",
+        "すなのちから",
+        "すなおこし"
+      ],
+      "moves_mentioned": [
+        "あくび",
+        "ステルスロック"
       ]
     },
     {
@@ -267,52 +267,6 @@
     },
     {
       "rank": 11,
-      "name": "ギルガルド",
-      "types": [
-        "steel",
-        "ghost"
-      ],
-      "stats": {
-        "hp": 60,
-        "atk": 50,
-        "def": 140,
-        "spa": 50,
-        "spd": 140,
-        "spe": 60
-      },
-      "abilities": [
-        "バトルスイッチ",
-        "バトルスイッチ"
-      ],
-      "moves_mentioned": [
-        "キングシールド"
-      ]
-    },
-    {
-      "rank": 12,
-      "name": "メガギャラドス",
-      "types": [
-        "water",
-        "dark"
-      ],
-      "stats": {
-        "hp": 95,
-        "atk": 155,
-        "def": 109,
-        "spa": 70,
-        "spd": 130,
-        "spe": 81
-      },
-      "abilities": [
-        "かたやぶり",
-        "かたやぶり"
-      ],
-      "moves_mentioned": [
-        "りゅうのまい"
-      ]
-    },
-    {
-      "rank": 13,
       "name": "メガミミロップ",
       "types": [
         "normal",
@@ -335,6 +289,52 @@
         "インファイト",
         "からげんき",
         "とんぼがえり"
+      ]
+    },
+    {
+      "rank": 12,
+      "name": "ギルガルド",
+      "types": [
+        "steel",
+        "ghost"
+      ],
+      "stats": {
+        "hp": 60,
+        "atk": 50,
+        "def": 140,
+        "spa": 50,
+        "spd": 140,
+        "spe": 60
+      },
+      "abilities": [
+        "バトルスイッチ",
+        "バトルスイッチ"
+      ],
+      "moves_mentioned": [
+        "キングシールド"
+      ]
+    },
+    {
+      "rank": 13,
+      "name": "メガギャラドス",
+      "types": [
+        "water",
+        "dark"
+      ],
+      "stats": {
+        "hp": 95,
+        "atk": 155,
+        "def": 109,
+        "spa": 70,
+        "spd": 130,
+        "spe": 81
+      },
+      "abilities": [
+        "かたやぶり",
+        "かたやぶり"
+      ],
+      "moves_mentioned": [
+        "りゅうのまい"
       ]
     },
     {
@@ -456,6 +456,26 @@
     },
     {
       "rank": 19,
+      "name": "メガスターミー",
+      "types": [
+        "water",
+        "psychic"
+      ],
+      "stats": {
+        "hp": 60,
+        "atk": 100,
+        "def": 105,
+        "spa": 130,
+        "spd": 105,
+        "spe": 120
+      },
+      "abilities": [
+        "ちからもち"
+      ],
+      "moves_mentioned": []
+    },
+    {
+      "rank": 20,
       "name": "ミミッキュ",
       "types": [
         "ghost",
@@ -477,26 +497,6 @@
         "つるぎのまい",
         "かげうち"
       ]
-    },
-    {
-      "rank": 20,
-      "name": "メガスターミー",
-      "types": [
-        "water",
-        "psychic"
-      ],
-      "stats": {
-        "hp": 60,
-        "atk": 100,
-        "def": 105,
-        "spa": 130,
-        "spd": 105,
-        "spe": 120
-      },
-      "abilities": [
-        "ちからもち"
-      ],
-      "moves_mentioned": []
     },
     {
       "rank": 21,
@@ -582,26 +582,24 @@
     },
     {
       "rank": 25,
-      "name": "メガマフォクシー",
+      "name": "ソウブレイズ",
       "types": [
         "fire",
-        "psychic"
+        "ghost"
       ],
       "stats": {
         "hp": 75,
-        "atk": 69,
-        "def": 72,
-        "spa": 159,
-        "spd": 125,
-        "spe": 134
+        "atk": 125,
+        "def": 80,
+        "spa": 60,
+        "spd": 100,
+        "spe": 85
       },
       "abilities": [
-        "ふゆう",
-        "ふゆう"
+        "もらいび",
+        "くだけるよろい"
       ],
-      "moves_mentioned": [
-        "わるだくみ"
-      ]
+      "moves_mentioned": []
     }
   ],
   "all_pokemon": [
