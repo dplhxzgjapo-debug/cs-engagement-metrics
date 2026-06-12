@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-11T10:46:03Z",
+  "updated_at": "2026-06-12T10:21:38Z",
   "source": "yakkun.com",
   "format": "singles",
   "pokemon": [
@@ -87,6 +87,31 @@
     },
     {
       "rank": 4,
+      "name": "メガリザードンY",
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "stats": {
+        "hp": 78,
+        "atk": 104,
+        "def": 78,
+        "spa": 159,
+        "spd": 115,
+        "spe": 100
+      },
+      "abilities": [
+        "ひでり",
+        "ひでり"
+      ],
+      "moves_mentioned": [
+        "にほんばれ",
+        "ソーラービーム",
+        "ステルスロック"
+      ]
+    },
+    {
+      "rank": 5,
       "name": "アシレーヌ",
       "types": [
         "water",
@@ -112,59 +137,7 @@
       ]
     },
     {
-      "rank": 5,
-      "name": "メガリザードンY",
-      "types": [
-        "fire",
-        "flying"
-      ],
-      "stats": {
-        "hp": 78,
-        "atk": 104,
-        "def": 78,
-        "spa": 159,
-        "spd": 115,
-        "spe": 100
-      },
-      "abilities": [
-        "ひでり",
-        "ひでり"
-      ],
-      "moves_mentioned": [
-        "にほんばれ",
-        "ソーラービーム",
-        "ステルスロック"
-      ]
-    },
-    {
       "rank": 6,
-      "name": "アーマーガア",
-      "types": [
-        "flying",
-        "steel"
-      ],
-      "stats": {
-        "hp": 98,
-        "atk": 87,
-        "def": 105,
-        "spa": 53,
-        "spd": 85,
-        "spe": 67
-      },
-      "abilities": [
-        "プレッシャー",
-        "きんちょうかん",
-        "ミラーアーマー"
-      ],
-      "moves_mentioned": [
-        "てっぺき",
-        "ボディプレス",
-        "はねやすめ",
-        "とんぼがえり"
-      ]
-    },
-    {
-      "rank": 7,
       "name": "イダイトウ♂",
       "types": [
         "water",
@@ -188,6 +161,33 @@
         "おはかまいり",
         "ウェーブタックル",
         "アクアジェット"
+      ]
+    },
+    {
+      "rank": 7,
+      "name": "アーマーガア",
+      "types": [
+        "flying",
+        "steel"
+      ],
+      "stats": {
+        "hp": 98,
+        "atk": 87,
+        "def": 105,
+        "spa": 53,
+        "spd": 85,
+        "spe": 67
+      },
+      "abilities": [
+        "プレッシャー",
+        "きんちょうかん",
+        "ミラーアーマー"
+      ],
+      "moves_mentioned": [
+        "てっぺき",
+        "ボディプレス",
+        "はねやすめ",
+        "とんぼがえり"
       ]
     },
     {
@@ -216,6 +216,32 @@
     },
     {
       "rank": 9,
+      "name": "メガミミロップ",
+      "types": [
+        "normal",
+        "fighting"
+      ],
+      "stats": {
+        "hp": 65,
+        "atk": 136,
+        "def": 94,
+        "spa": 54,
+        "spd": 96,
+        "spe": 135
+      },
+      "abilities": [
+        "きもったま",
+        "きもったま"
+      ],
+      "moves_mentioned": [
+        "ねこだまし",
+        "インファイト",
+        "からげんき",
+        "とんぼがえり"
+      ]
+    },
+    {
+      "rank": 10,
       "name": "メガルカリオ",
       "types": [
         "fighting",
@@ -241,7 +267,7 @@
       ]
     },
     {
-      "rank": 10,
+      "rank": 11,
       "name": "メガゲンガー",
       "types": [
         "ghost",
@@ -263,32 +289,6 @@
         "みちづれ",
         "おにび",
         "たたりめ"
-      ]
-    },
-    {
-      "rank": 11,
-      "name": "メガミミロップ",
-      "types": [
-        "normal",
-        "fighting"
-      ],
-      "stats": {
-        "hp": 65,
-        "atk": 136,
-        "def": 94,
-        "spa": 54,
-        "spd": 96,
-        "spe": 135
-      },
-      "abilities": [
-        "きもったま",
-        "きもったま"
-      ],
-      "moves_mentioned": [
-        "ねこだまし",
-        "インファイト",
-        "からげんき",
-        "とんぼがえり"
       ]
     },
     {
@@ -363,27 +363,6 @@
     },
     {
       "rank": 15,
-      "name": "メガキラフロル",
-      "types": [
-        "rock",
-        "poison"
-      ],
-      "stats": {
-        "hp": 83,
-        "atk": 90,
-        "def": 105,
-        "spa": 150,
-        "spd": 96,
-        "spe": 101
-      },
-      "abilities": [
-        "てきおうりょく",
-        "てきおうりょく"
-      ],
-      "moves_mentioned": []
-    },
-    {
-      "rank": 16,
       "name": "メガカイリュー",
       "types": [
         "dragon",
@@ -404,6 +383,27 @@
         "りゅうせいぐん",
         "しんそく"
       ]
+    },
+    {
+      "rank": 16,
+      "name": "メガキラフロル",
+      "types": [
+        "rock",
+        "poison"
+      ],
+      "stats": {
+        "hp": 83,
+        "atk": 90,
+        "def": 105,
+        "spa": 150,
+        "spd": 96,
+        "spe": 101
+      },
+      "abilities": [
+        "てきおうりょく",
+        "てきおうりょく"
+      ],
+      "moves_mentioned": []
     },
     {
       "rank": 17,
@@ -456,26 +456,6 @@
     },
     {
       "rank": 19,
-      "name": "メガスターミー",
-      "types": [
-        "water",
-        "psychic"
-      ],
-      "stats": {
-        "hp": 60,
-        "atk": 100,
-        "def": 105,
-        "spa": 130,
-        "spd": 105,
-        "spe": 120
-      },
-      "abilities": [
-        "ちからもち"
-      ],
-      "moves_mentioned": []
-    },
-    {
-      "rank": 20,
       "name": "ミミッキュ",
       "types": [
         "ghost",
@@ -499,31 +479,27 @@
       ]
     },
     {
-      "rank": 21,
-      "name": "サザンドラ",
+      "rank": 20,
+      "name": "メガスターミー",
       "types": [
-        "dark",
-        "dragon"
+        "water",
+        "psychic"
       ],
       "stats": {
-        "hp": 92,
-        "atk": 105,
-        "def": 90,
-        "spa": 125,
-        "spd": 90,
-        "spe": 98
+        "hp": 60,
+        "atk": 100,
+        "def": 105,
+        "spa": 130,
+        "spd": 105,
+        "spe": 120
       },
       "abilities": [
-        "ふゆう",
-        "ふゆう"
+        "ちからもち"
       ],
-      "moves_mentioned": [
-        "りゅうせいぐん",
-        "とんぼがえり"
-      ]
+      "moves_mentioned": []
     },
     {
-      "rank": 22,
+      "rank": 21,
       "name": "ウォッシュロトム",
       "types": [
         "electric",
@@ -544,6 +520,30 @@
       "moves_mentioned": [
         "おにび",
         "ボルトチェンジ"
+      ]
+    },
+    {
+      "rank": 22,
+      "name": "サザンドラ",
+      "types": [
+        "dark",
+        "dragon"
+      ],
+      "stats": {
+        "hp": 92,
+        "atk": 105,
+        "def": 90,
+        "spa": 125,
+        "spd": 90,
+        "spe": 98
+      },
+      "abilities": [
+        "ふゆう",
+        "ふゆう"
+      ],
+      "moves_mentioned": [
+        "りゅうせいぐん",
+        "とんぼがえり"
       ]
     },
     {
