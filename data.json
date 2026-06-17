@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-16T11:21:05Z",
+  "updated_at": "2026-06-17T11:06:03Z",
   "source": "yakkun.com",
   "format": "singles",
   "pokemon": [
@@ -708,6 +708,17 @@
       "ghost": false
     },
     {
+      "name": "ラフレシア",
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "spe_base": 50,
+      "spe_max": 112,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
       "name": "ウインディ",
       "types": [
         "fire"
@@ -1010,6 +1021,17 @@
       "ghost": false
     },
     {
+      "name": "ハリーセン",
+      "types": [
+        "water",
+        "poison"
+      ],
+      "spe_base": 85,
+      "spe_max": 150,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
       "name": "ハッサム",
       "types": [
         "bug",
@@ -1065,6 +1087,38 @@
       "ghost": false
     },
     {
+      "name": "ジュカイン",
+      "types": [
+        "grass"
+      ],
+      "spe_base": 120,
+      "spe_max": 189,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "バシャーモ",
+      "types": [
+        "fire",
+        "fighting"
+      ],
+      "spe_base": 80,
+      "spe_max": 145,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ラグラージ",
+      "types": [
+        "water",
+        "ground"
+      ],
+      "spe_base": 60,
+      "spe_max": 123,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
       "name": "ペリッパー",
       "types": [
         "water",
@@ -1096,6 +1150,17 @@
       "spe_max": 112,
       "cat": "phy_atk",
       "ghost": true
+    },
+    {
+      "name": "クチート",
+      "types": [
+        "steel",
+        "fairy"
+      ],
+      "spe_base": 50,
+      "spe_max": 112,
+      "cat": "phy_atk",
+      "ghost": false
     },
     {
       "name": "ボスゴドラ",
@@ -1233,6 +1298,17 @@
       "ghost": false
     },
     {
+      "name": "メタグロス",
+      "types": [
+        "steel",
+        "psychic"
+      ],
+      "spe_base": 70,
+      "spe_max": 134,
+      "cat": "wall",
+      "ghost": false
+    },
+    {
       "name": "ドダイトス",
       "types": [
         "grass",
@@ -1263,6 +1339,17 @@
       "spe_base": 60,
       "spe_max": 123,
       "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ムクホーク",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "spe_base": 100,
+      "spe_max": 167,
+      "cat": "phy_atk",
       "ghost": false
     },
     {
@@ -1616,6 +1703,16 @@
       "ghost": false
     },
     {
+      "name": "ムシャーナ",
+      "types": [
+        "psychic"
+      ],
+      "spe_base": 29,
+      "spe_max": 89,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
       "name": "ドリュウズ",
       "types": [
         "ground",
@@ -1647,6 +1744,17 @@
       "ghost": false
     },
     {
+      "name": "ペンドラー",
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "spe_base": 112,
+      "spe_max": 180,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
       "name": "エルフーン",
       "types": [
         "grass",
@@ -1666,6 +1774,17 @@
       "spe_base": 92,
       "spe_max": 158,
       "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ズルズキン",
+      "types": [
+        "dark",
+        "fighting"
+      ],
+      "spe_base": 58,
+      "spe_max": 121,
+      "cat": "support",
       "ghost": false
     },
     {
@@ -1726,6 +1845,16 @@
       ],
       "spe_base": 103,
       "spe_max": 170,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "シビルドン",
+      "types": [
+        "electric"
+      ],
+      "spe_base": 50,
+      "spe_max": 112,
       "cat": "phy_atk",
       "ghost": false
     },
@@ -1861,6 +1990,17 @@
       "ghost": false
     },
     {
+      "name": "カエンジシ",
+      "types": [
+        "fire",
+        "normal"
+      ],
+      "spe_base": 106,
+      "spe_max": 173,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
       "name": "フラージェス",
       "types": [
         "fairy"
@@ -1929,6 +2069,39 @@
       "spe_base": 72,
       "spe_max": 136,
       "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "カラマネロ",
+      "types": [
+        "dark",
+        "psychic"
+      ],
+      "spe_base": 73,
+      "spe_max": 137,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ガメノデス",
+      "types": [
+        "rock",
+        "water"
+      ],
+      "spe_base": 68,
+      "spe_max": 132,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ドラミドロ",
+      "types": [
+        "poison",
+        "dragon"
+      ],
+      "spe_base": 44,
+      "spe_max": 105,
+      "cat": "support",
       "ghost": false
     },
     {
@@ -2286,6 +2459,17 @@
       "ghost": false
     },
     {
+      "name": "オーロンゲ",
+      "types": [
+        "dark",
+        "fairy"
+      ],
+      "spe_base": 60,
+      "spe_max": 123,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
       "name": "バリコオル",
       "types": [
         "ice",
@@ -2315,6 +2499,16 @@
       "spe_base": 64,
       "spe_max": 127,
       "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "タイレーツ",
+      "types": [
+        "fighting"
+      ],
+      "spe_base": 75,
+      "spe_max": 139,
+      "cat": "phy_atk",
       "ghost": false
     },
     {
@@ -2391,6 +2585,17 @@
       ],
       "spe_base": 120,
       "spe_max": 189,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ハリーマン",
+      "types": [
+        "dark",
+        "poison"
+      ],
+      "spe_base": 85,
+      "spe_max": 150,
       "cat": "phy_atk",
       "ghost": false
     },
@@ -2533,6 +2738,27 @@
       "ghost": false
     },
     {
+      "name": "ハカドッグ",
+      "types": [
+        "ghost"
+      ],
+      "spe_base": 68,
+      "spe_max": 132,
+      "cat": "phy_atk",
+      "ghost": true
+    },
+    {
+      "name": "コノヨザル",
+      "types": [
+        "fighting",
+        "ghost"
+      ],
+      "spe_base": 90,
+      "spe_max": 156,
+      "cat": "phy_atk",
+      "ghost": true
+    },
+    {
       "name": "リキキリン",
       "types": [
         "normal",
@@ -2553,6 +2779,17 @@
       "spe_max": 112,
       "cat": "wall",
       "ghost": false
+    },
+    {
+      "name": "サーフゴー",
+      "types": [
+        "steel",
+        "ghost"
+      ],
+      "spe_base": 84,
+      "spe_max": 149,
+      "cat": "spe_atk",
+      "ghost": true
     },
     {
       "name": "ヤバソチャ",
@@ -2693,6 +2930,40 @@
         "spa": 135,
         "spd": 80,
         "spe": 121
+      },
+      "ghost": false
+    },
+    {
+      "name": "メガライチュウX",
+      "types": [
+        "electric"
+      ],
+      "spe_base": 110,
+      "spe_max": 178,
+      "stats": {
+        "hp": 60,
+        "atk": 135,
+        "def": 95,
+        "spa": 90,
+        "spd": 95,
+        "spe": 110
+      },
+      "ghost": false
+    },
+    {
+      "name": "メガライチュウY",
+      "types": [
+        "electric"
+      ],
+      "spe_base": 130,
+      "spe_max": 200,
+      "stats": {
+        "hp": 60,
+        "atk": 100,
+        "def": 55,
+        "spa": 160,
+        "spd": 80,
+        "spe": 130
       },
       "ghost": false
     },
@@ -3072,6 +3343,60 @@
       "ghost": false
     },
     {
+      "name": "メガジュカイン",
+      "types": [
+        "grass",
+        "dragon"
+      ],
+      "spe_base": 145,
+      "spe_max": 216,
+      "stats": {
+        "hp": 70,
+        "atk": 110,
+        "def": 75,
+        "spa": 145,
+        "spd": 85,
+        "spe": 145
+      },
+      "ghost": false
+    },
+    {
+      "name": "メガバシャーモ",
+      "types": [
+        "fire",
+        "fighting"
+      ],
+      "spe_base": 100,
+      "spe_max": 167,
+      "stats": {
+        "hp": 80,
+        "atk": 160,
+        "def": 80,
+        "spa": 130,
+        "spd": 80,
+        "spe": 100
+      },
+      "ghost": false
+    },
+    {
+      "name": "メガラグラージ",
+      "types": [
+        "water",
+        "ground"
+      ],
+      "spe_base": 70,
+      "spe_max": 134,
+      "stats": {
+        "hp": 100,
+        "atk": 150,
+        "def": 110,
+        "spa": 95,
+        "spd": 110,
+        "spe": 70
+      },
+      "ghost": false
+    },
+    {
       "name": "メガサーナイト",
       "types": [
         "psychic",
@@ -3106,6 +3431,24 @@
         "spe": 20
       },
       "ghost": true
+    },
+    {
+      "name": "メガクチート",
+      "types": [
+        "steel",
+        "fairy"
+      ],
+      "spe_base": 50,
+      "spe_max": 112,
+      "stats": {
+        "hp": 50,
+        "atk": 105,
+        "def": 125,
+        "spa": 55,
+        "spd": 95,
+        "spe": 50
+      },
+      "ghost": false
     },
     {
       "name": "メガボスゴドラ",
@@ -3283,6 +3626,42 @@
       "ghost": false
     },
     {
+      "name": "メガメタグロス",
+      "types": [
+        "steel",
+        "psychic"
+      ],
+      "spe_base": 110,
+      "spe_max": 178,
+      "stats": {
+        "hp": 80,
+        "atk": 145,
+        "def": 150,
+        "spa": 105,
+        "spd": 110,
+        "spe": 110
+      },
+      "ghost": false
+    },
+    {
+      "name": "メガムクホーク",
+      "types": [
+        "fighting",
+        "flying"
+      ],
+      "spe_base": 110,
+      "spe_max": 178,
+      "stats": {
+        "hp": 85,
+        "atk": 140,
+        "def": 100,
+        "spa": 60,
+        "spd": 90,
+        "spe": 110
+      },
+      "ghost": false
+    },
+    {
       "name": "メガミミロップ",
       "types": [
         "normal",
@@ -3445,6 +3824,59 @@
       "ghost": false
     },
     {
+      "name": "メガペンドラー",
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "spe_base": 62,
+      "spe_max": 125,
+      "stats": {
+        "hp": 60,
+        "atk": 140,
+        "def": 149,
+        "spa": 75,
+        "spd": 99,
+        "spe": 62
+      },
+      "ghost": false
+    },
+    {
+      "name": "メガズルズキン",
+      "types": [
+        "dark",
+        "fighting"
+      ],
+      "spe_base": 68,
+      "spe_max": 132,
+      "stats": {
+        "hp": 65,
+        "atk": 130,
+        "def": 135,
+        "spa": 55,
+        "spd": 135,
+        "spe": 68
+      },
+      "ghost": false
+    },
+    {
+      "name": "メガシビルドン",
+      "types": [
+        "electric"
+      ],
+      "spe_base": 80,
+      "spe_max": 145,
+      "stats": {
+        "hp": 85,
+        "atk": 145,
+        "def": 80,
+        "spa": 135,
+        "spd": 90,
+        "spe": 80
+      },
+      "ghost": false
+    },
+    {
       "name": "メガシャンデラ",
       "types": [
         "ghost",
@@ -3535,6 +3967,24 @@
       "ghost": false
     },
     {
+      "name": "メガカエンジシ",
+      "types": [
+        "fire",
+        "normal"
+      ],
+      "spe_base": 126,
+      "spe_max": 195,
+      "stats": {
+        "hp": 86,
+        "atk": 88,
+        "def": 92,
+        "spa": 129,
+        "spd": 86,
+        "spe": 126
+      },
+      "ghost": false
+    },
+    {
       "name": "メガフラエッテ",
       "types": [
         "fairy"
@@ -3582,6 +4032,60 @@
         "spa": 143,
         "spd": 101,
         "spe": 124
+      },
+      "ghost": false
+    },
+    {
+      "name": "メガカラマネロ",
+      "types": [
+        "dark",
+        "psychic"
+      ],
+      "spe_base": 88,
+      "spe_max": 154,
+      "stats": {
+        "hp": 86,
+        "atk": 102,
+        "def": 88,
+        "spa": 98,
+        "spd": 120,
+        "spe": 88
+      },
+      "ghost": false
+    },
+    {
+      "name": "メガガメノデス",
+      "types": [
+        "rock",
+        "fighting"
+      ],
+      "spe_base": 88,
+      "spe_max": 154,
+      "stats": {
+        "hp": 72,
+        "atk": 140,
+        "def": 130,
+        "spa": 64,
+        "spd": 106,
+        "spe": 88
+      },
+      "ghost": false
+    },
+    {
+      "name": "メガドラミドロ",
+      "types": [
+        "poison",
+        "dragon"
+      ],
+      "spe_base": 44,
+      "spe_max": 105,
+      "stats": {
+        "hp": 65,
+        "atk": 85,
+        "def": 105,
+        "spa": 132,
+        "spd": 163,
+        "spe": 44
       },
       "ghost": false
     },
@@ -3636,6 +4140,23 @@
         "spa": 160,
         "spd": 116,
         "spe": 36
+      },
+      "ghost": false
+    },
+    {
+      "name": "メガタイレーツ",
+      "types": [
+        "fighting"
+      ],
+      "spe_base": 100,
+      "spe_max": 167,
+      "stats": {
+        "hp": 65,
+        "atk": 135,
+        "def": 135,
+        "spa": 70,
+        "spd": 65,
+        "spe": 100
       },
       "ghost": false
     },
