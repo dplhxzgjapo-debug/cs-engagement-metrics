@@ -260,11 +260,11 @@ const TEAMS={
 tenkai:{name:"展開構築",sub:"メガリザードンX軸",
 members:[
   {name:"リザードン",types:["fire","dragon"],item:"リザードナイトX",moves:["フレアドライブ","ドラゴンクロー","りゅうのまい","ニトロチャージ"],nature:"ようき",ev:"A252 S252 H4",speed:167,role:"メガX 竜舞エース"},
-  {name:"カバルドン",types:["ground"],item:"オボンのみ",moves:["じしん","ステルスロック","あくび","ふきとばし"],nature:"わんぱく",ev:"H252 B160 D96",speed:47,role:"ステロ+あくび起点"},
-  {name:"ウルガモス",types:["bug","fire"],item:"ラムのみ",moves:["ちょうのまい","ほのおのまい","むしのさざめき","ギガドレイン"],nature:"ひかえめ",ev:"C252 S252 H4",speed:167,role:"蝶舞 特殊エース"},
+  {name:"カバルドン",types:["ground"],item:"オボンのみ",moves:["じしん","ステルスロック","あくび","ふきとばし"],nature:"わんぱく",ev:"H252 B160 D96",speed:67,role:"ステロ+あくび起点"},
+  {name:"ウルガモス",types:["bug","fire"],item:"ラムのみ",moves:["ちょうのまい","ほのおのまい","むしのさざめき","ギガドレイン"],nature:"ひかえめ",ev:"C252 S252 H4",speed:152,role:"蝶舞 特殊エース"},
   {name:"ミミッキュ",types:["ghost","fairy"],item:"きあいのタスキ",moves:["つるぎのまい","じゃれつく","かげうち","シャドークロー"],nature:"ようき",ev:"A252 S252 H4",speed:162,role:"ストッパー / 第3エース"},
   {name:"ガブリアス",types:["dragon","ground"],item:"こだわりスカーフ",moves:["じしん","げきりん","がんせきふうじ","どくづき"],nature:"ようき",ev:"A252 S252 H4",speed:169,role:"スカーフストッパー"},
-  {name:"ドドゲザン",types:["dark","steel"],item:"たべのこし",moves:["つるぎのまい","アイアンヘッド","ふいうち","はたきおとす"],nature:"いじっぱり",ev:"H252 A252 D4",speed:112,role:"積み+先制エース"}
+  {name:"ドドゲザン",types:["dark","steel"],item:"たべのこし",moves:["つるぎのまい","アイアンヘッド","ふいうち","はたきおとす"],nature:"いじっぱり",ev:"H252 A252 D4",speed:70,role:"積み+先制エース"}
 ],patterns:[
   {id:1,name:"① 基本展開",lead:"カバルドン",members:["カバルドン","リザードン","ウルガモス"],desc:"カバステロ+あくび→催眠中にリザX竜舞→全抜き",shortWhen:"バランス型/受けがいる"},
   {id:2,name:"② 対物理",lead:"カバルドン",members:["カバルドン","ウルガモス","ミミッキュ"],desc:"カバ起点→ウルガ蝶舞で物理受け貫通。ミミッキュストッパー",shortWhen:"物理中心の相手"},
@@ -277,8 +277,8 @@ members:[
   {name:"ガブリアス",types:["dragon","ground"],item:"きあいのタスキ",moves:["じしん","げきりん","がんせきふうじ","どくづき"],nature:"ようき",ev:"A252 S252 H4",speed:169,role:"タスキ対面"},
   {name:"マスカーニャ",types:["grass","dark"],item:"こだわりスカーフ",moves:["トリックフラワー","はたきおとす","ふいうち","とんぼがえり"],nature:"ようき",ev:"A252 S252 H4",speed:192,role:"スカーフS288制圧"},
   {name:"ミミッキュ",types:["ghost","fairy"],item:"オボンのみ",moves:["じゃれつく","かげうち","シャドークロー","のろい"],nature:"ようき",ev:"A252 S252 H4",speed:162,role:"ばけのかわストッパー"},
-  {name:"イダイトウ♂",types:["water","ghost"],item:"ラムのみ",moves:["ウェーブタックル","おはかまいり","アクアジェット","サイコファング"],nature:"いじっぱり",ev:"A252 S252 H4",speed:143,role:"てきおうりょく+先制"},
-  {name:"ドドゲザン",types:["dark","steel"],item:"たべのこし",moves:["ふいうち","アイアンヘッド","はたきおとす","つるぎのまい"],nature:"いじっぱり",ev:"H252 A252 D4",speed:112,role:"そうだいしょう+ふいうち"}
+  {name:"イダイトウ♂",types:["water","ghost"],item:"ラムのみ",moves:["ウェーブタックル","おはかまいり","アクアジェット","サイコファング"],nature:"いじっぱり",ev:"A252 S252 H4",speed:130,role:"てきおうりょく+先制"},
+  {name:"ドドゲザン",types:["dark","steel"],item:"たべのこし",moves:["ふいうち","アイアンヘッド","はたきおとす","つるぎのまい"],nature:"いじっぱり",ev:"H252 A252 D4",speed:70,role:"そうだいしょう+ふいうち"}
 ],patterns:[
   {id:1,name:"① 基本対面",lead:"ミミロップ",members:["ミミロップ","ガブリアス","ミミッキュ"],desc:"猫+格闘で1体処理→タスキガブ→ミミッキュストッパー",shortWhen:"万能/迷ったらコレ"},
   {id:2,name:"② 対ゴースト",lead:"ミミロップ",members:["ミミロップ","ドドゲザン","マスカーニャ"],desc:"きもったまでゴースト貫通+悪打点で処理",shortWhen:"ゴースト多い"},
@@ -288,11 +288,11 @@ members:[
 cycle:{name:"サイクル構築",sub:"メガゲンガー軸",
 members:[
   {name:"メガゲンガー",types:["ghost","poison"],item:"ゲンガナイト",moves:["おにび","たたりめ","シャドーボール","みちづれ"],nature:"おくびょう",ev:"C252 S252 H4",speed:200,role:"かげふみ受け崩し"},
-  {name:"アーマーガア",types:["steel","flying"],item:"たべのこし",moves:["ボディプレス","てっぺき","はねやすめ","とんぼがえり"],nature:"わんぱく",ev:"H252 B252 D4",speed:130,role:"物理受け+とんぼ"},
-  {name:"アシレーヌ",types:["water","fairy"],item:"オボンのみ",moves:["うたかたのアリア","ムーンフォース","クイックターン","アンコール"],nature:"ひかえめ",ev:"H252 B252 C4",speed:123,role:"竜悪受け+クイタン"},
+  {name:"アーマーガア",types:["steel","flying"],item:"たべのこし",moves:["ボディプレス","てっぺき","はねやすめ","とんぼがえり"],nature:"わんぱく",ev:"H252 B252 D4",speed:87,role:"物理受け+とんぼ"},
+  {name:"アシレーヌ",types:["water","fairy"],item:"オボンのみ",moves:["うたかたのアリア","ムーンフォース","クイックターン","アンコール"],nature:"ひかえめ",ev:"H252 B252 C4",speed:80,role:"竜悪受け+クイタン"},
   {name:"ウォッシュロトム",types:["electric","water"],item:"ラムのみ",moves:["ボルトチェンジ","ハイドロポンプ","おにび","トリック"],nature:"ひかえめ",ev:"H252 C252 S4",speed:138,role:"ボルチェン+鬼火"},
   {name:"ガブリアス",types:["dragon","ground"],item:"こだわりスカーフ",moves:["じしん","げきりん","がんせきふうじ","どくづき"],nature:"ようき",ev:"A252 S252 H4",speed:169,role:"スカーフストッパー"},
-  {name:"ブリジュラス",types:["steel","dragon"],item:"きあいのタスキ",moves:["ラスターカノン","りゅうせいぐん","ステルスロック","でんじは"],nature:"ひかえめ",ev:"C252 S252 H4",speed:150,role:"ステロ+でんじは撒き"}
+  {name:"ブリジュラス",types:["steel","dragon"],item:"きあいのタスキ",moves:["ラスターカノン","りゅうせいぐん","ステルスロック","でんじは"],nature:"ひかえめ",ev:"C252 S252 H4",speed:137,role:"ステロ+でんじは撒き"}
 ],patterns:[
   {id:1,name:"① 基本サイクル",lead:"アーマーガア",members:["アーマーガア","アシレーヌ","メガゲンガー"],desc:"ガアとんぼ→アシレクイタン→ゲンガーかげふみで受け処理",shortWhen:"受けポケがいる"},
   {id:2,name:"② ピボット回し",lead:"ウォッシュロトム",members:["ウォッシュロトム","アーマーガア","アシレーヌ"],desc:"ボルチェン→とんぼ→クイタン3枚ピボットで有利対面維持",shortWhen:"サイクル勝ち狙い"},
