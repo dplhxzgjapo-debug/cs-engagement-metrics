@@ -21,6 +21,38 @@ def fetch(url):
     with urllib.request.urlopen(req, timeout=30) as res:
         return res.read().decode("euc-jp", errors="replace")
 
+def fetch_utf8(url):
+    req = urllib.request.Request(url, headers=HEADERS)
+    with urllib.request.urlopen(req, timeout=30) as res:
+        return res.read().decode("utf-8", errors="replace")
+
+def parse_pokedb_rankings(html):
+    """champs.pokedb.tokyo の使用率テーブルを抽出。
+    多様な構造に耐えるよう、各 <tr> から rank/name/usage を緩く拾う。"""
+    rankings = []
+    # 各行を取り出してパース
+    rows = re.findall(r'<tr[^>]*>(.*?)</tr>', html, re.DOTALL)
+    for row in rows:
+        # rank: <td> の最初の整数
+        rm = re.search(r'<t[hd][^>]*>\s*(\d{1,3})\s*</t[hd]>', row)
+        # name: pokemon 詳細ページへのリンクテキスト
+        nm = re.search(r'/pokemon/show/[^"\']+["\'][^>]*>\s*([^<>]+?)\s*</a>', row)
+        # usage: X.X% パターン
+        um = re.search(r'(\d+\.\d+)\s*%', row)
+        if not (rm and nm): continue
+        rank = int(rm.group(1))
+        name = nm.group(1).strip()
+        usage = float(um.group(1)) if um else None
+        if 1 <= rank <= 200 and name:
+            rankings.append({"rank": rank, "name": name, "usage_rate": usage})
+    # dedup by rank (preserve first)
+    seen, out = set(), []
+    for r in rankings:
+        if r['rank'] in seen: continue
+        seen.add(r['rank'])
+        out.append(r)
+    return sorted(out, key=lambda x: x['rank'])
+
 def parse_rankings(text):
     matches = re.findall(r'(\d+)\u4f4d: ([^<"]+)', text)
     seen, out = set(), []
@@ -127,17 +159,38 @@ def main():
     all_pokemon, all_megas = parse_pokedex(pokedex_text)
     print(f"Found {len(all_pokemon)} available (excl. megas) + {len(all_megas)} megas")
 
+    # champs.pokedb.tokyo から M-3 シングル使用率を追加取得 (TOP100まで)
+    print("Fetching pokedb rankings...")
+    rankings_pokedb_singles = []
+    rankings_pokedb_doubles = []
+    try:
+        html = fetch_utf8("https://champs.pokedb.tokyo/pokemon/list?season=3&rule=0")
+        rankings_pokedb_singles = parse_pokedb_rankings(html)
+        print(f"pokedb singles: {len(rankings_pokedb_singles)} entries")
+        if rankings_pokedb_singles:
+            print(f"  sample TOP5: {[(r['rank'], r['name']) for r in rankings_pokedb_singles[:5]]}")
+    except Exception as e:
+        print(f"pokedb singles fetch failed: {e}")
+    try:
+        html = fetch_utf8("https://champs.pokedb.tokyo/pokemon/list?season=3&rule=1")
+        rankings_pokedb_doubles = parse_pokedb_rankings(html)
+        print(f"pokedb doubles: {len(rankings_pokedb_doubles)} entries")
+    except Exception as e:
+        print(f"pokedb doubles fetch failed: {e}")
+
     output = {
         "updated_at": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "source": "yakkun.com",
+        "source": "yakkun.com + champs.pokedb.tokyo",
         "format": "singles",
         "pokemon": details,
         "all_pokemon": all_pokemon,
-        "all_megas": all_megas
+        "all_megas": all_megas,
+        "rankings_pokedb_singles": rankings_pokedb_singles,
+        "rankings_pokedb_doubles": rankings_pokedb_doubles
     }
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
-    print(f"Done: {len(details)} ranked + {len(all_pokemon)} non-mega + {len(all_megas)} megas")
+    print(f"Done: yakkun {len(details)} ranked + {len(all_pokemon)} non-mega + {len(all_megas)} megas / pokedb singles {len(rankings_pokedb_singles)} / doubles {len(rankings_pokedb_doubles)}")
 
 if __name__ == "__main__":
     main()
