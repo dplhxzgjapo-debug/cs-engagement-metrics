@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# scraper trigger 2026-06-23T00:30
+# scraper debug 03:37
 """Scrape yakkun.com Pokemon Champions singles ranking + full Pokedex, output data.json"""
 import re, json, urllib.request, datetime, math
 
@@ -163,14 +163,31 @@ def main():
     print("Fetching pokedb rankings...")
     rankings_pokedb_singles = []
     rankings_pokedb_doubles = []
+    pokedb_debug = {}
     try:
         html = fetch_utf8("https://champs.pokedb.tokyo/pokemon/list?season=3&rule=0")
         rankings_pokedb_singles = parse_pokedb_rankings(html)
-        print(f"pokedb singles: {len(rankings_pokedb_singles)} entries")
-        if rankings_pokedb_singles:
-            print(f"  sample TOP5: {[(r['rank'], r['name']) for r in rankings_pokedb_singles[:5]]}")
+        # デバッグ情報: HTML長と構造ヒント
+        pokedb_debug["singles_html_len"] = len(html)
+        pokedb_debug["has_tr"] = html.count("<tr")
+        pokedb_debug["has_pokemon_show_link"] = html.count("/pokemon/show/")
+        pokedb_debug["has_table"] = html.count("<table")
+        pokedb_debug["has_react_root"] = ("__NEXT_DATA__" in html) or ("react-root" in html) or ('id="__next"' in html)
+        # 一致候補を見るためにサンプル切り出し
+        for pat,label in [(r'data-pokemon[^=]*="[^"]+', 'data-pokemon attr'),
+                          (r'class="[^"]*rank[^"]*"', 'class rank'),
+                          (r'href="/pokemon/show/[^"]+', '/pokemon/show/ links'),
+                          (r'__NEXT_DATA__|__INITIAL', 'next data')]:
+            ms = re.findall(pat, html)
+            pokedb_debug[f'sample_{label}'] = ms[:3]
+        # 最初の3000文字を別ファイルに保存 (デバッグ用)
+        with open("/tmp/pokedb_singles.html","w",encoding="utf-8") as f:
+            f.write(html[:50000])
+        print(f"pokedb singles: {len(rankings_pokedb_singles)} entries, html_len={len(html)}")
+        print(f"  debug: {pokedb_debug}")
     except Exception as e:
         print(f"pokedb singles fetch failed: {e}")
+        pokedb_debug["error"] = str(e)
     try:
         html = fetch_utf8("https://champs.pokedb.tokyo/pokemon/list?season=3&rule=1")
         rankings_pokedb_doubles = parse_pokedb_rankings(html)
@@ -186,7 +203,8 @@ def main():
         "all_pokemon": all_pokemon,
         "all_megas": all_megas,
         "rankings_pokedb_singles": rankings_pokedb_singles,
-        "rankings_pokedb_doubles": rankings_pokedb_doubles
+        "rankings_pokedb_doubles": rankings_pokedb_doubles,
+        "pokedb_debug": pokedb_debug
     }
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
