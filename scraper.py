@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# M-3 環境対応のため再取得トリガー (2026-06-18)
+# scraper trigger 2026-06-23T00:30
 """Scrape yakkun.com Pokemon Champions singles ranking + full Pokedex, output data.json"""
 import re, json, urllib.request, datetime, math
 
