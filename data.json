@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-23T00:30:45Z",
-  "source": "yakkun.com",
+  "updated_at": "2026-06-23T03:34:40Z",
+  "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
     {
@@ -4239,5 +4239,7 @@
       },
       "ghost": false
     }
-  ]
+  ],
+  "rankings_pokedb_singles": [],
+  "rankings_pokedb_doubles": []
 }
