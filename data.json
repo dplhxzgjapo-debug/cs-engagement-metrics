@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23T03:34:40Z",
+  "updated_at": "2026-06-23T03:37:51Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
@@ -4241,5 +4241,24 @@
     }
   ],
   "rankings_pokedb_singles": [],
-  "rankings_pokedb_doubles": []
+  "rankings_pokedb_doubles": [],
+  "pokedb_debug": {
+    "singles_html_len": 260902,
+    "has_tr": 0,
+    "has_pokemon_show_link": 235,
+    "has_table": 0,
+    "has_react_root": false,
+    "sample_data-pokemon attr": [],
+    "sample_class rank": [
+      "class=\"navbar-item is-navbar-ranking\"",
+      "class=\"fa-solid fa-ranking-star\"",
+      "class=\"fa-solid fa-ranking-star\""
+    ],
+    "sample_/pokemon/show/ links": [
+      "href=\"/pokemon/show/0445-00?season=3&rule=0",
+      "href=\"/pokemon/show/1018-00?season=3&rule=0",
+      "href=\"/pokemon/show/0778-00?season=3&rule=0"
+    ],
+    "sample_next data": []
+  }
 }
