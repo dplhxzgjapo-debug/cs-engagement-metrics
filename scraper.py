@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# scraper debug2 03:39
+# pokedb parser v3 03:41
 """Scrape yakkun.com Pokemon Champions singles ranking + full Pokedex, output data.json"""
 import re, json, urllib.request, datetime, math
 
@@ -27,24 +27,25 @@ def fetch_utf8(url):
         return res.read().decode("utf-8", errors="replace")
 
 def parse_pokedb_rankings(html):
-    """champs.pokedb.tokyo の使用率テーブルを抽出。
-    多様な構造に耐えるよう、各 <tr> から rank/name/usage を緩く拾う。"""
+    """champs.pokedb.tokyo の使用率リスト (data-pokemon-item div 構造) を抽出。"""
     rankings = []
-    # 各行を取り出してパース
-    rows = re.findall(r'<tr[^>]*>(.*?)</tr>', html, re.DOTALL)
-    for row in rows:
-        # rank: <td> の最初の整数
-        rm = re.search(r'<t[hd][^>]*>\s*(\d{1,3})\s*</t[hd]>', row)
-        # name: pokemon 詳細ページへのリンクテキスト
-        nm = re.search(r'/pokemon/show/[^"\']+["\'][^>]*>\s*([^<>]+?)\s*</a>', row)
-        # usage: X.X% パターン
-        um = re.search(r'(\d+\.\d+)\s*%', row)
+    # 各 list-pokemon ブロックを取得: <a href="/pokemon/show/XXX..." ... </a>
+    # 各ブロックに pokemon-rank と pokemon-name がある
+    blocks = re.findall(
+        r'<a\s+href="(/pokemon/show/[^"]+)"\s+class="list-pokemon[^"]*"[^>]*>(.*?)</a>',
+        html, re.DOTALL
+    )
+    for href, content in blocks:
+        rm = re.search(r'class="pokemon-rank[^"]*"[^>]*>\s*(\d{1,3})\s*</div>', content)
+        nm = re.search(r'class="pokemon-name"[^>]*>\s*([^<>]+?)\s*</div>', content)
+        # form id (例: 0445-00) もキャプチャ
+        form_m = re.search(r'/pokemon/show/(\d+)-(\d+)', href)
         if not (rm and nm): continue
         rank = int(rm.group(1))
         name = nm.group(1).strip()
-        usage = float(um.group(1)) if um else None
-        if 1 <= rank <= 200 and name:
-            rankings.append({"rank": rank, "name": name, "usage_rate": usage})
+        dex_id = f"{form_m.group(1)}-{form_m.group(2)}" if form_m else None
+        if 1 <= rank <= 300 and name:
+            rankings.append({"rank": rank, "name": name, "dex_id": dex_id})
     # dedup by rank (preserve first)
     seen, out = set(), []
     for r in rankings:
