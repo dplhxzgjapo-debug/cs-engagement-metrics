@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# scraper debug 03:37
+# scraper debug2 03:39
 """Scrape yakkun.com Pokemon Champions singles ranking + full Pokedex, output data.json"""
 import re, json, urllib.request, datetime, math
 
@@ -173,16 +173,11 @@ def main():
         pokedb_debug["has_pokemon_show_link"] = html.count("/pokemon/show/")
         pokedb_debug["has_table"] = html.count("<table")
         pokedb_debug["has_react_root"] = ("__NEXT_DATA__" in html) or ("react-root" in html) or ('id="__next"' in html)
-        # 一致候補を見るためにサンプル切り出し
-        for pat,label in [(r'data-pokemon[^=]*="[^"]+', 'data-pokemon attr'),
-                          (r'class="[^"]*rank[^"]*"', 'class rank'),
-                          (r'href="/pokemon/show/[^"]+', '/pokemon/show/ links'),
-                          (r'__NEXT_DATA__|__INITIAL', 'next data')]:
-            ms = re.findall(pat, html)
-            pokedb_debug[f'sample_{label}'] = ms[:3]
-        # 最初の3000文字を別ファイルに保存 (デバッグ用)
-        with open("/tmp/pokedb_singles.html","w",encoding="utf-8") as f:
-            f.write(html[:50000])
+        # 最初の /pokemon/show/ リンクの前後 2000 文字を切り出し
+        idx = html.find('href="/pokemon/show/')
+        if idx > 0:
+            pokedb_debug["context_before_first_link"] = html[max(0,idx-1500):idx]
+            pokedb_debug["context_after_first_link"] = html[idx:idx+1500]
         print(f"pokedb singles: {len(rankings_pokedb_singles)} entries, html_len={len(html)}")
         print(f"  debug: {pokedb_debug}")
     except Exception as e:
