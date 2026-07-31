@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-30T08:34:41Z",
+  "updated_at": "2026-07-31T08:55:48Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
@@ -57,30 +57,6 @@
     },
     {
       "rank": 3,
-      "name": "カバルドン",
-      "types": [
-        "ground"
-      ],
-      "stats": {
-        "hp": 108,
-        "atk": 112,
-        "def": 118,
-        "spa": 68,
-        "spd": 72,
-        "spe": 47
-      },
-      "abilities": [
-        "すなおこし",
-        "すなのちから",
-        "すなおこし"
-      ],
-      "moves_mentioned": [
-        "あくび",
-        "ステルスロック"
-      ]
-    },
-    {
-      "rank": 4,
       "name": "マスカーニャ",
       "types": [
         "grass",
@@ -107,30 +83,31 @@
       ]
     },
     {
-      "rank": 5,
-      "name": "メガメタグロス",
+      "rank": 4,
+      "name": "カバルドン",
       "types": [
-        "steel",
-        "psychic"
+        "ground"
       ],
       "stats": {
-        "hp": 80,
-        "atk": 145,
-        "def": 150,
-        "spa": 105,
-        "spd": 110,
-        "spe": 110
+        "hp": 108,
+        "atk": 112,
+        "def": 118,
+        "spa": 68,
+        "spd": 72,
+        "spe": 47
       },
       "abilities": [
-        "かたいツメ",
-        "かたいツメ"
+        "すなおこし",
+        "すなのちから",
+        "すなおこし"
       ],
       "moves_mentioned": [
-        "バレットパンチ"
+        "あくび",
+        "ステルスロック"
       ]
     },
     {
-      "rank": 6,
+      "rank": 5,
       "name": "ブリジュラス",
       "types": [
         "steel",
@@ -157,7 +134,7 @@
       ]
     },
     {
-      "rank": 7,
+      "rank": 6,
       "name": "アシレーヌ",
       "types": [
         "water",
@@ -180,6 +157,29 @@
         "アクアジェット",
         "めいそう",
         "アンコール"
+      ]
+    },
+    {
+      "rank": 7,
+      "name": "メガメタグロス",
+      "types": [
+        "steel",
+        "psychic"
+      ],
+      "stats": {
+        "hp": 80,
+        "atk": 145,
+        "def": 150,
+        "spa": 105,
+        "spd": 110,
+        "spe": 110
+      },
+      "abilities": [
+        "かたいツメ",
+        "かたいツメ"
+      ],
+      "moves_mentioned": [
+        "バレットパンチ"
       ]
     },
     {
@@ -207,29 +207,6 @@
     },
     {
       "rank": 9,
-      "name": "メガマフォクシー",
-      "types": [
-        "fire",
-        "psychic"
-      ],
-      "stats": {
-        "hp": 75,
-        "atk": 69,
-        "def": 72,
-        "spa": 159,
-        "spd": 125,
-        "spe": 134
-      },
-      "abilities": [
-        "ふゆう",
-        "ふゆう"
-      ],
-      "moves_mentioned": [
-        "わるだくみ"
-      ]
-    },
-    {
-      "rank": 10,
       "name": "メガカイリュー",
       "types": [
         "dragon",
@@ -249,6 +226,29 @@
       "moves_mentioned": [
         "りゅうせいぐん",
         "しんそく"
+      ]
+    },
+    {
+      "rank": 10,
+      "name": "メガマフォクシー",
+      "types": [
+        "fire",
+        "psychic"
+      ],
+      "stats": {
+        "hp": 75,
+        "atk": 69,
+        "def": 72,
+        "spa": 159,
+        "spd": 125,
+        "spe": 134
+      },
+      "abilities": [
+        "ふゆう",
+        "ふゆう"
+      ],
+      "moves_mentioned": [
+        "わるだくみ"
       ]
     },
     {
@@ -304,6 +304,28 @@
     },
     {
       "rank": 13,
+      "name": "メガゲッコウガ",
+      "types": [
+        "water",
+        "dark"
+      ],
+      "stats": {
+        "hp": 72,
+        "atk": 125,
+        "def": 77,
+        "spa": 133,
+        "spd": 81,
+        "spe": 142
+      },
+      "abilities": [
+        "へんげんじざい",
+        "へんげんじざい",
+        "へんげんじざい"
+      ],
+      "moves_mentioned": []
+    },
+    {
+      "rank": 14,
       "name": "サザンドラ",
       "types": [
         "dark",
@@ -325,28 +347,6 @@
         "りゅうせいぐん",
         "とんぼがえり"
       ]
-    },
-    {
-      "rank": 14,
-      "name": "メガゲッコウガ",
-      "types": [
-        "water",
-        "dark"
-      ],
-      "stats": {
-        "hp": 72,
-        "atk": 125,
-        "def": 77,
-        "spa": 133,
-        "spd": 81,
-        "spe": 142
-      },
-      "abilities": [
-        "へんげんじざい",
-        "へんげんじざい",
-        "へんげんじざい"
-      ],
-      "moves_mentioned": []
     },
     {
       "rank": 15,
@@ -402,63 +402,29 @@
     },
     {
       "rank": 17,
-      "name": "ウォッシュロトム",
+      "name": "ギルガルド",
       "types": [
-        "electric",
-        "water"
+        "steel",
+        "ghost"
       ],
       "stats": {
-        "hp": 50,
-        "atk": 65,
-        "def": 107,
-        "spa": 105,
-        "spd": 107,
-        "spe": 86
+        "hp": 60,
+        "atk": 50,
+        "def": 140,
+        "spa": 50,
+        "spd": 140,
+        "spe": 60
       },
       "abilities": [
-        "ふゆう",
-        "ふゆう"
+        "バトルスイッチ",
+        "バトルスイッチ"
       ],
       "moves_mentioned": [
-        "おにび",
-        "ボルトチェンジ"
+        "キングシールド"
       ]
     },
     {
       "rank": 18,
-      "name": "キュウコン(アローラ)",
-      "types": [],
-      "stats": {},
-      "abilities": [],
-      "moves_mentioned": []
-    },
-    {
-      "rank": 19,
-      "name": "メガゲンガー",
-      "types": [
-        "ghost",
-        "poison"
-      ],
-      "stats": {
-        "hp": 60,
-        "atk": 65,
-        "def": 80,
-        "spa": 170,
-        "spd": 95,
-        "spe": 130
-      },
-      "abilities": [
-        "かげふみ",
-        "かげふみ"
-      ],
-      "moves_mentioned": [
-        "みちづれ",
-        "おにび",
-        "たたりめ"
-      ]
-    },
-    {
-      "rank": 20,
       "name": "イダイトウ♂",
       "types": [
         "water",
@@ -485,27 +451,61 @@
       ]
     },
     {
-      "rank": 21,
-      "name": "ギルガルド",
+      "rank": 19,
+      "name": "ウォッシュロトム",
       "types": [
-        "steel",
-        "ghost"
+        "electric",
+        "water"
+      ],
+      "stats": {
+        "hp": 50,
+        "atk": 65,
+        "def": 107,
+        "spa": 105,
+        "spd": 107,
+        "spe": 86
+      },
+      "abilities": [
+        "ふゆう",
+        "ふゆう"
+      ],
+      "moves_mentioned": [
+        "おにび",
+        "ボルトチェンジ"
+      ]
+    },
+    {
+      "rank": 20,
+      "name": "メガゲンガー",
+      "types": [
+        "ghost",
+        "poison"
       ],
       "stats": {
         "hp": 60,
-        "atk": 50,
-        "def": 140,
-        "spa": 50,
-        "spd": 140,
-        "spe": 60
+        "atk": 65,
+        "def": 80,
+        "spa": 170,
+        "spd": 95,
+        "spe": 130
       },
       "abilities": [
-        "バトルスイッチ",
-        "バトルスイッチ"
+        "かげふみ",
+        "かげふみ"
       ],
       "moves_mentioned": [
-        "キングシールド"
+        "みちづれ",
+        "おにび",
+        "たたりめ"
       ]
+    },
+    {
+      "rank": 21,
+      "name": "キュウコン(アローラ)",
+      "types": [],
+      "stats": {},
+      "abilities": [],
+      "moves_mentioned": []
     },
     {
       "rank": 22,
@@ -582,7 +582,7 @@
       "moves_mentioned": []
     },
     {
-      "rank": 50,
+      "rank": 53,
       "name": "メガフラエッテ",
       "types": [
         "fairy"
