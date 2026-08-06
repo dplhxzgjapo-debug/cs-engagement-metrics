@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-05T08:42:28Z",
+  "updated_at": "2026-08-06T08:44:13Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
@@ -452,30 +452,6 @@
     },
     {
       "rank": 19,
-      "name": "ウォッシュロトム",
-      "types": [
-        "electric",
-        "water"
-      ],
-      "stats": {
-        "hp": 50,
-        "atk": 65,
-        "def": 107,
-        "spa": 105,
-        "spd": 107,
-        "spe": 86
-      },
-      "abilities": [
-        "ふゆう",
-        "ふゆう"
-      ],
-      "moves_mentioned": [
-        "おにび",
-        "ボルトチェンジ"
-      ]
-    },
-    {
-      "rank": 20,
       "name": "メガゲンガー",
       "types": [
         "ghost",
@@ -500,15 +476,31 @@
       ]
     },
     {
-      "rank": 21,
-      "name": "キュウコン(アローラ)",
-      "types": [],
-      "stats": {},
-      "abilities": [],
-      "moves_mentioned": []
+      "rank": 20,
+      "name": "ウォッシュロトム",
+      "types": [
+        "electric",
+        "water"
+      ],
+      "stats": {
+        "hp": 50,
+        "atk": 65,
+        "def": 107,
+        "spa": 105,
+        "spd": 107,
+        "spe": 86
+      },
+      "abilities": [
+        "ふゆう",
+        "ふゆう"
+      ],
+      "moves_mentioned": [
+        "おにび",
+        "ボルトチェンジ"
+      ]
     },
     {
-      "rank": 22,
+      "rank": 21,
       "name": "メガライチュウY",
       "types": [
         "electric"
@@ -528,6 +520,14 @@
       "moves_mentioned": [
         "でんじほう"
       ]
+    },
+    {
+      "rank": 22,
+      "name": "キュウコン(アローラ)",
+      "types": [],
+      "stats": {},
+      "abilities": [],
+      "moves_mentioned": []
     },
     {
       "rank": 23,
@@ -575,11 +575,28 @@
     },
     {
       "rank": 25,
-      "name": "ダイケンキ(ヒスイ)",
-      "types": [],
-      "stats": {},
-      "abilities": [],
-      "moves_mentioned": []
+      "name": "メガムクホーク",
+      "types": [
+        "fighting",
+        "flying"
+      ],
+      "stats": {
+        "hp": 85,
+        "atk": 140,
+        "def": 100,
+        "spa": 60,
+        "spd": 90,
+        "spe": 110
+      },
+      "abilities": [
+        "あまのじゃく",
+        "あまのじゃく"
+      ],
+      "moves_mentioned": [
+        "インファイト",
+        "はねやすめ",
+        "とんぼがえり"
+      ]
     },
     {
       "rank": 53,
