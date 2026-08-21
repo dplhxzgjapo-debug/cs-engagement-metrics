@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-20T06:53:03Z",
+  "updated_at": "2026-08-21T06:54:10Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
@@ -184,6 +184,29 @@
     },
     {
       "rank": 8,
+      "name": "メガマフォクシー",
+      "types": [
+        "fire",
+        "psychic"
+      ],
+      "stats": {
+        "hp": 75,
+        "atk": 69,
+        "def": 72,
+        "spa": 159,
+        "spd": 125,
+        "spe": 134
+      },
+      "abilities": [
+        "ふゆう",
+        "ふゆう"
+      ],
+      "moves_mentioned": [
+        "わるだくみ"
+      ]
+    },
+    {
+      "rank": 9,
       "name": "メガカイリュー",
       "types": [
         "dragon",
@@ -206,7 +229,7 @@
       ]
     },
     {
-      "rank": 9,
+      "rank": 10,
       "name": "メガメタグロス",
       "types": [
         "steel",
@@ -226,29 +249,6 @@
       ],
       "moves_mentioned": [
         "バレットパンチ"
-      ]
-    },
-    {
-      "rank": 10,
-      "name": "メガマフォクシー",
-      "types": [
-        "fire",
-        "psychic"
-      ],
-      "stats": {
-        "hp": 75,
-        "atk": 69,
-        "def": 72,
-        "spa": 159,
-        "spd": 125,
-        "spe": 134
-      },
-      "abilities": [
-        "ふゆう",
-        "ふゆう"
-      ],
-      "moves_mentioned": [
-        "わるだくみ"
       ]
     },
     {
@@ -278,30 +278,6 @@
     },
     {
       "rank": 12,
-      "name": "メガハッサム",
-      "types": [
-        "bug",
-        "steel"
-      ],
-      "stats": {
-        "hp": 70,
-        "atk": 150,
-        "def": 140,
-        "spa": 65,
-        "spd": 100,
-        "spe": 75
-      },
-      "abilities": [
-        "テクニシャン",
-        "テクニシャン"
-      ],
-      "moves_mentioned": [
-        "バレットパンチ",
-        "つるぎのまい"
-      ]
-    },
-    {
-      "rank": 13,
       "name": "アーマーガア",
       "types": [
         "flying",
@@ -325,6 +301,30 @@
         "ボディプレス",
         "はねやすめ",
         "とんぼがえり"
+      ]
+    },
+    {
+      "rank": 13,
+      "name": "メガハッサム",
+      "types": [
+        "bug",
+        "steel"
+      ],
+      "stats": {
+        "hp": 70,
+        "atk": 150,
+        "def": 140,
+        "spa": 65,
+        "spd": 100,
+        "spe": 75
+      },
+      "abilities": [
+        "テクニシャン",
+        "テクニシャン"
+      ],
+      "moves_mentioned": [
+        "バレットパンチ",
+        "つるぎのまい"
       ]
     },
     {
@@ -356,6 +356,52 @@
     },
     {
       "rank": 15,
+      "name": "サザンドラ",
+      "types": [
+        "dark",
+        "dragon"
+      ],
+      "stats": {
+        "hp": 92,
+        "atk": 105,
+        "def": 90,
+        "spa": 125,
+        "spd": 90,
+        "spe": 98
+      },
+      "abilities": [
+        "ふゆう",
+        "ふゆう"
+      ],
+      "moves_mentioned": [
+        "りゅうせいぐん",
+        "とんぼがえり"
+      ]
+    },
+    {
+      "rank": 16,
+      "name": "メガライチュウY",
+      "types": [
+        "electric"
+      ],
+      "stats": {
+        "hp": 60,
+        "atk": 100,
+        "def": 55,
+        "spa": 160,
+        "spd": 80,
+        "spe": 130
+      },
+      "abilities": [
+        "ノーガード",
+        "ノーガード"
+      ],
+      "moves_mentioned": [
+        "でんじほう"
+      ]
+    },
+    {
+      "rank": 17,
       "name": "キラフロル",
       "types": [
         "rock",
@@ -380,31 +426,7 @@
       ]
     },
     {
-      "rank": 16,
-      "name": "サザンドラ",
-      "types": [
-        "dark",
-        "dragon"
-      ],
-      "stats": {
-        "hp": 92,
-        "atk": 105,
-        "def": 90,
-        "spa": 125,
-        "spd": 90,
-        "spe": 98
-      },
-      "abilities": [
-        "ふゆう",
-        "ふゆう"
-      ],
-      "moves_mentioned": [
-        "りゅうせいぐん",
-        "とんぼがえり"
-      ]
-    },
-    {
-      "rank": 17,
+      "rank": 18,
       "name": "メガゲッコウガ",
       "types": [
         "water",
@@ -426,7 +448,7 @@
       "moves_mentioned": []
     },
     {
-      "rank": 18,
+      "rank": 19,
       "name": "メガゲンガー",
       "types": [
         "ghost",
@@ -451,60 +473,7 @@
       ]
     },
     {
-      "rank": 19,
-      "name": "ダイケンキ(ヒスイ)",
-      "types": [],
-      "stats": {},
-      "abilities": [],
-      "moves_mentioned": []
-    },
-    {
       "rank": 20,
-      "name": "メガライチュウY",
-      "types": [
-        "electric"
-      ],
-      "stats": {
-        "hp": 60,
-        "atk": 100,
-        "def": 55,
-        "spa": 160,
-        "spd": 80,
-        "spe": 130
-      },
-      "abilities": [
-        "ノーガード",
-        "ノーガード"
-      ],
-      "moves_mentioned": [
-        "でんじほう"
-      ]
-    },
-    {
-      "rank": 21,
-      "name": "ギルガルド",
-      "types": [
-        "steel",
-        "ghost"
-      ],
-      "stats": {
-        "hp": 60,
-        "atk": 50,
-        "def": 140,
-        "spa": 50,
-        "spd": 140,
-        "spe": 60
-      },
-      "abilities": [
-        "バトルスイッチ",
-        "バトルスイッチ"
-      ],
-      "moves_mentioned": [
-        "キングシールド"
-      ]
-    },
-    {
-      "rank": 22,
       "name": "サーフゴー",
       "types": [
         "steel",
@@ -529,7 +498,7 @@
       ]
     },
     {
-      "rank": 23,
+      "rank": 21,
       "name": "ウルガモス",
       "types": [
         "bug",
@@ -554,6 +523,37 @@
         "あさのひざし",
         "ステルスロック"
       ]
+    },
+    {
+      "rank": 22,
+      "name": "ギルガルド",
+      "types": [
+        "steel",
+        "ghost"
+      ],
+      "stats": {
+        "hp": 60,
+        "atk": 50,
+        "def": 140,
+        "spa": 50,
+        "spd": 140,
+        "spe": 60
+      },
+      "abilities": [
+        "バトルスイッチ",
+        "バトルスイッチ"
+      ],
+      "moves_mentioned": [
+        "キングシールド"
+      ]
+    },
+    {
+      "rank": 23,
+      "name": "ダイケンキ(ヒスイ)",
+      "types": [],
+      "stats": {},
+      "abilities": [],
+      "moves_mentioned": []
     },
     {
       "rank": 24,
@@ -608,7 +608,7 @@
       ]
     },
     {
-      "rank": 39,
+      "rank": 40,
       "name": "メガフラエッテ",
       "types": [
         "fairy"
