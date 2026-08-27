@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-26T06:55:57Z",
+  "updated_at": "2026-08-27T17:29:41Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
@@ -278,6 +278,30 @@
     },
     {
       "rank": 12,
+      "name": "メガハッサム",
+      "types": [
+        "bug",
+        "steel"
+      ],
+      "stats": {
+        "hp": 70,
+        "atk": 150,
+        "def": 140,
+        "spa": 65,
+        "spd": 100,
+        "spe": 75
+      },
+      "abilities": [
+        "テクニシャン",
+        "テクニシャン"
+      ],
+      "moves_mentioned": [
+        "バレットパンチ",
+        "つるぎのまい"
+      ]
+    },
+    {
+      "rank": 13,
       "name": "アーマーガア",
       "types": [
         "flying",
@@ -301,30 +325,6 @@
         "ボディプレス",
         "はねやすめ",
         "とんぼがえり"
-      ]
-    },
-    {
-      "rank": 13,
-      "name": "メガハッサム",
-      "types": [
-        "bug",
-        "steel"
-      ],
-      "stats": {
-        "hp": 70,
-        "atk": 150,
-        "def": 140,
-        "spa": 65,
-        "spd": 100,
-        "spe": 75
-      },
-      "abilities": [
-        "テクニシャン",
-        "テクニシャン"
-      ],
-      "moves_mentioned": [
-        "バレットパンチ",
-        "つるぎのまい"
       ]
     },
     {
@@ -474,31 +474,6 @@
     },
     {
       "rank": 20,
-      "name": "サーフゴー",
-      "types": [
-        "steel",
-        "ghost"
-      ],
-      "stats": {
-        "hp": 87,
-        "atk": 60,
-        "def": 95,
-        "spa": 133,
-        "spd": 91,
-        "spe": 84
-      },
-      "abilities": [
-        "おうごんのからだ",
-        "おうごんのからだ"
-      ],
-      "moves_mentioned": [
-        "シャドーボール",
-        "ゴールドラッシュ",
-        "トリック"
-      ]
-    },
-    {
-      "rank": 21,
       "name": "ウルガモス",
       "types": [
         "bug",
@@ -525,7 +500,7 @@
       ]
     },
     {
-      "rank": 22,
+      "rank": 21,
       "name": "ギルガルド",
       "types": [
         "steel",
@@ -548,15 +523,32 @@
       ]
     },
     {
-      "rank": 23,
-      "name": "ダイケンキ(ヒスイ)",
-      "types": [],
-      "stats": {},
-      "abilities": [],
-      "moves_mentioned": []
+      "rank": 22,
+      "name": "サーフゴー",
+      "types": [
+        "steel",
+        "ghost"
+      ],
+      "stats": {
+        "hp": 87,
+        "atk": 60,
+        "def": 95,
+        "spa": 133,
+        "spd": 91,
+        "spe": 84
+      },
+      "abilities": [
+        "おうごんのからだ",
+        "おうごんのからだ"
+      ],
+      "moves_mentioned": [
+        "シャドーボール",
+        "ゴールドラッシュ",
+        "トリック"
+      ]
     },
     {
-      "rank": 24,
+      "rank": 23,
       "name": "メガバシャーモ",
       "types": [
         "fire",
@@ -582,7 +574,7 @@
       ]
     },
     {
-      "rank": 25,
+      "rank": 24,
       "name": "ドドゲザン",
       "types": [
         "dark",
@@ -606,6 +598,14 @@
         "ふいうち",
         "つるぎのまい"
       ]
+    },
+    {
+      "rank": 25,
+      "name": "ダイケンキ(ヒスイ)",
+      "types": [],
+      "stats": {},
+      "abilities": [],
+      "moves_mentioned": []
     },
     {
       "rank": 40,
