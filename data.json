@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08T10:56:43Z",
+  "updated_at": "2026-09-09T11:01:01Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
@@ -107,8 +107,7 @@
       ],
       "moves_mentioned": [
         "ステルスロック",
-        "でんじは",
-        "ミラーコート"
+        "でんじは"
       ]
     },
     {
@@ -736,6 +735,17 @@
       "ghost": false
     },
     {
+      "name": "プクリン",
+      "types": [
+        "normal",
+        "fairy"
+      ],
+      "spe_base": 45,
+      "spe_max": 106,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
       "name": "ラフレシア",
       "types": [
         "grass",
@@ -744,6 +754,16 @@
       "spe_base": 50,
       "spe_max": 112,
       "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "ペルシアン",
+      "types": [
+        "normal"
+      ],
+      "spe_base": 115,
+      "spe_max": 183,
+      "cat": "phy_atk",
       "ghost": false
     },
     {
@@ -799,6 +819,17 @@
       "ghost": false
     },
     {
+      "name": "カモネギ",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "spe_base": 60,
+      "spe_max": 123,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
       "name": "ゲンガー",
       "types": [
         "ghost",
@@ -827,6 +858,17 @@
       ],
       "spe_base": 115,
       "spe_max": 183,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "バリヤード",
+      "types": [
+        "psychic",
+        "fairy"
+      ],
+      "spe_base": 90,
+      "spe_max": 156,
       "cat": "spe_atk",
       "ghost": false
     },
@@ -1223,6 +1265,16 @@
       "ghost": false
     },
     {
+      "name": "マルノーム",
+      "types": [
+        "poison"
+      ],
+      "spe_base": 55,
+      "spe_max": 117,
+      "cat": "support",
+      "ghost": false
+    },
+    {
       "name": "サメハダー",
       "types": [
         "water",
@@ -1322,6 +1374,17 @@
       ],
       "spe_base": 80,
       "spe_max": 145,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ボーマンダ",
+      "types": [
+        "dragon",
+        "flying"
+      ],
+      "spe_base": 100,
+      "spe_max": 167,
       "cat": "phy_atk",
       "ghost": false
     },
@@ -2039,6 +2102,16 @@
       "ghost": false
     },
     {
+      "name": "ゴーゴート",
+      "types": [
+        "grass"
+      ],
+      "spe_base": 68,
+      "spe_max": 132,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
       "name": "ゴロンダ",
       "types": [
         "fighting",
@@ -2390,6 +2463,17 @@
       "ghost": false
     },
     {
+      "name": "グソクムシャ",
+      "types": [
+        "bug",
+        "water"
+      ],
+      "spe_base": 40,
+      "spe_max": 101,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
       "name": "ミミッキュ",
       "types": [
         "ghost",
@@ -2423,6 +2507,36 @@
       "ghost": false
     },
     {
+      "name": "ゴリランダー",
+      "types": [
+        "grass"
+      ],
+      "spe_base": 85,
+      "spe_max": 150,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "エースバーン",
+      "types": [
+        "fire"
+      ],
+      "spe_base": 119,
+      "spe_max": 188,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "インテレオン",
+      "types": [
+        "water"
+      ],
+      "spe_base": 120,
+      "spe_max": 189,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
       "name": "アーマーガア",
       "types": [
         "flying",
@@ -2431,6 +2545,16 @@
       "spe_base": 67,
       "spe_max": 130,
       "cat": "support",
+      "ghost": false
+    },
+    {
+      "name": "フォクスライ",
+      "types": [
+        "dark"
+      ],
+      "spe_base": 90,
+      "spe_max": 156,
+      "cat": "spe_atk",
       "ghost": false
     },
     {
@@ -2466,6 +2590,16 @@
       "ghost": false
     },
     {
+      "name": "オトスパス",
+      "types": [
+        "fighting"
+      ],
+      "spe_base": 42,
+      "spe_max": 103,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
       "name": "ポットデス",
       "types": [
         "ghost"
@@ -2494,6 +2628,26 @@
       ],
       "spe_base": 60,
       "spe_max": 123,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ニャイキング",
+      "types": [
+        "steel"
+      ],
+      "spe_base": 50,
+      "spe_max": 112,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "ネギガナイト",
+      "types": [
+        "fighting"
+      ],
+      "spe_base": 65,
+      "spe_max": 128,
       "cat": "phy_atk",
       "ghost": false
     },
@@ -2537,6 +2691,38 @@
       "spe_base": 75,
       "spe_max": 139,
       "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "バチンウニ",
+      "types": [
+        "electric"
+      ],
+      "spe_base": 15,
+      "spe_max": 73,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "イエッサン♂",
+      "types": [
+        "psychic",
+        "normal"
+      ],
+      "spe_base": 95,
+      "spe_max": 161,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "イエッサン♀",
+      "types": [
+        "psychic",
+        "normal"
+      ],
+      "spe_base": 85,
+      "spe_max": 150,
+      "cat": "spe_atk",
       "ghost": false
     },
     {
@@ -2661,12 +2847,45 @@
       "ghost": false
     },
     {
+      "name": "パーモット",
+      "types": [
+        "electric",
+        "fighting"
+      ],
+      "spe_base": 105,
+      "spe_max": 172,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
       "name": "イッカネズミ",
       "types": [
         "normal"
       ],
       "spe_base": 111,
       "spe_max": 179,
+      "cat": "phy_atk",
+      "ghost": false
+    },
+    {
+      "name": "オリーヴァ",
+      "types": [
+        "grass",
+        "normal"
+      ],
+      "spe_base": 39,
+      "spe_max": 100,
+      "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "イキリンコ",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "spe_base": 92,
+      "spe_max": 158,
       "cat": "phy_atk",
       "ghost": false
     },
@@ -2710,6 +2929,16 @@
       "spe_base": 45,
       "spe_max": 106,
       "cat": "spe_atk",
+      "ghost": false
+    },
+    {
+      "name": "マフィティフ",
+      "types": [
+        "dark"
+      ],
+      "spe_base": 85,
+      "spe_max": 150,
+      "cat": "phy_atk",
       "ghost": false
     },
     {
@@ -2806,6 +3035,17 @@
       "spe_base": 50,
       "spe_max": 112,
       "cat": "wall",
+      "ghost": false
+    },
+    {
+      "name": "セグレイブ",
+      "types": [
+        "dragon",
+        "ice"
+      ],
+      "spe_base": 87,
+      "spe_max": 152,
+      "cat": "phy_atk",
       "ghost": false
     },
     {
@@ -3637,6 +3877,24 @@
       "ghost": false
     },
     {
+      "name": "メガアブソルZ",
+      "types": [
+        "dark",
+        "ghost"
+      ],
+      "spe_base": 151,
+      "spe_max": 223,
+      "stats": {
+        "hp": 65,
+        "atk": 154,
+        "def": 60,
+        "spa": 75,
+        "spd": 60,
+        "spe": 151
+      },
+      "ghost": true
+    },
+    {
       "name": "メガオニゴーリ",
       "types": [
         "ice"
@@ -3650,6 +3908,24 @@
         "spa": 120,
         "spd": 80,
         "spe": 100
+      },
+      "ghost": false
+    },
+    {
+      "name": "メガボーマンダ",
+      "types": [
+        "dragon",
+        "flying"
+      ],
+      "spe_base": 120,
+      "spe_max": 189,
+      "stats": {
+        "hp": 95,
+        "atk": 145,
+        "def": 130,
+        "spa": 120,
+        "spd": 90,
+        "spe": 120
       },
       "ghost": false
     },
@@ -3726,6 +4002,23 @@
       "ghost": false
     },
     {
+      "name": "メガガブリアスZ",
+      "types": [
+        "dragon"
+      ],
+      "spe_base": 151,
+      "spe_max": 223,
+      "stats": {
+        "hp": 108,
+        "atk": 130,
+        "def": 85,
+        "spa": 141,
+        "spd": 85,
+        "spe": 151
+      },
+      "ghost": false
+    },
+    {
       "name": "メガルカリオ",
       "types": [
         "fighting",
@@ -3740,6 +4033,24 @@
         "spa": 140,
         "spd": 70,
         "spe": 112
+      },
+      "ghost": false
+    },
+    {
+      "name": "メガルカリオZ",
+      "types": [
+        "fighting",
+        "steel"
+      ],
+      "spe_base": 151,
+      "spe_max": 223,
+      "stats": {
+        "hp": 70,
+        "atk": 100,
+        "def": 70,
+        "spa": 164,
+        "spd": 70,
+        "spe": 151
       },
       "ghost": false
     },
@@ -4154,6 +4465,24 @@
       "ghost": false
     },
     {
+      "name": "メガグソクムシャ",
+      "types": [
+        "bug",
+        "steel"
+      ],
+      "spe_base": 40,
+      "spe_max": 101,
+      "stats": {
+        "hp": 75,
+        "atk": 150,
+        "def": 175,
+        "spa": 70,
+        "spd": 120,
+        "spe": 40
+      },
+      "ghost": false
+    },
+    {
       "name": "メガジジーロン",
       "types": [
         "normal",
@@ -4221,6 +4550,24 @@
         "spa": 150,
         "spd": 96,
         "spe": 101
+      },
+      "ghost": false
+    },
+    {
+      "name": "メガセグレイブ",
+      "types": [
+        "dragon",
+        "ice"
+      ],
+      "spe_base": 87,
+      "spe_max": 152,
+      "stats": {
+        "hp": 115,
+        "atk": 175,
+        "def": 117,
+        "spa": 105,
+        "spd": 101,
+        "spe": 87
       },
       "ghost": false
     }
