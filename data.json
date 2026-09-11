@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T10:57:50Z",
+  "updated_at": "2026-09-11T10:56:20Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
@@ -143,6 +143,26 @@
     },
     {
       "rank": 7,
+      "name": "メガセグレイブ",
+      "types": [
+        "dragon",
+        "ice"
+      ],
+      "stats": {
+        "hp": 115,
+        "atk": 175,
+        "def": 117,
+        "spa": 105,
+        "spd": 101,
+        "spe": 87
+      },
+      "abilities": [
+        "ねつこうかん"
+      ],
+      "moves_mentioned": []
+    },
+    {
+      "rank": 8,
       "name": "ブリジュラス",
       "types": [
         "steel",
@@ -166,26 +186,6 @@
         "ステルスロック",
         "でんじは"
       ]
-    },
-    {
-      "rank": 8,
-      "name": "メガセグレイブ",
-      "types": [
-        "dragon",
-        "ice"
-      ],
-      "stats": {
-        "hp": 115,
-        "atk": 175,
-        "def": 117,
-        "spa": 105,
-        "spd": 101,
-        "spe": 87
-      },
-      "abilities": [
-        "ねつこうかん"
-      ],
-      "moves_mentioned": []
     },
     {
       "rank": 9,
@@ -237,26 +237,6 @@
     },
     {
       "rank": 11,
-      "name": "ゴリランダー",
-      "types": [
-        "grass"
-      ],
-      "stats": {
-        "hp": 100,
-        "atk": 125,
-        "def": 90,
-        "spa": 60,
-        "spd": 70,
-        "spe": 85
-      },
-      "abilities": [
-        "しんりょく",
-        "グラスメイカー"
-      ],
-      "moves_mentioned": []
-    },
-    {
-      "rank": 12,
       "name": "ミミッキュ",
       "types": [
         "ghost",
@@ -278,6 +258,26 @@
         "つるぎのまい",
         "かげうち"
       ]
+    },
+    {
+      "rank": 12,
+      "name": "ゴリランダー",
+      "types": [
+        "grass"
+      ],
+      "stats": {
+        "hp": 100,
+        "atk": 125,
+        "def": 90,
+        "spa": 60,
+        "spd": 70,
+        "spe": 85
+      },
+      "abilities": [
+        "しんりょく",
+        "グラスメイカー"
+      ],
+      "moves_mentioned": []
     },
     {
       "rank": 13,
@@ -436,26 +436,6 @@
     },
     {
       "rank": 19,
-      "name": "エースバーン",
-      "types": [
-        "fire"
-      ],
-      "stats": {
-        "hp": 80,
-        "atk": 116,
-        "def": 75,
-        "spa": 65,
-        "spd": 75,
-        "spe": 119
-      },
-      "abilities": [
-        "もうか",
-        "リベロ"
-      ],
-      "moves_mentioned": []
-    },
-    {
-      "rank": 20,
       "name": "ゲッコウガ",
       "types": [
         "water",
@@ -478,7 +458,59 @@
       "moves_mentioned": []
     },
     {
+      "rank": 20,
+      "name": "エースバーン",
+      "types": [
+        "fire"
+      ],
+      "stats": {
+        "hp": 80,
+        "atk": 116,
+        "def": 75,
+        "spa": 65,
+        "spd": 75,
+        "spe": 119
+      },
+      "abilities": [
+        "もうか",
+        "リベロ"
+      ],
+      "moves_mentioned": []
+    },
+    {
       "rank": 21,
+      "name": "キュウコン(アローラ)",
+      "types": [],
+      "stats": {},
+      "abilities": [],
+      "moves_mentioned": []
+    },
+    {
+      "rank": 22,
+      "name": "ウォッシュロトム",
+      "types": [
+        "electric",
+        "water"
+      ],
+      "stats": {
+        "hp": 50,
+        "atk": 65,
+        "def": 107,
+        "spa": 105,
+        "spd": 107,
+        "spe": 86
+      },
+      "abilities": [
+        "ふゆう",
+        "ふゆう"
+      ],
+      "moves_mentioned": [
+        "おにび",
+        "ボルトチェンジ"
+      ]
+    },
+    {
+      "rank": 23,
       "name": "ウルガモス",
       "types": [
         "bug",
@@ -502,41 +534,6 @@
         "ギガドレイン",
         "あさのひざし",
         "ステルスロック"
-      ]
-    },
-    {
-      "rank": 22,
-      "name": "キュウコン(アローラ)",
-      "types": [],
-      "stats": {},
-      "abilities": [],
-      "moves_mentioned": []
-    },
-    {
-      "rank": 23,
-      "name": "オオニューラ",
-      "types": [
-        "fighting",
-        "poison"
-      ],
-      "stats": {
-        "hp": 80,
-        "atk": 130,
-        "def": 60,
-        "spa": 40,
-        "spd": 80,
-        "spe": 120
-      },
-      "abilities": [
-        "プレッシャー",
-        "かるわざ",
-        "どくしゅ",
-        "かるわざ",
-        "かるわざ"
-      ],
-      "moves_mentioned": [
-        "インファイト",
-        "フェイタルクロー"
       ]
     },
     {
@@ -566,30 +563,33 @@
     },
     {
       "rank": 25,
-      "name": "ウォッシュロトム",
+      "name": "オオニューラ",
       "types": [
-        "electric",
-        "water"
+        "fighting",
+        "poison"
       ],
       "stats": {
-        "hp": 50,
-        "atk": 65,
-        "def": 107,
-        "spa": 105,
-        "spd": 107,
-        "spe": 86
+        "hp": 80,
+        "atk": 130,
+        "def": 60,
+        "spa": 40,
+        "spd": 80,
+        "spe": 120
       },
       "abilities": [
-        "ふゆう",
-        "ふゆう"
+        "プレッシャー",
+        "かるわざ",
+        "どくしゅ",
+        "かるわざ",
+        "かるわざ"
       ],
       "moves_mentioned": [
-        "おにび",
-        "ボルトチェンジ"
+        "インファイト",
+        "フェイタルクロー"
       ]
     },
     {
-      "rank": 36,
+      "rank": 43,
       "name": "メガフラエッテ",
       "types": [
         "fairy"
