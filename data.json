@@ -1,10 +1,34 @@
 {
-  "updated_at": "2026-09-13T11:26:30Z",
+  "updated_at": "2026-09-14T12:19:00Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
     {
       "rank": 1,
+      "name": "メガボーマンダ",
+      "types": [
+        "dragon",
+        "flying"
+      ],
+      "stats": {
+        "hp": 95,
+        "atk": 145,
+        "def": 130,
+        "spa": 120,
+        "spd": 90,
+        "spe": 120
+      },
+      "abilities": [
+        "スカイスキン"
+      ],
+      "moves_mentioned": [
+        "かえんほうしゃ",
+        "だいもんじ",
+        "りゅうのまい"
+      ]
+    },
+    {
+      "rank": 2,
       "name": "ガブリアス",
       "types": [
         "dragon",
@@ -30,26 +54,6 @@
         "どくづき",
         "アイアンヘッド"
       ]
-    },
-    {
-      "rank": 2,
-      "name": "メガボーマンダ",
-      "types": [
-        "dragon",
-        "flying"
-      ],
-      "stats": {
-        "hp": 95,
-        "atk": 145,
-        "def": 130,
-        "spa": 120,
-        "spd": 90,
-        "spe": 120
-      },
-      "abilities": [
-        "スカイスキン"
-      ],
-      "moves_mentioned": []
     },
     {
       "rank": 3,
@@ -93,9 +97,12 @@
         "spe": 40
       },
       "abilities": [
+        "かたいツメ",
         "かたいツメ"
       ],
-      "moves_mentioned": []
+      "moves_mentioned": [
+        "であいがしら"
+      ]
     },
     {
       "rank": 5,
@@ -139,7 +146,11 @@
       "abilities": [
         "ねつこうかん"
       ],
-      "moves_mentioned": []
+      "moves_mentioned": [
+        "つるぎのまい",
+        "りゅうのまい",
+        "こおりのつぶて"
+      ]
     },
     {
       "rank": 7,
@@ -157,9 +168,12 @@
         "spe": 151
       },
       "abilities": [
+        "はどうのぼうご",
         "はどうのぼうご"
       ],
-      "moves_mentioned": []
+      "moves_mentioned": [
+        "わるだくみ"
+      ]
     },
     {
       "rank": 8,
@@ -277,7 +291,10 @@
         "しんりょく",
         "グラスメイカー"
       ],
-      "moves_mentioned": []
+      "moves_mentioned": [
+        "はたきおとす",
+        "とんぼがえり"
+      ]
     },
     {
       "rank": 13,
@@ -411,6 +428,29 @@
     },
     {
       "rank": 18,
+      "name": "ゲッコウガ",
+      "types": [
+        "water",
+        "dark"
+      ],
+      "stats": {
+        "hp": 72,
+        "atk": 95,
+        "def": 67,
+        "spa": 103,
+        "spd": 71,
+        "spe": 122
+      },
+      "abilities": [
+        "げきりゅう",
+        "へんげんじざい",
+        "へんげんじざい",
+        "げきりゅう"
+      ],
+      "moves_mentioned": []
+    },
+    {
+      "rank": 19,
       "name": "メガリザードンY",
       "types": [
         "fire",
@@ -435,34 +475,11 @@
       ]
     },
     {
-      "rank": 19,
+      "rank": 20,
       "name": "キュウコン(アローラ)",
       "types": [],
       "stats": {},
       "abilities": [],
-      "moves_mentioned": []
-    },
-    {
-      "rank": 20,
-      "name": "ゲッコウガ",
-      "types": [
-        "water",
-        "dark"
-      ],
-      "stats": {
-        "hp": 72,
-        "atk": 95,
-        "def": 67,
-        "spa": 103,
-        "spd": 71,
-        "spe": 122
-      },
-      "abilities": [
-        "げきりゅう",
-        "へんげんじざい",
-        "へんげんじざい",
-        "げきりゅう"
-      ],
       "moves_mentioned": []
     },
     {
@@ -481,9 +498,12 @@
       },
       "abilities": [
         "もうか",
+        "リベロ",
         "リベロ"
       ],
-      "moves_mentioned": []
+      "moves_mentioned": [
+        "とんぼがえり"
+      ]
     },
     {
       "rank": 22,
@@ -511,33 +531,6 @@
     },
     {
       "rank": 23,
-      "name": "ウルガモス",
-      "types": [
-        "bug",
-        "fire"
-      ],
-      "stats": {
-        "hp": 85,
-        "atk": 60,
-        "def": 65,
-        "spa": 135,
-        "spd": 105,
-        "spe": 100
-      },
-      "abilities": [
-        "ほのおのからだ",
-        "むしのしらせ"
-      ],
-      "moves_mentioned": [
-        "ちょうのまい",
-        "ほのおのまい",
-        "ギガドレイン",
-        "あさのひざし",
-        "ステルスロック"
-      ]
-    },
-    {
-      "rank": 24,
       "name": "オオニューラ",
       "types": [
         "fighting",
@@ -561,6 +554,33 @@
       "moves_mentioned": [
         "インファイト",
         "フェイタルクロー"
+      ]
+    },
+    {
+      "rank": 24,
+      "name": "ウルガモス",
+      "types": [
+        "bug",
+        "fire"
+      ],
+      "stats": {
+        "hp": 85,
+        "atk": 60,
+        "def": 65,
+        "spa": 135,
+        "spd": 105,
+        "spe": 100
+      },
+      "abilities": [
+        "ほのおのからだ",
+        "むしのしらせ"
+      ],
+      "moves_mentioned": [
+        "ちょうのまい",
+        "ほのおのまい",
+        "ギガドレイン",
+        "あさのひざし",
+        "ステルスロック"
       ]
     },
     {
@@ -588,7 +608,7 @@
       ]
     },
     {
-      "rank": 48,
+      "rank": 51,
       "name": "メガフラエッテ",
       "types": [
         "fairy"
