@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T11:11:55Z",
+  "updated_at": "2026-09-17T11:19:56Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
@@ -83,29 +83,6 @@
     },
     {
       "rank": 4,
-      "name": "メガグソクムシャ",
-      "types": [
-        "bug",
-        "steel"
-      ],
-      "stats": {
-        "hp": 75,
-        "atk": 150,
-        "def": 175,
-        "spa": 70,
-        "spd": 120,
-        "spe": 40
-      },
-      "abilities": [
-        "かたいツメ",
-        "かたいツメ"
-      ],
-      "moves_mentioned": [
-        "であいがしら"
-      ]
-    },
-    {
-      "rank": 5,
       "name": "カバルドン",
       "types": [
         "ground"
@@ -129,31 +106,30 @@
       ]
     },
     {
-      "rank": 6,
-      "name": "メガセグレイブ",
+      "rank": 5,
+      "name": "メガグソクムシャ",
       "types": [
-        "dragon",
-        "ice"
+        "bug",
+        "steel"
       ],
       "stats": {
-        "hp": 115,
-        "atk": 175,
-        "def": 117,
-        "spa": 105,
-        "spd": 101,
-        "spe": 87
+        "hp": 75,
+        "atk": 150,
+        "def": 175,
+        "spa": 70,
+        "spd": 120,
+        "spe": 40
       },
       "abilities": [
-        "ねつこうかん"
+        "かたいツメ",
+        "かたいツメ"
       ],
       "moves_mentioned": [
-        "つるぎのまい",
-        "りゅうのまい",
-        "こおりのつぶて"
+        "であいがしら"
       ]
     },
     {
-      "rank": 7,
+      "rank": 6,
       "name": "メガルカリオZ",
       "types": [
         "fighting",
@@ -176,32 +152,31 @@
       ]
     },
     {
-      "rank": 8,
-      "name": "サーフゴー",
+      "rank": 7,
+      "name": "セグレイブ",
       "types": [
-        "steel",
-        "ghost"
+        "dragon",
+        "ice"
       ],
       "stats": {
-        "hp": 87,
-        "atk": 60,
-        "def": 95,
-        "spa": 133,
-        "spd": 91,
-        "spe": 84
+        "hp": 115,
+        "atk": 145,
+        "def": 92,
+        "spa": 75,
+        "spd": 86,
+        "spe": 87
       },
       "abilities": [
-        "おうごんのからだ",
-        "おうごんのからだ"
+        "ねつこうかん",
+        "アイスボディ"
       ],
       "moves_mentioned": [
-        "シャドーボール",
-        "ゴールドラッシュ",
-        "トリック"
+        "つるぎのまい",
+        "りゅうのまい"
       ]
     },
     {
-      "rank": 9,
+      "rank": 8,
       "name": "ブリジュラス",
       "types": [
         "steel",
@@ -227,26 +202,51 @@
       ]
     },
     {
-      "rank": 10,
-      "name": "ギルガルド",
+      "rank": 9,
+      "name": "サーフゴー",
       "types": [
         "steel",
         "ghost"
       ],
       "stats": {
-        "hp": 60,
-        "atk": 50,
-        "def": 140,
-        "spa": 50,
-        "spd": 140,
-        "spe": 60
+        "hp": 87,
+        "atk": 60,
+        "def": 95,
+        "spa": 133,
+        "spd": 91,
+        "spe": 84
       },
       "abilities": [
-        "バトルスイッチ",
-        "バトルスイッチ"
+        "おうごんのからだ",
+        "おうごんのからだ"
       ],
       "moves_mentioned": [
-        "キングシールド"
+        "シャドーボール",
+        "ゴールドラッシュ",
+        "トリック"
+      ]
+    },
+    {
+      "rank": 10,
+      "name": "ゴリランダー",
+      "types": [
+        "grass"
+      ],
+      "stats": {
+        "hp": 100,
+        "atk": 125,
+        "def": 90,
+        "spa": 60,
+        "spd": 70,
+        "spe": 85
+      },
+      "abilities": [
+        "しんりょく",
+        "グラスメイカー"
+      ],
+      "moves_mentioned": [
+        "はたきおとす",
+        "とんぼがえり"
       ]
     },
     {
@@ -275,29 +275,6 @@
     },
     {
       "rank": 12,
-      "name": "ゴリランダー",
-      "types": [
-        "grass"
-      ],
-      "stats": {
-        "hp": 100,
-        "atk": 125,
-        "def": 90,
-        "spa": 60,
-        "spd": 70,
-        "spe": 85
-      },
-      "abilities": [
-        "しんりょく",
-        "グラスメイカー"
-      ],
-      "moves_mentioned": [
-        "はたきおとす",
-        "とんぼがえり"
-      ]
-    },
-    {
-      "rank": 13,
       "name": "マスカーニャ",
       "types": [
         "grass",
@@ -324,7 +301,54 @@
       ]
     },
     {
+      "rank": 13,
+      "name": "ギルガルド",
+      "types": [
+        "steel",
+        "ghost"
+      ],
+      "stats": {
+        "hp": 60,
+        "atk": 50,
+        "def": 140,
+        "spa": 50,
+        "spd": 140,
+        "spe": 60
+      },
+      "abilities": [
+        "バトルスイッチ",
+        "バトルスイッチ"
+      ],
+      "moves_mentioned": [
+        "キングシールド"
+      ]
+    },
+    {
       "rank": 14,
+      "name": "ギャラドス",
+      "types": [
+        "water",
+        "flying"
+      ],
+      "stats": {
+        "hp": 95,
+        "atk": 125,
+        "def": 79,
+        "spa": 60,
+        "spd": 100,
+        "spe": 81
+      },
+      "abilities": [
+        "いかく",
+        "じしんかじょう",
+        "いかく"
+      ],
+      "moves_mentioned": [
+        "りゅうのまい"
+      ]
+    },
+    {
+      "rank": 15,
       "name": "アーマーガア",
       "types": [
         "flying",
@@ -348,30 +372,6 @@
         "ボディプレス",
         "はねやすめ",
         "とんぼがえり"
-      ]
-    },
-    {
-      "rank": 15,
-      "name": "ギャラドス",
-      "types": [
-        "water",
-        "flying"
-      ],
-      "stats": {
-        "hp": 95,
-        "atk": 125,
-        "def": 79,
-        "spa": 60,
-        "spd": 100,
-        "spe": 81
-      },
-      "abilities": [
-        "いかく",
-        "じしんかじょう",
-        "いかく"
-      ],
-      "moves_mentioned": [
-        "りゅうのまい"
       ]
     },
     {
@@ -428,26 +428,30 @@
     },
     {
       "rank": 18,
-      "name": "ゲッコウガ",
+      "name": "オオニューラ",
       "types": [
-        "water",
-        "dark"
+        "fighting",
+        "poison"
       ],
       "stats": {
-        "hp": 72,
-        "atk": 95,
-        "def": 67,
-        "spa": 103,
-        "spd": 71,
-        "spe": 122
+        "hp": 80,
+        "atk": 130,
+        "def": 60,
+        "spa": 40,
+        "spd": 80,
+        "spe": 120
       },
       "abilities": [
-        "げきりゅう",
-        "へんげんじざい",
-        "へんげんじざい",
-        "げきりゅう"
+        "プレッシャー",
+        "かるわざ",
+        "どくしゅ",
+        "かるわざ",
+        "かるわざ"
       ],
-      "moves_mentioned": []
+      "moves_mentioned": [
+        "インファイト",
+        "フェイタルクロー"
+      ]
     },
     {
       "rank": 19,
@@ -476,14 +480,6 @@
     },
     {
       "rank": 20,
-      "name": "キュウコン(アローラ)",
-      "types": [],
-      "stats": {},
-      "abilities": [],
-      "moves_mentioned": []
-    },
-    {
-      "rank": 21,
       "name": "エースバーン",
       "types": [
         "fire"
@@ -506,7 +502,60 @@
       ]
     },
     {
+      "rank": 21,
+      "name": "ゲッコウガ",
+      "types": [
+        "water",
+        "dark"
+      ],
+      "stats": {
+        "hp": 72,
+        "atk": 95,
+        "def": 67,
+        "spa": 103,
+        "spd": 71,
+        "spe": 122
+      },
+      "abilities": [
+        "げきりゅう",
+        "へんげんじざい",
+        "へんげんじざい",
+        "げきりゅう"
+      ],
+      "moves_mentioned": []
+    },
+    {
       "rank": 22,
+      "name": "イエッサン♂",
+      "types": [
+        "psychic",
+        "normal"
+      ],
+      "stats": {
+        "hp": 60,
+        "atk": 65,
+        "def": 55,
+        "spa": 105,
+        "spd": 95,
+        "spe": 95
+      },
+      "abilities": [
+        "せいしんりょく",
+        "シンクロ",
+        "サイコメイカー"
+      ],
+      "moves_mentioned": []
+    },
+    {
+      "rank": 23,
+      "name": "キュウコン(アローラ)",
+      "types": [],
+      "stats": {},
+      "abilities": [],
+      "moves_mentioned": []
+    },
+    {
+      "rank": 24,
       "name": "ウォッシュロトム",
       "types": [
         "electric",
@@ -530,34 +579,7 @@
       ]
     },
     {
-      "rank": 23,
-      "name": "オオニューラ",
-      "types": [
-        "fighting",
-        "poison"
-      ],
-      "stats": {
-        "hp": 80,
-        "atk": 130,
-        "def": 60,
-        "spa": 40,
-        "spd": 80,
-        "spe": 120
-      },
-      "abilities": [
-        "プレッシャー",
-        "かるわざ",
-        "どくしゅ",
-        "かるわざ",
-        "かるわざ"
-      ],
-      "moves_mentioned": [
-        "インファイト",
-        "フェイタルクロー"
-      ]
-    },
-    {
-      "rank": 24,
+      "rank": 25,
       "name": "ウルガモス",
       "types": [
         "bug",
@@ -584,31 +606,7 @@
       ]
     },
     {
-      "rank": 25,
-      "name": "サザンドラ",
-      "types": [
-        "dark",
-        "dragon"
-      ],
-      "stats": {
-        "hp": 92,
-        "atk": 105,
-        "def": 90,
-        "spa": 125,
-        "spd": 90,
-        "spe": 98
-      },
-      "abilities": [
-        "ふゆう",
-        "ふゆう"
-      ],
-      "moves_mentioned": [
-        "りゅうせいぐん",
-        "とんぼがえり"
-      ]
-    },
-    {
-      "rank": 51,
+      "rank": 57,
       "name": "メガフラエッテ",
       "types": [
         "fairy"
