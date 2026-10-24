@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T11:18:02Z",
+  "updated_at": "2026-10-24T10:37:53Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
@@ -107,29 +107,6 @@
     },
     {
       "rank": 5,
-      "name": "メガルカリオZ",
-      "types": [
-        "fighting",
-        "steel"
-      ],
-      "stats": {
-        "hp": 70,
-        "atk": 100,
-        "def": 70,
-        "spa": 164,
-        "spd": 70,
-        "spe": 151
-      },
-      "abilities": [
-        "はどうのぼうご",
-        "はどうのぼうご"
-      ],
-      "moves_mentioned": [
-        "わるだくみ"
-      ]
-    },
-    {
-      "rank": 6,
       "name": "メガグソクムシャ",
       "types": [
         "bug",
@@ -152,7 +129,55 @@
       ]
     },
     {
+      "rank": 6,
+      "name": "メガルカリオZ",
+      "types": [
+        "fighting",
+        "steel"
+      ],
+      "stats": {
+        "hp": 70,
+        "atk": 100,
+        "def": 70,
+        "spa": 164,
+        "spd": 70,
+        "spe": 151
+      },
+      "abilities": [
+        "はどうのぼうご",
+        "はどうのぼうご"
+      ],
+      "moves_mentioned": [
+        "わるだくみ"
+      ]
+    },
+    {
       "rank": 7,
+      "name": "メガリザードンY",
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "stats": {
+        "hp": 78,
+        "atk": 104,
+        "def": 78,
+        "spa": 159,
+        "spd": 115,
+        "spe": 100
+      },
+      "abilities": [
+        "ひでり",
+        "ひでり"
+      ],
+      "moves_mentioned": [
+        "にほんばれ",
+        "ソーラービーム",
+        "ステルスロック"
+      ]
+    },
+    {
+      "rank": 8,
       "name": "ブリジュラス",
       "types": [
         "steel",
@@ -175,31 +200,6 @@
       "moves_mentioned": [
         "ステルスロック",
         "でんじは"
-      ]
-    },
-    {
-      "rank": 8,
-      "name": "メガリザードンY",
-      "types": [
-        "fire",
-        "flying"
-      ],
-      "stats": {
-        "hp": 78,
-        "atk": 104,
-        "def": 78,
-        "spa": 159,
-        "spd": 115,
-        "spe": 100
-      },
-      "abilities": [
-        "ひでり",
-        "ひでり"
-      ],
-      "moves_mentioned": [
-        "にほんばれ",
-        "ソーラービーム",
-        "ステルスロック"
       ]
     },
     {
@@ -256,29 +256,6 @@
     },
     {
       "rank": 11,
-      "name": "メガカイリュー",
-      "types": [
-        "dragon",
-        "flying"
-      ],
-      "stats": {
-        "hp": 91,
-        "atk": 124,
-        "def": 115,
-        "spa": 145,
-        "spd": 125,
-        "spe": 100
-      },
-      "abilities": [
-        "マルチスケイル"
-      ],
-      "moves_mentioned": [
-        "りゅうせいぐん",
-        "しんそく"
-      ]
-    },
-    {
-      "rank": 12,
       "name": "アーマーガア",
       "types": [
         "flying",
@@ -305,31 +282,30 @@
       ]
     },
     {
-      "rank": 13,
-      "name": "メガボーマンダ",
+      "rank": 12,
+      "name": "メガカイリュー",
       "types": [
         "dragon",
         "flying"
       ],
       "stats": {
-        "hp": 95,
-        "atk": 145,
-        "def": 130,
-        "spa": 120,
-        "spd": 90,
-        "spe": 120
+        "hp": 91,
+        "atk": 124,
+        "def": 115,
+        "spa": 145,
+        "spd": 125,
+        "spe": 100
       },
       "abilities": [
-        "スカイスキン"
+        "マルチスケイル"
       ],
       "moves_mentioned": [
-        "かえんほうしゃ",
-        "だいもんじ",
-        "りゅうのまい"
+        "りゅうせいぐん",
+        "しんそく"
       ]
     },
     {
-      "rank": 14,
+      "rank": 13,
       "name": "セグレイブ",
       "types": [
         "dragon",
@@ -353,7 +329,7 @@
       ]
     },
     {
-      "rank": 15,
+      "rank": 14,
       "name": "メガメタグロス",
       "types": [
         "steel",
@@ -376,7 +352,53 @@
       ]
     },
     {
+      "rank": 15,
+      "name": "メガボーマンダ",
+      "types": [
+        "dragon",
+        "flying"
+      ],
+      "stats": {
+        "hp": 95,
+        "atk": 145,
+        "def": 130,
+        "spa": 120,
+        "spd": 90,
+        "spe": 120
+      },
+      "abilities": [
+        "スカイスキン"
+      ],
+      "moves_mentioned": [
+        "かえんほうしゃ",
+        "だいもんじ",
+        "りゅうのまい"
+      ]
+    },
+    {
       "rank": 16,
+      "name": "イエッサン♂",
+      "types": [
+        "psychic",
+        "normal"
+      ],
+      "stats": {
+        "hp": 60,
+        "atk": 65,
+        "def": 55,
+        "spa": 105,
+        "spd": 95,
+        "spe": 95
+      },
+      "abilities": [
+        "せいしんりょく",
+        "シンクロ",
+        "サイコメイカー"
+      ],
+      "moves_mentioned": []
+    },
+    {
+      "rank": 17,
       "name": "キラフロル",
       "types": [
         "rock",
@@ -399,28 +421,6 @@
         "ステルスロック",
         "どくびし"
       ]
-    },
-    {
-      "rank": 17,
-      "name": "イエッサン♂",
-      "types": [
-        "psychic",
-        "normal"
-      ],
-      "stats": {
-        "hp": 60,
-        "atk": 65,
-        "def": 55,
-        "spa": 105,
-        "spd": 95,
-        "spe": 95
-      },
-      "abilities": [
-        "せいしんりょく",
-        "シンクロ",
-        "サイコメイカー"
-      ],
-      "moves_mentioned": []
     },
     {
       "rank": 18,
@@ -568,6 +568,30 @@
     },
     {
       "rank": 24,
+      "name": "ブラッキー",
+      "types": [
+        "dark"
+      ],
+      "stats": {
+        "hp": 95,
+        "atk": 65,
+        "def": 110,
+        "spa": 60,
+        "spd": 130,
+        "spe": 65
+      },
+      "abilities": [
+        "シンクロ",
+        "せいしんりょく"
+      ],
+      "moves_mentioned": [
+        "イカサマ",
+        "ちょうはつ",
+        "アンコール"
+      ]
+    },
+    {
+      "rank": 25,
       "name": "オオニューラ",
       "types": [
         "fighting",
@@ -594,30 +618,7 @@
       ]
     },
     {
-      "rank": 25,
-      "name": "ゲッコウガ",
-      "types": [
-        "water",
-        "dark"
-      ],
-      "stats": {
-        "hp": 72,
-        "atk": 95,
-        "def": 67,
-        "spa": 103,
-        "spd": 71,
-        "spe": 122
-      },
-      "abilities": [
-        "げきりゅう",
-        "へんげんじざい",
-        "へんげんじざい",
-        "げきりゅう"
-      ],
-      "moves_mentioned": []
-    },
-    {
-      "rank": 27,
+      "rank": 35,
       "name": "メガフラエッテ",
       "types": [
         "fairy"
