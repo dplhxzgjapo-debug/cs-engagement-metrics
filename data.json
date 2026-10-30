@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T12:37:43Z",
+  "updated_at": "2026-10-30T12:28:31Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
@@ -130,29 +130,6 @@
     },
     {
       "rank": 6,
-      "name": "メガルカリオZ",
-      "types": [
-        "fighting",
-        "steel"
-      ],
-      "stats": {
-        "hp": 70,
-        "atk": 100,
-        "def": 70,
-        "spa": 164,
-        "spd": 70,
-        "spe": 151
-      },
-      "abilities": [
-        "はどうのぼうご",
-        "はどうのぼうご"
-      ],
-      "moves_mentioned": [
-        "わるだくみ"
-      ]
-    },
-    {
-      "rank": 7,
       "name": "メガリザードンY",
       "types": [
         "fire",
@@ -174,6 +151,29 @@
         "にほんばれ",
         "ソーラービーム",
         "ステルスロック"
+      ]
+    },
+    {
+      "rank": 7,
+      "name": "メガルカリオZ",
+      "types": [
+        "fighting",
+        "steel"
+      ],
+      "stats": {
+        "hp": 70,
+        "atk": 100,
+        "def": 70,
+        "spa": 164,
+        "spd": 70,
+        "spe": 151
+      },
+      "abilities": [
+        "はどうのぼうご",
+        "はどうのぼうご"
+      ],
+      "moves_mentioned": [
+        "わるだくみ"
       ]
     },
     {
@@ -204,31 +204,6 @@
     },
     {
       "rank": 9,
-      "name": "サーフゴー",
-      "types": [
-        "steel",
-        "ghost"
-      ],
-      "stats": {
-        "hp": 87,
-        "atk": 60,
-        "def": 95,
-        "spa": 133,
-        "spd": 91,
-        "spe": 84
-      },
-      "abilities": [
-        "おうごんのからだ",
-        "おうごんのからだ"
-      ],
-      "moves_mentioned": [
-        "シャドーボール",
-        "ゴールドラッシュ",
-        "トリック"
-      ]
-    },
-    {
-      "rank": 10,
       "name": "イダイトウ♂",
       "types": [
         "water",
@@ -252,6 +227,31 @@
         "おはかまいり",
         "ウェーブタックル",
         "アクアジェット"
+      ]
+    },
+    {
+      "rank": 10,
+      "name": "サーフゴー",
+      "types": [
+        "steel",
+        "ghost"
+      ],
+      "stats": {
+        "hp": 87,
+        "atk": 60,
+        "def": 95,
+        "spa": 133,
+        "spd": 91,
+        "spe": 84
+      },
+      "abilities": [
+        "おうごんのからだ",
+        "おうごんのからだ"
+      ],
+      "moves_mentioned": [
+        "シャドーボール",
+        "ゴールドラッシュ",
+        "トリック"
       ]
     },
     {
@@ -306,6 +306,29 @@
     },
     {
       "rank": 13,
+      "name": "メガメタグロス",
+      "types": [
+        "steel",
+        "psychic"
+      ],
+      "stats": {
+        "hp": 80,
+        "atk": 145,
+        "def": 150,
+        "spa": 105,
+        "spd": 110,
+        "spe": 110
+      },
+      "abilities": [
+        "かたいツメ",
+        "かたいツメ"
+      ],
+      "moves_mentioned": [
+        "バレットパンチ"
+      ]
+    },
+    {
+      "rank": 14,
       "name": "セグレイブ",
       "types": [
         "dragon",
@@ -326,29 +349,6 @@
       "moves_mentioned": [
         "つるぎのまい",
         "りゅうのまい"
-      ]
-    },
-    {
-      "rank": 14,
-      "name": "メガメタグロス",
-      "types": [
-        "steel",
-        "psychic"
-      ],
-      "stats": {
-        "hp": 80,
-        "atk": 145,
-        "def": 150,
-        "spa": 105,
-        "spd": 110,
-        "spe": 110
-      },
-      "abilities": [
-        "かたいツメ",
-        "かたいツメ"
-      ],
-      "moves_mentioned": [
-        "バレットパンチ"
       ]
     },
     {
@@ -399,31 +399,6 @@
     },
     {
       "rank": 17,
-      "name": "キラフロル",
-      "types": [
-        "rock",
-        "poison"
-      ],
-      "stats": {
-        "hp": 83,
-        "atk": 55,
-        "def": 90,
-        "spa": 130,
-        "spd": 81,
-        "spe": 86
-      },
-      "abilities": [
-        "どくげしょう",
-        "ふしょく",
-        "どくげしょう"
-      ],
-      "moves_mentioned": [
-        "ステルスロック",
-        "どくびし"
-      ]
-    },
-    {
-      "rank": 18,
       "name": "マスカーニャ",
       "types": [
         "grass",
@@ -447,6 +422,31 @@
         "はたきおとす",
         "とんぼがえり",
         "ふいうち"
+      ]
+    },
+    {
+      "rank": 18,
+      "name": "キラフロル",
+      "types": [
+        "rock",
+        "poison"
+      ],
+      "stats": {
+        "hp": 83,
+        "atk": 55,
+        "def": 90,
+        "spa": 130,
+        "spd": 81,
+        "spe": 86
+      },
+      "abilities": [
+        "どくげしょう",
+        "ふしょく",
+        "どくげしょう"
+      ],
+      "moves_mentioned": [
+        "ステルスロック",
+        "どくびし"
       ]
     },
     {
@@ -568,30 +568,6 @@
     },
     {
       "rank": 24,
-      "name": "ブラッキー",
-      "types": [
-        "dark"
-      ],
-      "stats": {
-        "hp": 95,
-        "atk": 65,
-        "def": 110,
-        "spa": 60,
-        "spd": 130,
-        "spe": 65
-      },
-      "abilities": [
-        "シンクロ",
-        "せいしんりょく"
-      ],
-      "moves_mentioned": [
-        "イカサマ",
-        "ちょうはつ",
-        "アンコール"
-      ]
-    },
-    {
-      "rank": 25,
       "name": "オオニューラ",
       "types": [
         "fighting",
@@ -618,7 +594,31 @@
       ]
     },
     {
-      "rank": 35,
+      "rank": 25,
+      "name": "ブラッキー",
+      "types": [
+        "dark"
+      ],
+      "stats": {
+        "hp": 95,
+        "atk": 65,
+        "def": 110,
+        "spa": 60,
+        "spd": 130,
+        "spe": 65
+      },
+      "abilities": [
+        "シンクロ",
+        "せいしんりょく"
+      ],
+      "moves_mentioned": [
+        "イカサマ",
+        "ちょうはつ",
+        "アンコール"
+      ]
+    },
+    {
+      "rank": 37,
       "name": "メガフラエッテ",
       "types": [
         "fairy"
