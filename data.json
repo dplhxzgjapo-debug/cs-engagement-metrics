@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T13:53:56Z",
+  "updated_at": "2026-11-04T14:03:46Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
@@ -377,28 +377,6 @@
     },
     {
       "rank": 16,
-      "name": "イエッサン♂",
-      "types": [
-        "psychic",
-        "normal"
-      ],
-      "stats": {
-        "hp": 60,
-        "atk": 65,
-        "def": 55,
-        "spa": 105,
-        "spd": 95,
-        "spe": 95
-      },
-      "abilities": [
-        "せいしんりょく",
-        "シンクロ",
-        "サイコメイカー"
-      ],
-      "moves_mentioned": []
-    },
-    {
-      "rank": 17,
       "name": "マスカーニャ",
       "types": [
         "grass",
@@ -423,6 +401,28 @@
         "とんぼがえり",
         "ふいうち"
       ]
+    },
+    {
+      "rank": 17,
+      "name": "イエッサン♂",
+      "types": [
+        "psychic",
+        "normal"
+      ],
+      "stats": {
+        "hp": 60,
+        "atk": 65,
+        "def": 55,
+        "spa": 105,
+        "spd": 95,
+        "spe": 95
+      },
+      "abilities": [
+        "せいしんりょく",
+        "シンクロ",
+        "サイコメイカー"
+      ],
+      "moves_mentioned": []
     },
     {
       "rank": 18,
@@ -521,28 +521,6 @@
     },
     {
       "rank": 22,
-      "name": "メガライチュウY",
-      "types": [
-        "electric"
-      ],
-      "stats": {
-        "hp": 60,
-        "atk": 100,
-        "def": 55,
-        "spa": 160,
-        "spd": 80,
-        "spe": 130
-      },
-      "abilities": [
-        "ノーガード",
-        "ノーガード"
-      ],
-      "moves_mentioned": [
-        "でんじほう"
-      ]
-    },
-    {
-      "rank": 23,
       "name": "メガゲンガー",
       "types": [
         "ghost",
@@ -564,6 +542,28 @@
         "みちづれ",
         "おにび",
         "たたりめ"
+      ]
+    },
+    {
+      "rank": 23,
+      "name": "メガライチュウY",
+      "types": [
+        "electric"
+      ],
+      "stats": {
+        "hp": 60,
+        "atk": 100,
+        "def": 55,
+        "spa": 160,
+        "spd": 80,
+        "spe": 130
+      },
+      "abilities": [
+        "ノーガード",
+        "ノーガード"
+      ],
+      "moves_mentioned": [
+        "でんじほう"
       ]
     },
     {
@@ -6938,7 +6938,7 @@
     }
   ],
   "pokedb_debug": {
-    "singles_html_len": 262806,
+    "singles_html_len": 263177,
     "has_tr": 0,
     "has_pokemon_show_link": 235,
     "has_table": 0,
