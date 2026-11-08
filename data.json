@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T12:43:24Z",
+  "updated_at": "2026-11-08T13:00:49Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
@@ -83,101 +83,6 @@
     },
     {
       "rank": 4,
-      "name": "カバルドン",
-      "types": [
-        "ground"
-      ],
-      "stats": {
-        "hp": 108,
-        "atk": 112,
-        "def": 118,
-        "spa": 68,
-        "spd": 72,
-        "spe": 47
-      },
-      "abilities": [
-        "すなおこし",
-        "すなのちから",
-        "すなおこし"
-      ],
-      "moves_mentioned": [
-        "あくび",
-        "ステルスロック"
-      ]
-    },
-    {
-      "rank": 5,
-      "name": "メガグソクムシャ",
-      "types": [
-        "bug",
-        "steel"
-      ],
-      "stats": {
-        "hp": 75,
-        "atk": 150,
-        "def": 175,
-        "spa": 70,
-        "spd": 120,
-        "spe": 40
-      },
-      "abilities": [
-        "かたいツメ",
-        "かたいツメ"
-      ],
-      "moves_mentioned": [
-        "であいがしら"
-      ]
-    },
-    {
-      "rank": 6,
-      "name": "メガリザードンY",
-      "types": [
-        "fire",
-        "flying"
-      ],
-      "stats": {
-        "hp": 78,
-        "atk": 104,
-        "def": 78,
-        "spa": 159,
-        "spd": 115,
-        "spe": 100
-      },
-      "abilities": [
-        "ひでり",
-        "ひでり"
-      ],
-      "moves_mentioned": [
-        "にほんばれ",
-        "ソーラービーム",
-        "ステルスロック"
-      ]
-    },
-    {
-      "rank": 7,
-      "name": "メガルカリオZ",
-      "types": [
-        "fighting",
-        "steel"
-      ],
-      "stats": {
-        "hp": 70,
-        "atk": 100,
-        "def": 70,
-        "spa": 164,
-        "spd": 70,
-        "spe": 151
-      },
-      "abilities": [
-        "はどうのぼうご",
-        "はどうのぼうご"
-      ],
-      "moves_mentioned": [
-        "わるだくみ"
-      ]
-    },
-    {
-      "rank": 8,
       "name": "ブリジュラス",
       "types": [
         "steel",
@@ -203,7 +108,79 @@
       ]
     },
     {
-      "rank": 9,
+      "rank": 5,
+      "name": "メガルカリオZ",
+      "types": [
+        "fighting",
+        "steel"
+      ],
+      "stats": {
+        "hp": 70,
+        "atk": 100,
+        "def": 70,
+        "spa": 164,
+        "spd": 70,
+        "spe": 151
+      },
+      "abilities": [
+        "はどうのぼうご",
+        "はどうのぼうご"
+      ],
+      "moves_mentioned": [
+        "わるだくみ"
+      ]
+    },
+    {
+      "rank": 6,
+      "name": "カバルドン",
+      "types": [
+        "ground"
+      ],
+      "stats": {
+        "hp": 108,
+        "atk": 112,
+        "def": 118,
+        "spa": 68,
+        "spd": 72,
+        "spe": 47
+      },
+      "abilities": [
+        "すなおこし",
+        "すなのちから",
+        "すなおこし"
+      ],
+      "moves_mentioned": [
+        "あくび",
+        "ステルスロック"
+      ]
+    },
+    {
+      "rank": 7,
+      "name": "メガリザードンY",
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "stats": {
+        "hp": 78,
+        "atk": 104,
+        "def": 78,
+        "spa": 159,
+        "spd": 115,
+        "spe": 100
+      },
+      "abilities": [
+        "ひでり",
+        "ひでり"
+      ],
+      "moves_mentioned": [
+        "にほんばれ",
+        "ソーラービーム",
+        "ステルスロック"
+      ]
+    },
+    {
+      "rank": 8,
       "name": "イダイトウ♂",
       "types": [
         "water",
@@ -227,6 +204,29 @@
         "おはかまいり",
         "ウェーブタックル",
         "アクアジェット"
+      ]
+    },
+    {
+      "rank": 9,
+      "name": "メガグソクムシャ",
+      "types": [
+        "bug",
+        "steel"
+      ],
+      "stats": {
+        "hp": 75,
+        "atk": 150,
+        "def": 175,
+        "spa": 70,
+        "spd": 120,
+        "spe": 40
+      },
+      "abilities": [
+        "かたいツメ",
+        "かたいツメ"
+      ],
+      "moves_mentioned": [
+        "であいがしら"
       ]
     },
     {
@@ -256,6 +256,53 @@
     },
     {
       "rank": 11,
+      "name": "メガカイリュー",
+      "types": [
+        "dragon",
+        "flying"
+      ],
+      "stats": {
+        "hp": 91,
+        "atk": 124,
+        "def": 115,
+        "spa": 145,
+        "spd": 125,
+        "spe": 100
+      },
+      "abilities": [
+        "マルチスケイル"
+      ],
+      "moves_mentioned": [
+        "りゅうせいぐん",
+        "しんそく"
+      ]
+    },
+    {
+      "rank": 12,
+      "name": "メガボーマンダ",
+      "types": [
+        "dragon",
+        "flying"
+      ],
+      "stats": {
+        "hp": 95,
+        "atk": 145,
+        "def": 130,
+        "spa": 120,
+        "spd": 90,
+        "spe": 120
+      },
+      "abilities": [
+        "スカイスキン"
+      ],
+      "moves_mentioned": [
+        "かえんほうしゃ",
+        "だいもんじ",
+        "りゅうのまい"
+      ]
+    },
+    {
+      "rank": 13,
       "name": "アーマーガア",
       "types": [
         "flying",
@@ -282,101 +329,7 @@
       ]
     },
     {
-      "rank": 12,
-      "name": "メガカイリュー",
-      "types": [
-        "dragon",
-        "flying"
-      ],
-      "stats": {
-        "hp": 91,
-        "atk": 124,
-        "def": 115,
-        "spa": 145,
-        "spd": 125,
-        "spe": 100
-      },
-      "abilities": [
-        "マルチスケイル"
-      ],
-      "moves_mentioned": [
-        "りゅうせいぐん",
-        "しんそく"
-      ]
-    },
-    {
-      "rank": 13,
-      "name": "メガメタグロス",
-      "types": [
-        "steel",
-        "psychic"
-      ],
-      "stats": {
-        "hp": 80,
-        "atk": 145,
-        "def": 150,
-        "spa": 105,
-        "spd": 110,
-        "spe": 110
-      },
-      "abilities": [
-        "かたいツメ",
-        "かたいツメ"
-      ],
-      "moves_mentioned": [
-        "バレットパンチ"
-      ]
-    },
-    {
       "rank": 14,
-      "name": "セグレイブ",
-      "types": [
-        "dragon",
-        "ice"
-      ],
-      "stats": {
-        "hp": 115,
-        "atk": 145,
-        "def": 92,
-        "spa": 75,
-        "spd": 86,
-        "spe": 87
-      },
-      "abilities": [
-        "ねつこうかん",
-        "アイスボディ"
-      ],
-      "moves_mentioned": [
-        "つるぎのまい",
-        "りゅうのまい"
-      ]
-    },
-    {
-      "rank": 15,
-      "name": "メガボーマンダ",
-      "types": [
-        "dragon",
-        "flying"
-      ],
-      "stats": {
-        "hp": 95,
-        "atk": 145,
-        "def": 130,
-        "spa": 120,
-        "spd": 90,
-        "spe": 120
-      },
-      "abilities": [
-        "スカイスキン"
-      ],
-      "moves_mentioned": [
-        "かえんほうしゃ",
-        "だいもんじ",
-        "りゅうのまい"
-      ]
-    },
-    {
-      "rank": 16,
       "name": "マスカーニャ",
       "types": [
         "grass",
@@ -403,29 +356,53 @@
       ]
     },
     {
-      "rank": 17,
-      "name": "イエッサン♂",
+      "rank": 15,
+      "name": "ゴリランダー",
       "types": [
-        "psychic",
-        "normal"
+        "grass"
       ],
       "stats": {
-        "hp": 60,
-        "atk": 65,
-        "def": 55,
-        "spa": 105,
-        "spd": 95,
-        "spe": 95
+        "hp": 100,
+        "atk": 125,
+        "def": 90,
+        "spa": 60,
+        "spd": 70,
+        "spe": 85
       },
       "abilities": [
-        "せいしんりょく",
-        "シンクロ",
-        "サイコメイカー"
+        "しんりょく",
+        "グラスメイカー"
       ],
-      "moves_mentioned": []
+      "moves_mentioned": [
+        "はたきおとす",
+        "とんぼがえり"
+      ]
     },
     {
-      "rank": 18,
+      "rank": 16,
+      "name": "メガメタグロス",
+      "types": [
+        "steel",
+        "psychic"
+      ],
+      "stats": {
+        "hp": 80,
+        "atk": 145,
+        "def": 150,
+        "spa": 105,
+        "spd": 110,
+        "spe": 110
+      },
+      "abilities": [
+        "かたいツメ",
+        "かたいツメ"
+      ],
+      "moves_mentioned": [
+        "バレットパンチ"
+      ]
+    },
+    {
+      "rank": 17,
       "name": "キラフロル",
       "types": [
         "rock",
@@ -450,73 +427,96 @@
       ]
     },
     {
-      "rank": 19,
-      "name": "ゴリランダー",
+      "rank": 18,
+      "name": "イエッサン♂",
       "types": [
-        "grass"
+        "psychic",
+        "normal"
       ],
       "stats": {
-        "hp": 100,
-        "atk": 125,
-        "def": 90,
-        "spa": 60,
-        "spd": 70,
-        "spe": 85
+        "hp": 60,
+        "atk": 65,
+        "def": 55,
+        "spa": 105,
+        "spd": 95,
+        "spe": 95
       },
       "abilities": [
-        "しんりょく",
-        "グラスメイカー"
+        "せいしんりょく",
+        "シンクロ",
+        "サイコメイカー"
+      ],
+      "moves_mentioned": []
+    },
+    {
+      "rank": 19,
+      "name": "メガギャラドス",
+      "types": [
+        "water",
+        "dark"
+      ],
+      "stats": {
+        "hp": 95,
+        "atk": 155,
+        "def": 109,
+        "spa": 70,
+        "spd": 130,
+        "spe": 81
+      },
+      "abilities": [
+        "かたやぶり",
+        "かたやぶり"
       ],
       "moves_mentioned": [
-        "はたきおとす",
-        "とんぼがえり"
+        "りゅうのまい"
       ]
     },
     {
       "rank": 20,
-      "name": "エースバーン",
+      "name": "セグレイブ",
       "types": [
-        "fire"
+        "dragon",
+        "ice"
       ],
       "stats": {
-        "hp": 80,
-        "atk": 116,
-        "def": 75,
-        "spa": 65,
-        "spd": 75,
-        "spe": 119
+        "hp": 115,
+        "atk": 145,
+        "def": 92,
+        "spa": 75,
+        "spd": 86,
+        "spe": 87
       },
       "abilities": [
-        "もうか",
-        "リベロ",
-        "リベロ"
+        "ねつこうかん",
+        "アイスボディ"
       ],
       "moves_mentioned": [
-        "とんぼがえり"
+        "つるぎのまい",
+        "りゅうのまい"
       ]
     },
     {
       "rank": 21,
-      "name": "ギャラドス",
+      "name": "ブラッキー",
       "types": [
-        "water",
-        "flying"
+        "dark"
       ],
       "stats": {
         "hp": 95,
-        "atk": 125,
-        "def": 79,
+        "atk": 65,
+        "def": 110,
         "spa": 60,
-        "spd": 100,
-        "spe": 81
+        "spd": 130,
+        "spe": 65
       },
       "abilities": [
-        "いかく",
-        "じしんかじょう",
-        "いかく"
+        "シンクロ",
+        "せいしんりょく"
       ],
       "moves_mentioned": [
-        "りゅうのまい"
+        "イカサマ",
+        "ちょうはつ",
+        "アンコール"
       ]
     },
     {
@@ -546,79 +546,55 @@
     },
     {
       "rank": 23,
-      "name": "メガライチュウY",
+      "name": "エースバーン",
       "types": [
-        "electric"
+        "fire"
       ],
       "stats": {
-        "hp": 60,
-        "atk": 100,
-        "def": 55,
-        "spa": 160,
-        "spd": 80,
-        "spe": 130
+        "hp": 80,
+        "atk": 116,
+        "def": 75,
+        "spa": 65,
+        "spd": 75,
+        "spe": 119
       },
       "abilities": [
-        "ノーガード",
-        "ノーガード"
+        "もうか",
+        "リベロ",
+        "リベロ"
       ],
       "moves_mentioned": [
-        "でんじほう"
+        "とんぼがえり"
       ]
     },
     {
       "rank": 24,
-      "name": "オオニューラ",
+      "name": "パーモット",
       "types": [
-        "fighting",
-        "poison"
+        "electric",
+        "fighting"
       ],
       "stats": {
-        "hp": 80,
-        "atk": 130,
-        "def": 60,
-        "spa": 40,
-        "spd": 80,
-        "spe": 120
+        "hp": 70,
+        "atk": 115,
+        "def": 70,
+        "spa": 70,
+        "spd": 60,
+        "spe": 105
       },
       "abilities": [
-        "プレッシャー",
-        "かるわざ",
-        "どくしゅ",
-        "かるわざ",
-        "かるわざ"
+        "ちくでん",
+        "しぜんかいふく",
+        "てつのこぶし",
+        "てつのこぶし"
       ],
       "moves_mentioned": [
-        "インファイト",
-        "フェイタルクロー"
+        "さいきのいのり",
+        "でんこうそうげき"
       ]
     },
     {
       "rank": 25,
-      "name": "ブラッキー",
-      "types": [
-        "dark"
-      ],
-      "stats": {
-        "hp": 95,
-        "atk": 65,
-        "def": 110,
-        "spa": 60,
-        "spd": 130,
-        "spe": 65
-      },
-      "abilities": [
-        "シンクロ",
-        "せいしんりょく"
-      ],
-      "moves_mentioned": [
-        "イカサマ",
-        "ちょうはつ",
-        "アンコール"
-      ]
-    },
-    {
-      "rank": 37,
       "name": "メガフラエッテ",
       "types": [
         "fairy"
