@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T15:29:47Z",
+  "updated_at": "2026-11-20T15:08:06Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
@@ -109,29 +109,6 @@
     },
     {
       "rank": 5,
-      "name": "メガルカリオZ",
-      "types": [
-        "fighting",
-        "steel"
-      ],
-      "stats": {
-        "hp": 70,
-        "atk": 100,
-        "def": 70,
-        "spa": 164,
-        "spd": 70,
-        "spe": 151
-      },
-      "abilities": [
-        "はどうのぼうご",
-        "はどうのぼうご"
-      ],
-      "moves_mentioned": [
-        "わるだくみ"
-      ]
-    },
-    {
-      "rank": 6,
       "name": "ミミッキュ",
       "types": [
         "ghost",
@@ -152,6 +129,29 @@
       "moves_mentioned": [
         "つるぎのまい",
         "かげうち"
+      ]
+    },
+    {
+      "rank": 6,
+      "name": "メガルカリオZ",
+      "types": [
+        "fighting",
+        "steel"
+      ],
+      "stats": {
+        "hp": 70,
+        "atk": 100,
+        "def": 70,
+        "spa": 164,
+        "spd": 70,
+        "spe": 151
+      },
+      "abilities": [
+        "はどうのぼうご",
+        "はどうのぼうご"
+      ],
+      "moves_mentioned": [
+        "わるだくみ"
       ]
     },
     {
@@ -380,51 +380,6 @@
     },
     {
       "rank": 16,
-      "name": "メガメタグロス",
-      "types": [
-        "steel",
-        "psychic"
-      ],
-      "stats": {
-        "hp": 80,
-        "atk": 145,
-        "def": 150,
-        "spa": 105,
-        "spd": 110,
-        "spe": 110
-      },
-      "abilities": [
-        "かたいツメ",
-        "かたいツメ"
-      ],
-      "moves_mentioned": [
-        "バレットパンチ"
-      ]
-    },
-    {
-      "rank": 17,
-      "name": "イエッサン♂",
-      "types": [
-        "psychic",
-        "normal"
-      ],
-      "stats": {
-        "hp": 60,
-        "atk": 65,
-        "def": 55,
-        "spa": 105,
-        "spd": 95,
-        "spe": 95
-      },
-      "abilities": [
-        "せいしんりょく",
-        "シンクロ",
-        "サイコメイカー"
-      ],
-      "moves_mentioned": []
-    },
-    {
-      "rank": 18,
       "name": "セグレイブ",
       "types": [
         "dragon",
@@ -448,7 +403,75 @@
       ]
     },
     {
+      "rank": 17,
+      "name": "メガメタグロス",
+      "types": [
+        "steel",
+        "psychic"
+      ],
+      "stats": {
+        "hp": 80,
+        "atk": 145,
+        "def": 150,
+        "spa": 105,
+        "spd": 110,
+        "spe": 110
+      },
+      "abilities": [
+        "かたいツメ",
+        "かたいツメ"
+      ],
+      "moves_mentioned": [
+        "バレットパンチ"
+      ]
+    },
+    {
+      "rank": 18,
+      "name": "イエッサン♂",
+      "types": [
+        "psychic",
+        "normal"
+      ],
+      "stats": {
+        "hp": 60,
+        "atk": 65,
+        "def": 55,
+        "spa": 105,
+        "spd": 95,
+        "spe": 95
+      },
+      "abilities": [
+        "せいしんりょく",
+        "シンクロ",
+        "サイコメイカー"
+      ],
+      "moves_mentioned": []
+    },
+    {
       "rank": 19,
+      "name": "メガギャラドス",
+      "types": [
+        "water",
+        "dark"
+      ],
+      "stats": {
+        "hp": 95,
+        "atk": 155,
+        "def": 109,
+        "spa": 70,
+        "spd": 130,
+        "spe": 81
+      },
+      "abilities": [
+        "かたやぶり",
+        "かたやぶり"
+      ],
+      "moves_mentioned": [
+        "りゅうのまい"
+      ]
+    },
+    {
+      "rank": 20,
       "name": "キラフロル",
       "types": [
         "rock",
@@ -470,29 +493,6 @@
       "moves_mentioned": [
         "ステルスロック",
         "どくびし"
-      ]
-    },
-    {
-      "rank": 20,
-      "name": "メガギャラドス",
-      "types": [
-        "water",
-        "dark"
-      ],
-      "stats": {
-        "hp": 95,
-        "atk": 155,
-        "def": 109,
-        "spa": 70,
-        "spd": 130,
-        "spe": 81
-      },
-      "abilities": [
-        "かたやぶり",
-        "かたやぶり"
-      ],
-      "moves_mentioned": [
-        "りゅうのまい"
       ]
     },
     {
@@ -520,6 +520,30 @@
     },
     {
       "rank": 22,
+      "name": "ウォッシュロトム",
+      "types": [
+        "electric",
+        "water"
+      ],
+      "stats": {
+        "hp": 50,
+        "atk": 65,
+        "def": 107,
+        "spa": 105,
+        "spd": 107,
+        "spe": 86
+      },
+      "abilities": [
+        "ふゆう",
+        "ふゆう"
+      ],
+      "moves_mentioned": [
+        "おにび",
+        "ボルトチェンジ"
+      ]
+    },
+    {
+      "rank": 23,
       "name": "ブラッキー",
       "types": [
         "dark"
@@ -543,7 +567,30 @@
       ]
     },
     {
-      "rank": 23,
+      "rank": 24,
+      "name": "ゲッコウガ",
+      "types": [
+        "water",
+        "dark"
+      ],
+      "stats": {
+        "hp": 72,
+        "atk": 95,
+        "def": 67,
+        "spa": 103,
+        "spd": 71,
+        "spe": 122
+      },
+      "abilities": [
+        "げきりゅう",
+        "へんげんじざい",
+        "へんげんじざい",
+        "げきりゅう"
+      ],
+      "moves_mentioned": []
+    },
+    {
+      "rank": 25,
       "name": "メガゲンガー",
       "types": [
         "ghost",
@@ -568,57 +615,7 @@
       ]
     },
     {
-      "rank": 24,
-      "name": "ヒートロトム",
-      "types": [
-        "electric",
-        "fire"
-      ],
-      "stats": {
-        "hp": 50,
-        "atk": 65,
-        "def": 107,
-        "spa": 105,
-        "spd": 107,
-        "spe": 86
-      },
-      "abilities": [
-        "ふゆう",
-        "ふゆう"
-      ],
-      "moves_mentioned": [
-        "オーバーヒート",
-        "ボルトチェンジ",
-        "トリック",
-        "おにび"
-      ]
-    },
-    {
-      "rank": 25,
-      "name": "ウォッシュロトム",
-      "types": [
-        "electric",
-        "water"
-      ],
-      "stats": {
-        "hp": 50,
-        "atk": 65,
-        "def": 107,
-        "spa": 105,
-        "spd": 107,
-        "spe": 86
-      },
-      "abilities": [
-        "ふゆう",
-        "ふゆう"
-      ],
-      "moves_mentioned": [
-        "おにび",
-        "ボルトチェンジ"
-      ]
-    },
-    {
-      "rank": 28,
+      "rank": 37,
       "name": "メガフラエッテ",
       "types": [
         "fairy"
