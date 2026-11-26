@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T16:58:37Z",
+  "updated_at": "2026-11-26T16:39:02Z",
   "source": "yakkun.com + champs.pokedb.tokyo",
   "format": "singles",
   "pokemon": [
@@ -83,6 +83,30 @@
     },
     {
       "rank": 4,
+      "name": "ミミッキュ",
+      "types": [
+        "ghost",
+        "fairy"
+      ],
+      "stats": {
+        "hp": 55,
+        "atk": 90,
+        "def": 80,
+        "spa": 50,
+        "spd": 105,
+        "spe": 96
+      },
+      "abilities": [
+        "ばけのかわ",
+        "ばけのかわ"
+      ],
+      "moves_mentioned": [
+        "つるぎのまい",
+        "かげうち"
+      ]
+    },
+    {
+      "rank": 5,
       "name": "ブリジュラス",
       "types": [
         "steel",
@@ -105,30 +129,6 @@
       "moves_mentioned": [
         "ステルスロック",
         "でんじは"
-      ]
-    },
-    {
-      "rank": 5,
-      "name": "ミミッキュ",
-      "types": [
-        "ghost",
-        "fairy"
-      ],
-      "stats": {
-        "hp": 55,
-        "atk": 90,
-        "def": 80,
-        "spa": 50,
-        "spd": 105,
-        "spe": 96
-      },
-      "abilities": [
-        "ばけのかわ",
-        "ばけのかわ"
-      ],
-      "moves_mentioned": [
-        "つるぎのまい",
-        "かげうち"
       ]
     },
     {
@@ -255,31 +255,6 @@
     },
     {
       "rank": 11,
-      "name": "サーフゴー",
-      "types": [
-        "steel",
-        "ghost"
-      ],
-      "stats": {
-        "hp": 87,
-        "atk": 60,
-        "def": 95,
-        "spa": 133,
-        "spd": 91,
-        "spe": 84
-      },
-      "abilities": [
-        "おうごんのからだ",
-        "おうごんのからだ"
-      ],
-      "moves_mentioned": [
-        "シャドーボール",
-        "ゴールドラッシュ",
-        "トリック"
-      ]
-    },
-    {
-      "rank": 12,
       "name": "マスカーニャ",
       "types": [
         "grass",
@@ -303,6 +278,31 @@
         "はたきおとす",
         "とんぼがえり",
         "ふいうち"
+      ]
+    },
+    {
+      "rank": 12,
+      "name": "サーフゴー",
+      "types": [
+        "steel",
+        "ghost"
+      ],
+      "stats": {
+        "hp": 87,
+        "atk": 60,
+        "def": 95,
+        "spa": 133,
+        "spd": 91,
+        "spe": 84
+      },
+      "abilities": [
+        "おうごんのからだ",
+        "おうごんのからだ"
+      ],
+      "moves_mentioned": [
+        "シャドーボール",
+        "ゴールドラッシュ",
+        "トリック"
       ]
     },
     {
@@ -357,29 +357,6 @@
     },
     {
       "rank": 15,
-      "name": "ゴリランダー",
-      "types": [
-        "grass"
-      ],
-      "stats": {
-        "hp": 100,
-        "atk": 125,
-        "def": 90,
-        "spa": 60,
-        "spd": 70,
-        "spe": 85
-      },
-      "abilities": [
-        "しんりょく",
-        "グラスメイカー"
-      ],
-      "moves_mentioned": [
-        "はたきおとす",
-        "とんぼがえり"
-      ]
-    },
-    {
-      "rank": 16,
       "name": "セグレイブ",
       "types": [
         "dragon",
@@ -403,7 +380,7 @@
       ]
     },
     {
-      "rank": 17,
+      "rank": 16,
       "name": "メガメタグロス",
       "types": [
         "steel",
@@ -426,29 +403,30 @@
       ]
     },
     {
-      "rank": 18,
-      "name": "イエッサン♂",
+      "rank": 17,
+      "name": "ゴリランダー",
       "types": [
-        "psychic",
-        "normal"
+        "grass"
       ],
       "stats": {
-        "hp": 60,
-        "atk": 65,
-        "def": 55,
-        "spa": 105,
-        "spd": 95,
-        "spe": 95
+        "hp": 100,
+        "atk": 125,
+        "def": 90,
+        "spa": 60,
+        "spd": 70,
+        "spe": 85
       },
       "abilities": [
-        "せいしんりょく",
-        "シンクロ",
-        "サイコメイカー"
+        "しんりょく",
+        "グラスメイカー"
       ],
-      "moves_mentioned": []
+      "moves_mentioned": [
+        "はたきおとす",
+        "とんぼがえり"
+      ]
     },
     {
-      "rank": 19,
+      "rank": 18,
       "name": "メガギャラドス",
       "types": [
         "water",
@@ -469,6 +447,28 @@
       "moves_mentioned": [
         "りゅうのまい"
       ]
+    },
+    {
+      "rank": 19,
+      "name": "イエッサン♂",
+      "types": [
+        "psychic",
+        "normal"
+      ],
+      "stats": {
+        "hp": 60,
+        "atk": 65,
+        "def": 55,
+        "spa": 105,
+        "spd": 95,
+        "spe": 95
+      },
+      "abilities": [
+        "せいしんりょく",
+        "シンクロ",
+        "サイコメイカー"
+      ],
+      "moves_mentioned": []
     },
     {
       "rank": 20,
@@ -520,30 +520,6 @@
     },
     {
       "rank": 22,
-      "name": "ウォッシュロトム",
-      "types": [
-        "electric",
-        "water"
-      ],
-      "stats": {
-        "hp": 50,
-        "atk": 65,
-        "def": 107,
-        "spa": 105,
-        "spd": 107,
-        "spe": 86
-      },
-      "abilities": [
-        "ふゆう",
-        "ふゆう"
-      ],
-      "moves_mentioned": [
-        "おにび",
-        "ボルトチェンジ"
-      ]
-    },
-    {
-      "rank": 23,
       "name": "ブラッキー",
       "types": [
         "dark"
@@ -564,6 +540,30 @@
         "イカサマ",
         "ちょうはつ",
         "アンコール"
+      ]
+    },
+    {
+      "rank": 23,
+      "name": "ウォッシュロトム",
+      "types": [
+        "electric",
+        "water"
+      ],
+      "stats": {
+        "hp": 50,
+        "atk": 65,
+        "def": 107,
+        "spa": 105,
+        "spd": 107,
+        "spe": 86
+      },
+      "abilities": [
+        "ふゆう",
+        "ふゆう"
+      ],
+      "moves_mentioned": [
+        "おにび",
+        "ボルトチェンジ"
       ]
     },
     {
@@ -591,31 +591,32 @@
     },
     {
       "rank": 25,
-      "name": "メガゲンガー",
+      "name": "メガバシャーモ",
       "types": [
-        "ghost",
-        "poison"
+        "fire",
+        "fighting"
       ],
       "stats": {
-        "hp": 60,
-        "atk": 65,
+        "hp": 80,
+        "atk": 160,
         "def": 80,
-        "spa": 170,
-        "spd": 95,
-        "spe": 130
+        "spa": 130,
+        "spd": 80,
+        "spe": 100
       },
       "abilities": [
-        "かげふみ",
-        "かげふみ"
+        "かそく",
+        "かそく"
       ],
       "moves_mentioned": [
-        "みちづれ",
-        "おにび",
-        "たたりめ"
+        "フレアドライブ",
+        "インファイト",
+        "つるぎのまい",
+        "かみなりパンチ"
       ]
     },
     {
-      "rank": 37,
+      "rank": 40,
       "name": "メガフラエッテ",
       "types": [
         "fairy"
